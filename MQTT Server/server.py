@@ -6,9 +6,6 @@ import time
 import paho.mqtt 
 import urllib.request
 
-# os.system("echo Hello from the other side!")
-# output = deque([])
-
 class mqtt: 
     def __init__(self, path):
         self.path = path
@@ -25,7 +22,7 @@ class mqtt:
         if not self.active:
             self.active = True
             os.chdir(self.path)
-            self._server = Popen(["mosquitto", "-v", "-c", "C:\\Users\\harry\\Desktop\\SH Robotics\\2023-SH-Open-House\\mosquitto.conf"],
+            self._server = Popen(["mosquitto", "-v", "-c", "C:\\Users\\harry\\Desktop\\SH Robotics\\2023-SH-Open-House\\MQTT Server\\mosquitto.conf"],
                             stdout = PIPE,
                             # stdin = PIPE,
                             text = True,
@@ -74,9 +71,9 @@ info  = " | MQTT Server | \n server-start : starts mqtt server \n server-read : 
 # Command Line
 while True:
     if response:
-        response = input("\n< Maze Runner >: ")
+        response = input("\n< MQTT-server >: ")
     else: 
-        response = input("< Maze Runner >: ")
+        response = input("< MQTT-server >: ")
     
     # MQTT Server
     if response == "help":
@@ -98,10 +95,8 @@ while True:
         else:
             print("Server Inactive. Start Server")
 
-    # GUI 
-
     else:
-        print(f"Maze Runner has no such command \"{response}\". use \"help\" for more info")
+        print(f"MQTT-Server has no such command \"{response}\". use \"help\" for more info")
 
     #TODO: Testing Connections 
     #TODO: Script on EV3 

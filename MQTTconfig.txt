@@ -1,5 +1,3 @@
-Public IP4 Address: 
-Port: 
 MQTT Path: C:\\Program Files\\mosquitto
 MQTT .config Path: C:\\Users\\harry\\Desktop\\SH Robotics\\2023-SH-Open-House\\mosquitto.conf
 

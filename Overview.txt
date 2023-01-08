@@ -1,0 +1,100 @@
+____________________ Overview ____________________
+
+- Structure of repo 
+
+
+______________________ Clients ______________________
+
+1. Mazerobot
+- ev3 robot running ev3dev 
+- executes robot cmds from GUI
+
+2. GUI (1 & 2)
+- Website
+- Custom Interface to allow users to program the robot
+
+3. Log
+- Observes the interaction among clients
+- Traceback errors 
+
+
+________________ Channel Interaction ________________
+
+* This is a demonstration of how the channel look like, in reality, messages are not enumerated. 
+~[Client ID] [Client Msg]~ 
+
+msg 1 : [Mazerobot] status: Free
+
+msg 2 : [GUI1] Maze_robot run [...]
+
+msg 3 : [Mazerobot] Received
+
+msg 4 : [Mazerobot] status: Occupied
+
+[Robot Completes the GUI Program]
+
+
+msg 5 : [MazeRunner] status: Free
+...
+
+
+____________________ Break-down ____________________
+
+    # msg 1 : [Mazerobot] status: Free
+
+    - Once the robot is ready, this msg will be sent by the robot to the channel
+    - Once received by GUIs, GUIs can go ahead to run the seq of movements on the robot
+
+
+    # msg 2 : [GUI1] Maze_robot run [...]
+
+    - ... : commands for the movement of the robot
+    - [Optional] : GUI shows that the program is being loaded
+
+
+    # msg 3 : [Mazerunner] Received
+
+    - cfmation from the Maze-Runner 
+    - [Optional] GUI shows that the robot is running
+
+
+    # msg 4 : [Mazerunner] status: Occupied
+
+    - The robot is running a program at the momemt
+    - Once received by GUIS, GUIs are not allowed to send any commands
+
+
+    # msg 5 : [Mazerunner] status: Free
+
+    - The loop continues 
+
+
+_____________________ Robot cmd _____________________
+
+| Basic Robot Movement |
+
+    1. f1000
+    - f : move forward
+    - 1000 : by 1000 deg
+
+    2. b1000
+    ^
+
+    3. l30
+    - l : turn left on the spot
+    - 30 : both wheels rotate by 30 deg
+
+    4. r30
+    ^
+
+| Gyro |
+
+    1. gf1000
+    gf : pid gyro straight
+    1000 : by 1000 deg
+
+    2. gt90
+    gf : p gyro turn
+    90 : until bearing 90 is reached
+
+
