@@ -1,0 +1,55 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+/* section, div {
+    border: 1px solid purple;
+} */
+.h-85 {
+    height: 85%;
+}
+.h-15 {
+    height: 15%;
+}
+#codecontainer {
+    background-color: #ddf;
+}
+.execblocks .btncontainer {
+    text-align: center;
+}
+button.action {
+    border: 1px solid black;
+    border-radius: 15px;
+    font-size: 1.2em;
+    padding: 0.8em 1.8em;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+
+}
+button.action#clear {
+    background-color: rgb(255, 200, 200);
+}
+button.action#clear:hover {
+    background-color: rgb(240, 185, 185);
+}
+button.action#clear:active {
+    background-color: rgb(225, 170, 170);
+}
+button.action#run {
+    background-color: rgb(200, 255, 200);
+}
+button.action#run:hover {
+    background-color: rgb(185, 240, 185);
+}
+button.action#run:active {
+    background-color: rgb(170, 225, 170);
+}
+
