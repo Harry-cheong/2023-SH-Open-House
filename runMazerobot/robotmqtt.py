@@ -1,6 +1,7 @@
 import paho.mqtt.client as mqtt
 import time
 import sys
+import pybricks
 
 class Robot():
     def __init__(self):
