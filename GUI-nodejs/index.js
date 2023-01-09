@@ -34,45 +34,46 @@ function logEvent(eventTxt) {
     for(var i = 0; i < padding; i++) {
         eventTxtArray[0] += " ";
     }
-    fs.writeFile('./logs.txt', data, (err) => {
+    var d = new Date(); 
+    var datetime = 
+    `${d.getDate().toString().padStart(2, '0')}${(d.getMonth()+1).toString().padStart(2, '0')}${d.getFullYear()}-${d.getHours().toString().padStart(2, '0')}${d.getMinutes().toString().padStart(2, '0')}${d.getSeconds().toString().padStart(2, '0')}`
+    data = datetime + " " + eventTxtArray.join(" ") + "\n"
+    fs.appendFile('./logs.txt', data, (err) => {
         if (err) throw err;
     })
 }
 
 client.on('connect', function () {
-  console.log('[Local] nodejs-client connected to MQTT')
+  logEvent('[Local] nodejs-client connected to MQTT')
   // Subscribe to a topic
   client.subscribe('Comms', function (err) {
     if (!err) {
-        console.log("[Local] nodejs-client subscribed to 'Comms'")
+        logEvent("[Local] nodejs-client subscribed to 'Comms'")
     }
   })
 })
 
 client.on('disconnect', function() {
-    console.log('[Local] nodejs-client disconnected from MQTT')
-})
-
-client.on('disconnected', function() {
-    console.log('[Local] nodejs-client disconnected from MQTT')
+    logEvent('[Local] nodejs-client disconnected from MQTT')
 })
 
 client.on('error', function(error){
-    console.log("[Local] nodejs-client could not connect to MQTT. Error: " + error);
+    logEvent("[Local] nodejs-client could not connect to MQTT. " + error);
 });
 
 function beginExecution(seq, res) {
-    if (!isRobotInFreeState) {
+    if (!isRobotInFreeState || isGUIExecutionQueued) {
         res.redirect(301, `http://localhost:${port}/`);
         currentStatus = "Failed"
-        console.log("[Local] Execution of code failed: Robot busy")
+        logEvent("[Local] Execution of code failed: Robot busy")
     } else {
         currentExecutionStep = 0
         isGUIExecutionQueued = true;
         actions = seq.split('-');
         res.redirect(301, `http://localhost:${port}/`);
         currentStatus = "Running"
-        console.log("[Local] Execution of code started")
+        logEvent("[Local] Execution of code started")
+        isRobotInFreeState = false;
         sendCommand()
     }
 }
@@ -88,14 +89,14 @@ function sendCommand() {
 // Receive messages
 client.on('message', function (topic, message) {
     var txt = message.toString()
-    console.log(txt)
+    logEvent(txt)
     if (txt === "[Mazerunner] Status: Free") {
         isRobotInFreeState = true
         if (isGUIExecutionQueued) {sendCommand();}
         else if (isAwaitingTermination) {
             isAwaitingTermination = false;
             currentStatus = "Clear";
-            console.log("[Local] Execution of code ended")
+            logEvent("[Local] Execution of code ended")
         }
     } else if (txt === "[Mazerunner] Status: Occupied") {
         isRobotInFreeState = false;
@@ -106,15 +107,19 @@ client.on('message', function (topic, message) {
 
 app.get('/', (req, res) => {
     res.render('index.ejs', {status: currentStatus});
-    if (currentStatus == "Failed") {
-        currentStatus = "Clear";
-    }
 });
 
 app.post('/formdata', (req, res) => {
     beginExecution(req.body.name, res);
 });
 
+app.get('/runstatus', (req, res) => {
+    res.send(currentStatus)
+    if (currentStatus == "Failed") {
+        currentStatus = "Clear";
+    }
+})
+
 app.listen(port, () => {
-    console.log(`[Local] Node.JS running on port ${port}`); 
+    logEvent(`[Local] Node.JS running on port ${port}`)
 });
