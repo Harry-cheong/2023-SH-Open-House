@@ -12,10 +12,20 @@
     <div id="maincontainer" class="container-fluid h-100 p-0">
         <div class="row row-cols-2 w-100 h-100 p-0 m-0">
             <section id="codecontainer" class="col p-0">
-                <input id="name" name="name" type="text"/>
+                <input id="name" name="name" type="text" class="d-none"/>
             </section>
-            <section id="blockscontainer" class="col p-0">
-                <div id="allblocks" class="w-100 h-85 p-0 m-0"></div>
+            <section id="blockscontainer" class="col p-0 m-0">
+                <div id="allblocks" class="w-100 h-85 m-0 p-0">
+                    <template id="template" class="d-none">
+                        <p>
+                            <span class="preblockname"></span>
+                            <input class="blockdetail" disabled/>
+                            <span class="postblockname"></span>
+                        </p>
+                    </template>
+                    <div id="allblocksleft"></div>
+                    <div id="allblocksright"></div>
+                </div>
                 <div id="execblocks" class="w-100 h-15 p-0 m-0">
                     <div class="row row-cols-2 w-100 h-100 m-0 p-0">
                         <div class="col m-0 btncontainer">

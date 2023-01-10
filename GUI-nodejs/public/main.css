@@ -90,3 +90,55 @@ button.btngreen:hover {
     margin: 0 auto 2vh;
     font-size: 1.2em;
 }
+#allblocks {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
+}
+#allblocksleft {
+    padding: 1vh 1vw 1vh 2vw;
+    width: 50%;
+}
+#allblocksright { 
+    padding: 1vh 2vw 1vh 1vw;
+    width: 50%;
+}
+.block {
+    margin: 2vh 0;
+    border-radius: 15px;
+    background-color: #ff9900;
+    padding: 3vh 2vw !important;
+    width: 100%;
+    border: none;
+    transition: 0.3s;
+}
+.block:hover {
+    background-color: #ee8800;
+}
+.block:active {
+    background-color: #dd7700;
+}
+.preblockname, .postblockname {
+    font-size: 1.2em;
+}
+.block input {
+    width: 5em;
+    border-radius: 1em;
+    border: none;
+    padding: 0.3em 1em;
+}
+.block input::-webkit-outer-spin-button,
+.block input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.block input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.block p {
+    margin: 0;
+    text-align: center;
+}
