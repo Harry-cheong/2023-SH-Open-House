@@ -8,12 +8,30 @@ function clearAllCode() {
 }
 
 function runCode() {
-    $('#codeform').submit()
-    console.log("submitted")
+    $("#runmodal").modal("show");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            reloadToCompletion()
+        }
+    };
+    xhttp.open("POST", "/formdata", true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.send(`cmd=${$("#name").val()}`);    
 }
 
 function stopCode() {
-    console.log("TODO: implement code interruption")
+    $("#runmodal").modal("hide");
+    $("#stopmodal").modal("show");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            reloadToCompletion()
+        }
+    };
+    xhttp.open("POST", "/interruptexecution", true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.send();    
 }
 
 window.status = ""
@@ -27,17 +45,24 @@ function reloadToCompletion() {
             if (window.status !== newStatus) {
                 if(newStatus === "Running") {
                     $("#runmodal").modal("show");
-                } else if (newStatus === "Clear") {
+                } 
+                else if (newStatus === "Stopping") {
                     $("#runmodal").modal("hide");
+                    $("#stopmodal").modal("show");
                 }
+            }
+
+            if (newStatus === "Clear") {
+                $("#runmodal").modal("hide");
+                $("#stopmodal").modal("hide");
             }
 
             window.status = newStatus;
 
-            if (window.status === "Running") {
+            if (window.status === "Running" || window.status === "Stopping") {
                 setTimeout(function() {
                     reloadToCompletion()
-                }, 5000)
+                }, 1000)
             }
             console.log(window.status)
         }

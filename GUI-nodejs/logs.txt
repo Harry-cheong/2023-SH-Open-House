@@ -478,3 +478,148 @@
 09012023-222740 [Mazerunner]    Command Received. Running...
 09012023-222740 [Local]         Execution of code ended
 09012023-222740 [Mazerunner]    Status: Free
+10012023-175247 [Local]         Node.JS running on port 5001
+10012023-175423 [Local]         Node.JS running on port 5001
+10012023-175600 [Local]         Node.JS running on port 5001
+10012023-175615 [Local]         Node.JS running on port 5001
+10012023-181254 [Local]         Node.JS running on port 5001
+10012023-181354 [Local]         Execution of code failed: Robot busy
+10012023-181402 [Local]         Execution of code failed: Robot busy
+10012023-181519 [Local]         Node.JS running on port 5001
+10012023-181613 [Local]         Node.JS running on port 5001
+10012023-181738 [Local]         Execution of code failed: Robot busy
+10012023-181750 [Local]         Node.JS running on port 5001
+10012023-181800 [Local]         Execution of code started
+10012023-181820 [Local]         Node.JS running on port 5001
+10012023-181850 [Local]         Execution of code started
+10012023-181918 [Local]         Node.JS running on port 5001
+10012023-185209 [Local]         nodejs-client connected to MQTT
+10012023-185209 [Local]         nodejs-client subscribed to 'Comms'
+10012023-185217 [Local]         Execution of code started
+10012023-185217 [nodejs-client] Run testcmd
+10012023-185230 [Mazerunner]    Status: Free
+10012023-185230 [Local]         Execution of code ended
+10012023-185246 [Local]         Execution of code started
+10012023-185246 [nodejs-client] Run testcmd
+10012023-185251 [Mazerunner]    Command Received. Running...
+10012023-185251 [Mazerunner]    Status: Free
+10012023-185251 [Local]         Execution of code ended
+10012023-185422 [Local]         Node.JS running on port 5001
+10012023-185422 [Local]         nodejs-client connected to MQTT
+10012023-185422 [Local]         nodejs-client subscribed to 'Comms'
+10012023-185522 [Local]         Execution of code started
+10012023-185522 [nodejs-client] Run testcmd
+10012023-185527 [Mazerunner]    Command Received. Running...
+10012023-185527 [Mazerunner]    Status: Free
+10012023-185527 [Local]         Execution of code ended
+10012023-185533 [Local]         Execution of code started
+10012023-185533 [nodejs-client] Run testcmd
+10012023-185539 [Mazerunner]    Command Received. Running...
+10012023-185539 [Mazerunner]    Status: Free
+10012023-185539 [Local]         Execution of code ended
+10012023-185544 [Local]         Execution of code started
+10012023-185544 [nodejs-client] Run testcmd
+10012023-185549 [Mazerunner]    Command Received. Running...
+10012023-185549 [Mazerunner]    Status: Free
+10012023-185549 [Local]         Execution of code ended
+10012023-185641 [Local]         Execution of code started
+10012023-185641 [nodejs-client] Run testcmd
+10012023-185646 [Mazerunner]    Command Received. Running...
+10012023-185646 [Mazerunner]    Status: Free
+10012023-185646 [Local]         Execution of code ended
+10012023-185949 [Local]         Execution of code started
+10012023-185949 [nodejs-client] Run testcmd
+10012023-185954 [Mazerunner]    Command Received. Running...
+10012023-185954 [Mazerunner]    Status: Free
+10012023-185954 [Local]         Execution of code ended
+10012023-190717 [Local]         Node.JS running on port 5001
+10012023-190717 [Local]         nodejs-client connected to MQTT
+10012023-190717 [Local]         nodejs-client subscribed to 'Comms'
+10012023-190720 [Local]         Execution of code started
+10012023-190720 [nodejs-client] Run cmd1
+10012023-190725 [Mazerunner]    Command Received. Running...
+10012023-190725 [Mazerunner]    Status: Free
+10012023-190725 [nodejs-client] Run cmd2
+10012023-190730 [Mazerunner]    Command Received. Running...
+10012023-190730 [Mazerunner]    Status: Free
+10012023-190730 [nodejs-client] Run cmd3
+10012023-190735 [Mazerunner]    Command Received. Running...
+10012023-190735 [Mazerunner]    Status: Free
+10012023-190735 [Local]         Execution of code ended
+10012023-190903 [Local]         Node.JS running on port 5001
+10012023-190903 [Local]         nodejs-client connected to MQTT
+10012023-190903 [Local]         nodejs-client subscribed to 'Comms'
+10012023-190908 [Local]         Execution of code started
+10012023-190908 [nodejs-client] Run cmd1
+10012023-190909 [Local]         Execution of code interrupted
+10012023-190909 [nodejs-client] Interrupt execution
+10012023-190918 [Mazerunner]    Command Received. Running...
+10012023-190918 [Mazerunner]    Status: Free
+10012023-190918 [Mazerunner]    Command Received. Running...
+10012023-190918 [Mazerunner]    Status: Free
+10012023-191215 [Local]         Node.JS running on port 5001
+10012023-191215 [Local]         nodejs-client connected to MQTT
+10012023-191215 [Local]         nodejs-client subscribed to 'Comms'
+10012023-191223 [Local]         Execution of code started
+10012023-191223 [nodejs-client] Run cmd1
+10012023-191226 [Local]         Execution of code interrupted
+10012023-191226 [nodejs-client] Interrupt execution
+10012023-191233 [Mazerunner]    Command Received. Running...
+10012023-191233 [Mazerunner]    Status: Free
+10012023-191233 [Mazerunner]    Command Received. Running...
+10012023-191233 [Mazerunner]    Status: Free
+10012023-191324 [Local]         Node.JS running on port 5001
+10012023-191324 [Local]         nodejs-client connected to MQTT
+10012023-191324 [Local]         nodejs-client subscribed to 'Comms'
+10012023-191328 [Local]         Execution of code started
+10012023-191328 [nodejs-client] Run cmd1
+10012023-191330 [Local]         Execution of code interrupted
+10012023-191330 [nodejs-client] Interrupt execution
+10012023-191339 [Mazerunner]    Command Received. Running...
+10012023-191339 [Mazerunner]    Command Received. Running...
+10012023-191339 [Mazerunner]    Status: Free
+10012023-191339 [Mazerunner]    Status: Free
+10012023-191452 [Local]         Node.JS running on port 5001
+10012023-191452 [Local]         nodejs-client connected to MQTT
+10012023-191452 [Local]         nodejs-client subscribed to 'Comms'
+10012023-191459 [Local]         Execution of code started
+10012023-191459 [nodejs-client] Run cmd1
+10012023-191501 [Local]         Execution of code interrupted
+10012023-191502 [nodejs-client] Interrupt execution
+10012023-191509 [Mazerunner]    Command Received. Running...
+10012023-191509 [Mazerunner]    Status: Free
+10012023-191509 [Mazerunner]    Command Received. Running...
+10012023-191509 [Mazerunner]    Status: Free
+10012023-191657 [Local]         Node.JS running on port 5001
+10012023-191657 [Local]         nodejs-client connected to MQTT
+10012023-191657 [Local]         nodejs-client subscribed to 'Comms'
+10012023-191702 [Local]         Execution of code started
+10012023-191702 [nodejs-client] Run cmd1
+10012023-191705 [Local]         Execution of code interrupted
+10012023-191705 [nodejs-client] Interrupt execution
+10012023-191712 [Mazerunner]    Command Received. Running...
+10012023-191712 [Mazerunner]    Status: Free
+10012023-191712 [Mazerunner]    Status: Free
+10012023-191712 [Mazerunner]    Command Received. Running...
+10012023-191826 [Local]         Node.JS running on port 5001
+10012023-191826 [Local]         nodejs-client connected to MQTT
+10012023-191826 [Local]         nodejs-client subscribed to 'Comms'
+10012023-191831 [Local]         Execution of code started
+10012023-191831 [nodejs-client] Run cmd1
+10012023-191834 [Local]         Execution of code interrupted
+10012023-191834 [nodejs-client] Interrupt execution
+10012023-191841 [Mazerunner]    Command Received. Running...
+10012023-191841 [Mazerunner]    Status: Free
+10012023-191841 [Mazerunner]    Command Received. Running...
+10012023-191841 [Mazerunner]    Status: Free
+10012023-193041 [Local]         Node.JS running on port 5001
+10012023-193042 [Local]         nodejs-client connected to MQTT
+10012023-193042 [Local]         nodejs-client subscribed to 'Comms'
+10012023-193045 [Local]         Execution of code started
+10012023-193045 [nodejs-client] Run cmd1
+10012023-193048 [Local]         Execution of code interrupted
+10012023-193048 [nodejs-client] Interrupt execution
+10012023-193050 [Mazerunner]    Command Received. Running...
+10012023-193050 [Mazerunner]    Status: Free
+10012023-193055 [Mazerunner]    Command Received. Running...
+10012023-193055 [Mazerunner]    Status: Free

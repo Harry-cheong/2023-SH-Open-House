@@ -53,8 +53,7 @@ button.btngreen:hover {
     color: rgb(255, 255, 255);
 }
 .loader {
-    border: 16px solid rgb(200, 200, 200); /* Light grey */
-    border-top: 16px solid rgb(80, 161, 107); /* Blue */
+    border: 16px solid rgb(200, 200, 200);
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -62,7 +61,18 @@ button.btngreen:hover {
     margin: 7.5vh auto 10vh;
 }
 
+#runmodal .loader {
+    border-top: 16px solid rgb(80, 161, 107); 
+}
+
+#stopmodal .loader {
+    border-top: 16px solid rgb(161, 80, 107); 
+}
+
 #runmodal .modal-header, #runmodal .modal-footer {
+    border: none;
+}
+#stopmodal .modal-header, #stopmodal .modal-footer {
     border: none;
 }
 
@@ -71,12 +81,12 @@ button.btngreen:hover {
     100% { transform: rotate(360deg); }
 }
 
-#runmodal h1 {
+#runmodal h1, #stopmodal h1 {
     text-align: center;
     margin: 1vh auto 0;
 }
 
-#runmodal button {
+#runmodal button, #stopmodal button {
     margin: 0 auto 2vh;
     font-size: 1.2em;
 }
