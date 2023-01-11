@@ -1,0 +1,2 @@
+pair.straight(1000) 
+pair.turn(-662.5) 
