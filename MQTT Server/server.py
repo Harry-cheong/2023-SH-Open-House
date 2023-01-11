@@ -3,7 +3,7 @@ from subprocess import Popen, PIPE, TimeoutExpired
 import socket
 from collections import deque 
 import time
-import paho.mqtt 
+# import paho.mqtt 
 import urllib.request
 
 class mqtt: 
@@ -22,7 +22,7 @@ class mqtt:
         if not self.active:
             self.active = True
             os.chdir(self.path)
-            self._server = Popen(["mosquitto", "-v", "-c", "C:\\Users\\harry\\Desktop\\SH Robotics\\2023-SH-Open-House\\MQTT Server\\mosquitto.conf"],
+            self._server = Popen(["mosquitto", "-v", "-c", "C:\\Users\\User\\Desktop\\Harry\\2023-SH-Open-House\\MQTT Server\\mosquitto.conf"],
                             stdout = PIPE,
                             # stdin = PIPE,
                             text = True,
@@ -62,7 +62,7 @@ class config:
         self.externalIP4 = urllib.request.urlopen("https://v4.ident.me/").read().decode('utf8')
 
 # Config file 
-s = mqtt("C:\Program Files\mosquitto")
+s = mqtt("C:\\Program Files\\mosquitto")
 response = ""
 
 # Maze Runner Command info
