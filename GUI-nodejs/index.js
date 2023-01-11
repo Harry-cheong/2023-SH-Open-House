@@ -4,12 +4,8 @@ const fs = require('fs');
 const app = express();
 const port = 5001;
 
-let isRobotInFreeState = true;
-let isGUIExecutionQueued = false;
-let actions = [];
-let currentExecutionStep = 0;
+let isRobotExecuting = false;
 let currentStatus = "Clear"
-let isExecutionStopping = false;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static( __dirname + '/public' ));
@@ -62,45 +58,26 @@ client.on('error', function(error){
 });
 
 function beginExecution(seq, res) {
-    if (!isRobotInFreeState || isGUIExecutionQueued) {
+    if (isRobotExecuting) {
         logEvent("[Local] Execution of code failed: Robot busy")
         res.status(500).send("Command failed");
     } else {
-        currentExecutionStep = 0
-        isGUIExecutionQueued = true;
-        actions = seq.split('-');
-        currentStatus = "Running"
-        logEvent("[Local] Execution of code started")
+        isRobotExecuting = true;
+        currentStatus = "Sending";
+        logEvent("[Local] Execution of code started");
         res.status(200).send("Command succeeded");
-        sendCommand()
+        client.publish('Comms', `[nodejs-client] Run ${seq}`)
     }
 }
 
 function interruptExecution(res) {
-    if (!isGUIExecutionQueued && isRobotInFreeState) {
+    if (!isRobotExecuting) {
         res.status(200).send("Command redundant")
     } else {
         res.status(200).send("Interrupting execution")
         logEvent("[Local] Execution of code interrupted")
         client.publish('Comms', `[nodejs-client] Interrupt execution`)
         currentStatus = "Stopping"
-        isExecutionStopping = true
-        if (isRobotInFreeState) {
-            currentStatus = "Clear"
-            isGUIExecutionQueued = false
-            isExecutionStopping = false
-        }
-    }
-}
-
-function sendCommand() {
-    if (currentExecutionStep === actions.length) {
-        isGUIExecutionQueued = false;
-        currentStatus = "Clear";
-        logEvent("[Local] Execution of code ended")
-    } else if (!isExecutionStopping) {
-        client.publish('Comms', `[nodejs-client] Run ${actions[currentExecutionStep]}`)
-        isRobotInFreeState = false;
     }
 }
 
@@ -109,20 +86,11 @@ client.on('message', function (topic, message) {
     var txt = message.toString()
     logEvent(txt)
     if (txt === "[Mazerunner] Status: Free") {
-        isRobotInFreeState = true
-        if (isExecutionStopping) {
-            isGUIExecutionQueued = false
-            isExecutionStopping = false
-            currentStatus = "Clear"
-        } else if (isGUIExecutionQueued) {
-            sendCommand();
-        }
-        
-    } else if (txt === "[Mazerunner] Status: Occupied") {
-        isRobotInFreeState = false;
+        isRobotExecuting = false;
+        currentStatus = "Clear";
     } else if (txt == "[Mazerunner] Command Received. Running...") {
-        isRobotInFreeState = false;
-        currentExecutionStep += 1;
+        isRobotExecuting = true;
+        currentStatus = "Running";
     }
 })
 
@@ -140,9 +108,6 @@ app.post('/interruptexecution', (req, res) => {
 
 app.get('/runstatus', (req, res) => {
     res.send(currentStatus)
-    if (currentStatus == "Failed") {
-        currentStatus = "Clear";
-    }
 })
 
 app.listen(port, () => {
