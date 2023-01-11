@@ -72,13 +72,13 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
 .loader.green {
     border: 16px solid rgb(200, 200, 200);
     border-top: 16px solid rgba(102, 102, 102);
-    background-color: rgb(220, 240, 220);
+    background-color: rgb(205, 255, 205);
 }
 
 .loader.red {
     border: 16px solid rgb(200, 200, 200);
     border-top: 16px solid rgba(102, 102, 102);
-    background-color: rgb(240, 220, 220);
+    background-color: rgb(255, 205, 205);
 }
 
 #runmodal .modal-body {
@@ -132,6 +132,15 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
     padding: 1vh 2vw 1vh 1vw;
     width: 50%;
 }
+.block#startblock {
+    background-color: #55ff55 !important;
+    cursor: default;
+}
+.fillblock {
+    border: 1px solid black !important;
+    margin-top: -1px !important;
+    cursor: default !important;
+}
 .block {
     margin: 2vh 0;
     border-radius: 100px;
@@ -143,15 +152,12 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
     display: flex;
     flex-wrap: wrap;
 }
-.block#startblock {
-    background-color: #55ff55 !important;
-}
-.fillblock {
-    border: 1px solid black;
-    margin-top: -1px !important;
+
+button:disabled, button[disabled] {
+    cursor: not-allowed;
 }
 
-.block:hover {
+.addblock:hover {
     background-color: #ee8800;
 }
 .addblock:active {
@@ -173,11 +179,10 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
 }
 
 .block input[type=number] {
-  -moz-appearance: textfield;
+  -moz-appearance: textfield; 
 }
 
 .block p {
-    margin: 0;
     text-align: center;
 }
 .block .blocktxt,.block .buttons {
@@ -202,6 +207,11 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
 .fillblock .block2 {
     flex: 2 0 46%;
 }
+.fillblock .block1 {
+    text-align: left;
+    transition: 0.2s;
+    opacity: 0;
+}
 .fillblock .block3 {
     text-align: right;
     opacity: 0;
@@ -211,19 +221,27 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
     align-items: center;
     justify-content: flex-end;
 }
+.fillblock .block1 button {
+    border: none;
+    background: #0000;
+    transition: 0.2s;
+    font-size: 1.2em;
+    cursor: help;
+}
 .fillblock .block3 button {
     border: 1px solid #0000;
     background: #0000;
     transition: 0.2s;
+    font-size: 1.2em;
 }
 .fillblock .block3 button:hover {
     border: 1px solid black;
 }
-.fillblock:hover .block3 {
-    visibility: visible;
+.fillblock:hover .block3, .fillblock:hover .block1 {
     opacity: 1;
 }
 .fillblock {
     margin: 0;
     width: 100%;
 }
+

@@ -107,7 +107,7 @@ function reloadToCompletion() {
             if (window.status === "Running" || window.status === "Stopping" || window.status === "Sending") {
                 setTimeout(function() {
                     reloadToCompletion()
-                }, 1000)
+                }, 3000)
             }
             console.log(window.status)
         }
@@ -140,8 +140,8 @@ function verifyAllInputs() {
 }
 
 function verifyInput(e) {
-    var value = e.target.value;
-    var input = e.target;
+    var value = e.currentTarget.value;
+    var input = e.currentTarget;
     var blockID = $(input).parent().parent().parent().attr("id")
     if (value > 99999) {
         $(`#${blockID} .warning`).removeClass("d-none");
@@ -153,6 +153,19 @@ function verifyInput(e) {
         $(`#${blockID} .warning`).addClass("d-none");
     }
     verifyAllInputs()
+}
+
+function verifySequence() {
+    var allBlocks = $("#codecontainer .block")
+    if (allBlocks.length === 1) {
+        $("#run").addClass("disabled")
+        $("#run").attr("disabled", true)
+    } else if (allBlocks.length > 1) {
+        $("#run").removeClass("disabled")
+        $("#run").attr("disabled", false)
+    } else {
+        throw new Error("Impossible value of length reached")
+    }
 }
 
 function findBlock(blockNumber) {
@@ -167,7 +180,7 @@ function findBlock(blockNumber) {
 }
 
 function moveUp(e) {
-    var btn = e.target;
+    var btn = e.currentTarget;
     var block = $(btn).parent().parent();
     var blockID = $(block).attr("id")
     var blockNumber = parseInt(blockID.split("_")[0])
@@ -184,7 +197,7 @@ function moveUp(e) {
 }
 
 function moveDown(e) {
-    var btn = e.target;
+    var btn = e.currentTarget;
     var block = $(btn).parent().parent();
     var blockID = $(block).attr("id")
     var blockNumber = parseInt(blockID.split("_")[0])
@@ -201,7 +214,7 @@ function moveDown(e) {
 }
 
 function trash(e) {
-    var btn = e.target;
+    var btn = e.currentTarget;
     $(btn).parent().parent().remove()
 
     counter = 0
@@ -216,6 +229,7 @@ function trash(e) {
         counter += 1;
     }
     window.codeCounter = counter;
+    verifySequence()
 }
 function addToCode(key) {
     contents = $(`#${key}`).html();
@@ -236,14 +250,15 @@ function addToCode(key) {
         trash(e);
     });
     window.codeCounter += 1;
+    verifySequence()
 }
 
 const allBlocks = {
-    "f": {pretext: "Move forward ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1},
-    "r": {pretext: "Turn right ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1},
-    "l": {pretext: "Turn left ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1},
-    "b": {pretext: "Move backward ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1},
-    "lt": {pretext: "Line trace ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1},
+    "f": {pretext: "Move forward ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot forward by degrees of wheel rotation"},
+    "r": {pretext: "Turn right ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Turns the robot right by degrees of robot"},
+    "l": {pretext: "Turn left ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot left by degrees of robot"},
+    "b": {pretext: "Move backward ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot backward by degrees of wheel rotation"},
+    "lt": {pretext: "Line trace ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot forward by tracing the line by degrees of wheel rotation"},
 }
 
 
@@ -267,5 +282,9 @@ $(function() {
         } else {
             $(`#${key} .blockdetail`).addClass('d-none');
         }
+        $(`#${key} .blockinfo`).attr("data-bs-title", value.info);
     }
+    
+    $("body").tooltip({ selector: '[data-bs-toggle=tooltip]' });
+    verifySequence()
 })

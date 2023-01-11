@@ -807,3 +807,49 @@
 11012023-181239 [nodejs-client] Run [f1000,r180]
 11012023-181255 [Mazerunner]    Command Received. Running...
 11012023-181255 [Mazerunner]    Status: Free
+11012023-211558 [Local]         Node.JS running on port 5001
+11012023-211558 [Local]         nodejs-client connected to MQTT
+11012023-211558 [Local]         nodejs-client subscribed to 'Comms'
+11012023-211833 [Local]       Node.JS running on port 5001
+11012023-211833 [Local]       nodejs-client connected to MQTT
+11012023-211833 [Local]       nodejs-client subscribed to 'Comms'
+11012023-214304 [Local]       Execution of code started
+11012023-214304 [nodejs-client] Run [l100,lt100,b100]
+11012023-214325 [Local]       Execution of code interrupted
+11012023-214325 [nodejs-client] Interrupt execution
+11012023-214446 [Local]       Node.JS running on port 5001
+11012023-214446 [Local]       nodejs-client connected to MQTT
+11012023-214446 [Local]       nodejs-client subscribed to 'Comms'
+11012023-221811 [Local]       Execution of code started
+11012023-221811 [nodejs-client] Run [l100,lt100,f100]
+11012023-221813 [Local]       Execution of code interrupted
+11012023-221814 [nodejs-client] Interrupt execution
+11012023-221822 [Local]       Node.JS running on port 5001
+11012023-221823 [Local]       nodejs-client connected to MQTT
+11012023-221823 [Local]       nodejs-client subscribed to 'Comms'
+11012023-221827 [Local]       Execution of code started
+11012023-221827 [nodejs-client] Run []
+11012023-221954 [Local]       Execution of code interrupted
+11012023-221954 [nodejs-client] Interrupt execution
+11012023-222026 [Local]       Node.JS running on port 5001
+11012023-222027 [Local]       nodejs-client connected to MQTT
+11012023-222027 [Local]       nodejs-client subscribed to 'Comms'
+11012023-222030 [Local]       Execution of code started
+11012023-222030 [nodejs-client] Run []
+11012023-222031 [Local]       Execution of code interrupted
+11012023-222031 [nodejs-client] Interrupt execution
+11012023-222036 [Local]       Node.JS running on port 5001
+11012023-222036 [Local]       nodejs-client connected to MQTT
+11012023-222036 [Local]       nodejs-client subscribed to 'Comms'
+11012023-222038 [Local]       Execution of code started
+11012023-222038 [nodejs-client] Run []
+11012023-222053 [Local]       Node.JS running on port 5001
+11012023-222053 [Local]       nodejs-client connected to MQTT
+11012023-222053 [Local]       nodejs-client subscribed to 'Comms'
+11012023-222115 [Local]       Execution of code started
+11012023-222115 [nodejs-client] Run [f100,l100]
+11012023-222506 [Local]       Execution of code interrupted
+11012023-222506 [nodejs-client] Interrupt execution
+11012023-222526 [Local]       Node.JS running on port 5001
+11012023-222526 [Local]       nodejs-client connected to MQTT
+11012023-222526 [Local]       nodejs-client subscribed to 'Comms'

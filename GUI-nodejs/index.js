@@ -4,6 +4,9 @@ const fs = require('fs');
 const app = express();
 const port = 5001;
 
+const clientID = "nodejs-client"
+const longestRecognisedClientID = "nodejs-client"
+
 let isRobotExecuting = false;
 let currentStatus = "Clear"
 
@@ -17,7 +20,7 @@ const options = {
   clean: true,
   connectTimeout: 1000,
   // Authentication
-  clientId: 'nodejs-client',
+  clientId: clientID,
   username: 'algorithm',
   password: '12345'
 }
@@ -26,7 +29,7 @@ const client = mqtt.connect(url, options)
 function logEvent(eventTxt) {
     console.log(eventTxt);
     eventTxtArray = eventTxt.split(" ");
-    padding = "[nodejs-client]".length - eventTxtArray[0].length
+    padding = longestRecognisedClientID.length - eventTxtArray[0].length
     for(var i = 0; i < padding; i++) {
         eventTxtArray[0] += " ";
     }
@@ -40,21 +43,21 @@ function logEvent(eventTxt) {
 }
 
 client.on('connect', function () {
-  logEvent('[Local] nodejs-client connected to MQTT')
+  logEvent(`[Local] ${clientID} connected to MQTT`)
   // Subscribe to a topic
   client.subscribe('Comms', function (err) {
     if (!err) {
-        logEvent("[Local] nodejs-client subscribed to 'Comms'")
+        logEvent(`[Local] ${clientID} subscribed to 'Comms'`)
     }
   })
 })
 
 client.on('disconnect', function() {
-    logEvent('[Local] nodejs-client disconnected from MQTT')
+    logEvent(`[Local] ${clientID} disconnected from MQTT`)
 })
 
 client.on('error', function(error){
-    logEvent("[Local] nodejs-client could not connect to MQTT. " + error);
+    logEvent(`[Local] ${clientID} could not connect to MQTT. ${error}`);
 });
 
 function beginExecution(seq, res) {
@@ -63,10 +66,10 @@ function beginExecution(seq, res) {
         res.status(500).send("Command failed");
     } else {
         isRobotExecuting = true;
-        currentStatus = "Sending";
+        currentStatus = "Running";
         logEvent("[Local] Execution of code started");
         res.status(200).send("Command succeeded");
-        client.publish('Comms', `[nodejs-client] Run ${seq}`)
+        client.publish('Comms', `[${clientID}] Run ${seq}`)
     }
 }
 
@@ -76,7 +79,7 @@ function interruptExecution(res) {
     } else {
         res.status(200).send("Interrupting execution")
         logEvent("[Local] Execution of code interrupted")
-        client.publish('Comms', `[nodejs-client] Interrupt execution`)
+        client.publish('Comms', `[${clientID}] Interrupt execution`)
         currentStatus = "Stopping"
     }
 }
