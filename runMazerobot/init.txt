@@ -8,75 +8,40 @@ import umath
 hub = PrimeHub()
 
 # Initialising Sensors 
+ls = ColorSensor(Port.C)
 
 # Initialising Motors
 lm = Motor(Port.A, Direction.CLOCKWISE)
-rm = Motor(Port.B, Direction.CLOCKWISE)
+rm = Motor(Port.B, Direction.COUNTERCLOCKWISE)
 
 # DriveBase 
-wheelSize = 17.6 * umath.pi * 10 # Sizes: Small (5.6cm) Large (17.6cm)); in mm
-axleTrack = 10 * 10 # Distance bet the points where both wheels touch the gnd; in mm
+wheelSize = 5.6 * umath.pi * 10 # Sizes: Small (5.6cm) Large (17.6cm)); in mm
+axleTrack = 7 * 10 # Distance bet the points where both wheels touch the gnd; in mm
 pair = DriveBase(lm, rm, wheelSize, axleTrack) 
 # pair.settings(): Using default values which are selected such that your robot drives at 40% of its maximum speed
 
 # Timer
-t = Stopwatch() 
+t = StopWatch() 
 t.reset()
 t.resume()
 
-def gyro_straight(speed, deg, target = None, forward = True):
+# Simple Line Tracing
+def line_trace(deg, speed = 1500, threshold = 32, right_side = True):
+    turn_rate = -500
 
-    if not forward:
-        polarity *= -1
-        speed *= -1 
-
-    if target is None: raise ValueError('Missing Gyro Value')
-    last_error = error = integral = 0.0
-    derivative = 0.0
+    if right_side:
+        turn_rate = 500
 
     pair.reset()
 
     while not abs(pair.angle()) > deg:
-        o_yaw = hub.imu.heading()
-        error = target - o_yaw
-
-        if error == 0:
-            integral = 0
+        # print(ls.reflection())
+        if ls.reflection() > threshold:
+            pair.drive(speed, turn_rate)
+        elif ls.reflection() < threshold:
+            pair.drive(speed, -turn_rate)
         else:
-            integral = integral + error
-
-        derivative = error - last_error
-        last_error = error
-
-        steering = ((gkp * error) + (gki * integral) + (gkd * derivative))*polarity
-
-        pair.drive(speed = speed, round(steering)) # drive(speed, turn_rate)
-        # print('reading: {r}, error: {e}, steering: {s}'.format(r= o_yaw, e = error, s = steering))
-
+            pair.drive(speed, turn_rate)
     pair.stop()
-
-def gyro_turn(target, marginoferror, speed, timeout = False, steering = 100):
-    start = t.time()
-    end = t.time()
-
-    if type(timeout) == 'int': sec = timeout
-    else: sec = 0
-
-    while not (end-start) > sec*1000:
-        o_yaw = hub.imu.heading()
-
-        if target - o_yaw < 0:
-            pair.drive(30, -40)
-        elif target - o_yaw > 0:
-            pair.start(30, steering = 40)
-        elif abs(target - o_yaw) <= marginoferror:
-            break
-
-        if timeout:
-            end = t.time()
-            print('timeout')
-
-    lm.stop()
-    rm.stop()
 
 # Robot Command Starts Here

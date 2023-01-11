@@ -1,4 +1,2 @@
-pair.straight(80) 
-pair.turn(speed = 90) 
-pair.straight(-100) 
-pair.turn(speed = -100) 
+pair.straight(1000) 
+pair.turn(-662.5) 

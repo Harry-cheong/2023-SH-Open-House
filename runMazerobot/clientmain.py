@@ -4,7 +4,7 @@ import sys
 import pybricks
 from buildprogram import Builder
 from runpybricks import autopybricks
-
+import threading
 class Robot():
     def __init__(self):
 
@@ -18,6 +18,9 @@ class Robot():
         # Builder
         self.fileb = Builder()
 
+        # Pybricks
+        self.pyb = autopybricks()
+
     # Adding MQTT client instance
     def addMQTT_object(self, ev3_client):
         self.client_ev3 = ev3_client
@@ -27,21 +30,30 @@ class Robot():
         # print(client)
         if client != self.client_ev3.client_id:
             if self.status == "Free":
-                self.status = "Running"
 
-                #TODO Execute commands in msg
-                self.client_ev3.publish("Command Received. Running...")
+                # Responding to run cmd
+                if msg[:3] == "Run":
+                    self.status = "Running"
 
-                # Simulation of robot execution
-                time.sleep(5)
-                #TODO Incorporation of builder + autopybricks
+                    #TODO Execute commands in msg
+                    self.client_ev3.publish("Command Received. Running...")
 
-                self.status = "Free"
-                self.status_published = False
-                self.publish_status()
+                    #TODO test working 
+                    robotcmd = msg[msg.find("[") : ]
+                    self.fileb.buildrobotcmd(robotcmd)
+                    self.pyb.runcmd()
+
+                    self.status = "Free"
+                    self.status_published = False
+                    self.publish_status()
+                    # print("status received")
 
             elif self.status == "Running": 
                 print("Program Running in Progress...")
+            
+            elif msg == "Interrupt execution":
+                self.pyb.stopprogram()
+
 
     def publish_status(self):
         if not self.status_published:
@@ -71,11 +83,15 @@ class client_ev3():
 
     def __init__(self, cmd):
         self.messages = []
-        
         self.cmd = cmd
+
         # MQTT Client Instance
         self.client = self.connect_mqtt()
     
+    # The callback for when the client receives the published message
+    def on_publish(self, client, userdata, mid):
+        print("Successful")
+
     # The callback for when the client receives a CONNACK response from the server
     def on_connect(self, client, userdata, flags, rc):
         if int(rc) == 0 : print("Connected")
@@ -84,12 +100,12 @@ class client_ev3():
     # The callback for when a PUBLIC message message is received from the server
     def on_message(self, _client, userdata, msg):
         decrypted_data = str(msg.payload.decode("utf-8"))
+        print(decrypted_data)
 
-
+        msg_filtered = decrypted_data[decrypted_data.find("]") + 2 :]
         client = decrypted_data[: decrypted_data.find("]") + 1].replace("[", "").replace("]","")
 
-        print(decrypted_data)
-        self.cmd.process_cmd(client, decrypted_data)
+        self.cmd.process_cmd(client, msg_filtered)
 
     # Function to connect with server
     def connect_mqtt(self):
@@ -102,6 +118,7 @@ class client_ev3():
         # Callbacks
         client.on_connect = self.on_connect
         client.on_message = self.on_message
+        client.on_publish = self.on_publish
         
         # Connect
         client.connect(self.broker, self.port)
@@ -117,6 +134,10 @@ class client_ev3():
         # result: [0, 1]
         status = result[0]
         if not status == 0: print(f"Failed to send {message} to topic {self.topic}")
+    
+    # def tpublish(self, message):
+    #     self._publish = threading.Thread(target = self.publish, args = (message,))
+    #     self._publish.start()
 
 
 

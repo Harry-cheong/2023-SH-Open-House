@@ -97,4 +97,16 @@ _____________________ Robot cmd _____________________
     gf : p gyro turn
     90 : until bearing 90 is reached
 
+| Loops & Logic |
+
+    1. w(...)
+    w() -> while true, execute functions inside the bracket
+
+    2. if(conditon, ...)
+    if() -> if condition is true
+
+    3. kb 
+    kb : keyword break 
+    
+
 

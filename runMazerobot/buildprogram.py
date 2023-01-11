@@ -25,7 +25,7 @@ class Builder():
 
             try: 
                 m = command[0]
-                if m != "g":
+                if m != "lt":
                     v = int(command[1 :])
                 else:
                     m = command[ : 2]
@@ -49,21 +49,25 @@ class Builder():
                 self.r(v)
             
             # Gyro Movement
-            elif m == "gf":
-                self.gf(v)
-            elif m == "gt":
-                self.gt(v)
+            # elif m == "gf":
+            #     self.gf(v)
+            # elif m == "gt":
+            #     self.gt(v)
+
+            # Line Tracing
+            elif m == "lt":
+                self.lt(v)
         
         # Closing File
         self.outFile.close()
 
     # Basic Movements
     def r(self, turn_angle):
-        self.outFile.writelines(f"pair.turn(speed = {turn_angle}) \n")
+        self.outFile.writelines(f"pair.turn({-(turn_angle/360 * 1325)}) \n")
         # print(f"pair.turn(speed = {turn_angle}) \n")
 
     def l(self, turn_angle):
-        self.outFile.writelines(f"pair.turn(speed = {-turn_angle}) \n")
+        self.outFile.writelines(f"pair.turn({turn_angle/360 * 1325}) \n")
         # print(f"pair.turn(speed = {-turn_angle}) \n")
 
     def f(self, deg):
@@ -75,12 +79,16 @@ class Builder():
         # print(f"pair.straight({-deg}) \n")
     
     # Gyro
-    def gf(self, deg):
-        self.outFile.writelines(f"gyro_straight({self.speed}, {deg}, target = 0, forward = True)\n")
+    # def gf(self, deg):
+    #     self.outFile.writelines(f"gyro_straight({self.speed}, {deg}, target = 0, forward = True) \n")
 
-    def gt(self, bearing):
-        self.outFile.writelines(f"gyro_turn({bearing}, 2, speed = {self.speed},timeout = False, steering = 100) \n")
+    # def gt(self, bearing):
+    #     self.outFile.writelines(f"gyro_turn({bearing}, 2, speed = {self.speed}, timeout = False, steering = 100) \n")
+
+    # Line-Tracing
+    def lt(self, deg):
+        self.outFile.wrtielines(f"line_trace({deg}) \n")
 
 if __name__ == "__main__":
     b = Builder()
-    b.buildrobotcmd("[f80,r90,b100,l100]") # Test Case
+    b.buildrobotcmd("[f80,r90,b100,l100,gf2000]") # Test Case
