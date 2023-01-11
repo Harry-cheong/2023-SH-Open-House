@@ -1,0 +1,4 @@
+pair.straight(80) 
+pair.turn(speed = 90) 
+pair.straight(-100) 
+pair.turn(speed = -100) 

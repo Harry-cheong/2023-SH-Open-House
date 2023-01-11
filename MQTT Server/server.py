@@ -97,9 +97,6 @@ while True:
 
     else:
         print(f"MQTT-Server has no such command \"{response}\". use \"help\" for more info")
-
-    #TODO: Testing Connections 
-    #TODO: Script on EV3 
     
     time.sleep(1)
 
