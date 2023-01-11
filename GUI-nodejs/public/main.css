@@ -58,29 +58,55 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
     color: rgb(10, 10, 10) !important;
 }
 .loader {
-    border: 16px solid rgb(200, 200, 200);
     border-radius: 50%;
     width: 150px;
     height: 150px;
-    animation: spin 2s linear infinite;
-    margin: 7.5vh auto 10vh;
+    animation: spin 5s linear infinite;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
 }
 
 .loader.green {
-    border-top: 16px solid rgb(80, 161, 107); 
+    border: 16px solid rgb(200, 200, 200);
+    border-top: 16px solid rgba(102, 102, 102);
+    background-color: rgb(220, 240, 220);
 }
 
 .loader.red {
-    border-top: 16px solid rgb(161, 80, 107); 
+    border: 16px solid rgb(200, 200, 200);
+    border-top: 16px solid rgba(102, 102, 102);
+    background-color: rgb(240, 220, 220);
 }
+
+#runmodal .modal-body {
+    height: 200px;
+}
+
+.modal-body img {
+    width: 4vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
 
 #runmodal .modal-header, #runmodal .modal-footer {
     border: none;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes spin_reverse {
+    0% {transform: rotate(-0deg);}
+    100% {transform: rotate(-360deg);}
 }
 
 #runmodal h1 {
@@ -168,13 +194,13 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
     display: none;
 }
 .addblock .block2 {
-    flex: 1 0 90%;
+    flex: 1 0 95%;
 }
 .fillblock .block1, .fillblock .block3 {
-    flex: 1 0 22%;
+    flex: 1 0 23%;
 }
 .fillblock .block2 {
-    flex: 2 0 44%;
+    flex: 2 0 46%;
 }
 .fillblock .block3 {
     text-align: right;

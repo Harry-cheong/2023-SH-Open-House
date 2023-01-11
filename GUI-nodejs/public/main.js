@@ -46,6 +46,8 @@ function updateModal(state) {
         $("#runmodal .loader").removeClass("red");
         $("#runmodal button").addClass("btn-danger");
         $("#runmodal button").removeClass("btn-secondary");
+        $("#stopimg").addClass("d-none")
+        $("#playimg").removeClass("d-none")
     } else if(state === "Running") {
         $("#runmodal").modal("show");
         $("#runmodal h1").text("Code running...");
@@ -54,6 +56,8 @@ function updateModal(state) {
         $("#runmodal .loader").removeClass("red");
         $("#runmodal button").addClass("btn-danger");
         $("#runmodal button").removeClass("btn-secondary");
+        $("#stopimg").addClass("d-none")
+        $("#playimg").removeClass("d-none")
     } else if (state === "Stopping") {
         $("#runmodal").modal("show");
         $("#runmodal h1").text("Code stopping...");
@@ -62,6 +66,8 @@ function updateModal(state) {
         $("#runmodal .loader").removeClass("green");
         $("#runmodal button").addClass("btn-secondary");
         $("#runmodal button").removeClass("btn-danger");
+        $("#playimg").addClass("d-none")
+        $("#stopimg").removeClass("d-none")
     } else if (state === "Clear") {
         $("#runmodal").modal("hide");
     }
@@ -237,6 +243,7 @@ const allBlocks = {
     "r": {pretext: "Turn right ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1},
     "l": {pretext: "Turn left ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1},
     "b": {pretext: "Move backward ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1},
+    "lt": {pretext: "Line trace ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1},
 }
 
 
