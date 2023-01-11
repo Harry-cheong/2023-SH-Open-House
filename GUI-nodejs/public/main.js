@@ -10,6 +10,9 @@ function pullCodeSequenceToString() {
     var finalText = ""
     var allBlocks = $("#codecontainer .block")
     for(var i = 0; i < allBlocks.length; i++) {
+        if (allBlocks[i].id === "startblock") {
+            continue;
+        }
         var id = allBlocks[i].id.split('_')[1];
         var val = $(`#${allBlocks[i].id} input`).val()
         finalText = finalText + id + val;

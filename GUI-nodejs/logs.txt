@@ -723,3 +723,13 @@
 11012023-144653 [Mazerunner]    Status: Free
 11012023-160841 [Local]         nodejs-client connected to MQTT
 11012023-160841 [Local]         nodejs-client subscribed to 'Comms'
+11012023-165745 [Local]         Node.JS running on port 5001
+11012023-165745 [Local]         nodejs-client connected to MQTT
+11012023-165745 [Local]         nodejs-client subscribed to 'Comms'
+11012023-165753 [Local]         Execution of code started
+11012023-165753 [nodejs-client] Run [undefinedundefined,l100,r100,b100]
+11012023-165943 [Local]         Node.JS running on port 5001
+11012023-165943 [Local]         nodejs-client connected to MQTT
+11012023-165943 [Local]         nodejs-client subscribed to 'Comms'
+11012023-165949 [Local]         Execution of code started
+11012023-165949 [nodejs-client] Run [f100,l100,b100]
