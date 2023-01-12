@@ -73,56 +73,68 @@ _____________________ Robot cmd _____________________
 
 | Basic Robot Movement |
 
-    1. f1000
+    1. f1000 [MazeRobot✅] [GUI✅]
     - f : move forward
-    - 1000 : by 1000 deg
+    - 1000 : for 1000 deg
 
-    2. b1000
+    2. b1000 [MazeRobot✅] [GUI✅]
     ^
 
-    3. l30
+    3. l30 [MazeRobot✅] [GUI✅]
     - l : turn left on the spot
-    - 30 : both wheels rotate by 30 deg
+    - 30 : (30/360)*1325; robot to the 30 bearing
 
-    4. r30
+    4. r30 [MazeRobot✅] [GUI✅]
     ^
 
-| Gyro |
+| Code Snippets |
 
-    1. gf1000
+    1. t1000 [MazeRobot✅] [GUI✅]
+    - t : line trace 
+    - 1000 : for 1000 deg
+
+| Gyro | [❌]
+
+    1. gf1000 [❌]
     gf : pid gyro straight
     1000 : by 1000 deg
 
-    2. gt90
+    2. gt90 [❌]
     gf : p gyro turn
     90 : until bearing 90 is reached
 
 [* New *] | Sensors |
 
-    1. lr 
+    1. lr [MazeRobot✅]
     - lr : returns light reflection value (0 - 100 arbitrary units)
 
-    2. ud
-    - usd : returns distance value from ultrasonic sensor (0 - 256 cm)
+    2. ud [MazeRobot✅]
+    - usd : returns distance value from ultrasonic sensor (0 - 2000 mm)
 
 [* New *] | Loops & Logic |
 
-    1. w{...}
+    1. w{...} [MazeRobot✅]
     w{} -> while true, execute functions inside the bracket
 
-    2. if(conditon, ...), elif(condition, ...), else(...)
+    2. if^conditon, ...^, ef^condition, ...^, el^...^ [MazeRobot✅]
     - checking of syntax done on gui side
     if() -> if condition is true
 
     3. kb 
     kb : keyword break 
 
+    4. w(if^...^,...) 
+    - if/else statement nested inside while loop
+
+    5. for|i, ...| [MazeRobot✅]
+    - executes the loop i times
+
 [* New *] | Operators |
 
-    1. >, <, ==, (optional) <=, (optional) >=
+    1. >, <, ==, (optional) <=, (optional) >= [MazeRobot✅]
     - comparison operators
 
-    2. +, -, *, / 
+    2. +, -, *, / [❌]
     - arithmetic operators
     
 
