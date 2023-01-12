@@ -853,3 +853,15 @@
 11012023-222526 [Local]       Node.JS running on port 5001
 11012023-222526 [Local]       nodejs-client connected to MQTT
 11012023-222526 [Local]       nodejs-client subscribed to 'Comms'
+12012023-181606 [Local]       Node.JS running on port 5001
+12012023-183641 [Local]       Execution of code started
+12012023-183647 [Local]       Execution of code interrupted
+12012023-183652 [Local]       Node.JS running on port 5001
+12012023-184359 [Local]       Execution of code started
+12012023-184400 [Local]       Execution of code interrupted
+12012023-184403 [Local]       Node.JS running on port 5001
+12012023-190537 [Local]       nodejs-client connected to MQTT
+12012023-190537 [Local]       nodejs-client subscribed to 'Comms'
+12012023-190633 [Mazerunner]  Status: Free
+12012023-191153 [Local]       Execution of code started
+12012023-191153 [nodejs-client] Run [l100]

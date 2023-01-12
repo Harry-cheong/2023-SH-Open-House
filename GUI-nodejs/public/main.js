@@ -4,6 +4,14 @@ function openConfirmationBox() {
 
 function clearAllCode() {
     $('#confirmclearmodal').modal('hide'); 
+    localStorage.setItem("codesequence", "")
+    var allBlocks = $("#codecontainer .block")
+    for(var i = 0; i < allBlocks.length; i++) {
+        if (allBlocks[i].id === "startblock") {
+            continue;
+        }
+        $(allBlocks[i]).remove();
+    }
 }
 
 function pullCodeSequenceToString() {
@@ -22,9 +30,43 @@ function pullCodeSequenceToString() {
     }
     $("#name").val(`[${finalText}]`)
 }
+function updateLocalStorage() {
+    var finalText = ""
+    var allBlocks = $("#codecontainer .block")
+    for(var i = 0; i < allBlocks.length; i++) {
+        if (allBlocks[i].id === "startblock") {
+            continue;
+        }
+        var id = allBlocks[i].id.split('_')[1];
+        var val = $(`#${allBlocks[i].id} input`).val()
+        finalText = finalText + id + "_" + val;
+        if (i !== allBlocks.length-1) {
+            finalText = finalText + "-";
+        }
+    }
+    localStorage.setItem("codesequence", finalText)
+}
+
+function renderLocalStorage() {
+    window.counter = 0;
+    seq = localStorage.getItem("codesequence").split("-")
+    if(seq.length > 0) {
+    for(var i = 0; i < seq.length; i++) {
+        let key = seq[i].split("_")[0]
+        try {
+            addToCode(key); 
+        }  catch {
+            // jquery throws a funny error if not caught -> this has no implications on functionality
+        }
+        $(`#${window.codeCounter-1}_${key} input`).val(parseInt(seq[i].split("_")[1]))
+    }}
+    
+}
 
 function runCode() {
     pullCodeSequenceToString();
+    updateLocalStorage()
+    console.log("update modal to sending")
     updateModal("Sending");
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -70,6 +112,12 @@ function updateModal(state) {
         $("#stopimg").removeClass("d-none")
     } else if (state === "Clear") {
         $("#runmodal").modal("hide");
+    } else if (state === "Failed") {
+        setTimeout(function() {
+            $("#runmodal").modal("hide");
+            $("#failmodal").modal("show");
+        }, 500)
+        
     }
 }
 
@@ -93,18 +141,16 @@ function reloadToCompletion() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             newStatus = this.responseText;
-
             if (window.status !== newStatus) {
                 updateModal(newStatus)
             }
-
             if (newStatus === "Clear") {
                 updateModal("Clear")
             }
 
             window.status = newStatus;
 
-            if (window.status === "Running" || window.status === "Stopping" || window.status === "Sending") {
+            if (window.status === "Running" || window.status === "Stopping" || window.status === "Sending" || window.status === "Failed") {
                 setTimeout(function() {
                     reloadToCompletion()
                 }, 3000)
@@ -124,10 +170,8 @@ window.errors = 0;
 function verifyAllInputs() {
     var allBlocks = $("#codecontainer .block")
     for(var i = 0; i < allBlocks.length; i++) {
-        var blockID = allBlocks[i].id
-        console.log(blockID)        
+        var blockID = allBlocks[i].id    
         var val = $(`#${blockID} input`).val()
-        console.log(val)
         if (val > 99999 || val < 1) {
             $("#run").addClass("disabled")
             $("#run").attr("disabled", true)
@@ -153,6 +197,7 @@ function verifyInput(e) {
         $(`#${blockID} .warning`).addClass("d-none");
     }
     verifyAllInputs()
+    updateLocalStorage()
 }
 
 function verifySequence() {
@@ -194,6 +239,7 @@ function moveUp(e) {
         $(`#temp_${blockNumber}_${blockAboveID.split("_")[1]}`).attr("id", `${blockNumber}_${blockAboveID.split("_")[1]}`)
         $(`#temp_${blockNumber-1}_${blockID.split("_")[1]}`).attr("id", `${blockNumber-1}_${blockID.split("_")[1]}`)
     }
+    updateLocalStorage()
 }
 
 function moveDown(e) {
@@ -211,6 +257,7 @@ function moveDown(e) {
         $(`#temp_${blockNumber}_${blockBelowID.split("_")[1]}`).attr("id", `${blockNumber}_${blockBelowID.split("_")[1]}`)
         $(`#temp_${blockNumber+1}_${blockID.split("_")[1]}`).attr("id", `${blockNumber+1}_${blockID.split("_")[1]}`)
     }
+    updateLocalStorage()
 }
 
 function trash(e) {
@@ -230,6 +277,7 @@ function trash(e) {
     }
     window.codeCounter = counter;
     verifySequence()
+    updateLocalStorage()
 }
 function addToCode(key) {
     contents = $(`#${key}`).html();
@@ -250,7 +298,8 @@ function addToCode(key) {
         trash(e);
     });
     window.codeCounter += 1;
-    verifySequence()
+    verifySequence();
+    updateLocalStorage();
 }
 
 const allBlocks = {
@@ -287,4 +336,10 @@ $(function() {
     
     $("body").tooltip({ selector: '[data-bs-toggle=tooltip]' });
     verifySequence()
+    try {
+        renderLocalStorage();
+    } catch (error) {
+        localStorage.setItem("codesequence", "");
+        renderLocalStorage();
+    }
 })

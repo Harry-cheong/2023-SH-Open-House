@@ -12,13 +12,13 @@
 <body>
     <div id="maincontainer" class="container-fluid h-100 p-0">
         <div class="row row-cols-2 w-100 h-100 p-0 m-0">
-            <section id="codecontainer" class="col">
+            <section id="codecontainer" class="col h-100">
                 <input id="name" name="name" type="text" class="d-none"/>
                 <button id="startblock" class="block fillblock">
                     <div class="block2"><p class="blocktxt"><span class="preblockname">Start</span></p></div>
                 </button>
             </section>
-            <section id="blockscontainer" class="col p-0 m-0">
+            <section id="blockscontainer" class="col p-0 m-0 h-100">
                 <div id="allblocks" class="w-100 h-85 m-0 p-0">
                     <template id="template" class="d-none">
                         <div class="block1">
@@ -92,6 +92,23 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                     <button type="button" class="btn btn-danger" onclick="clearAllCode()">Clear all</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <div id="failmodal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Execution failed</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Robot is currently busy. Please wait until robot finishes executing code to try again.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

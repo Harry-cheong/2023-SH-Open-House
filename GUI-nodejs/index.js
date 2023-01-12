@@ -4,10 +4,12 @@ const fs = require('fs');
 const app = express();
 const port = 5001;
 
-const clientID = "nodejs-client"
-const longestRecognisedClientID = "nodejs-client"
+const clientID = "guiclient0"
+const opposingClientID = "guiclient1"
+const longestRecognisedClientID = "guiclient0"
 
 let isRobotExecuting = false;
+let isGUIExecuting = false;
 let currentStatus = "Clear"
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,7 +31,7 @@ const client = mqtt.connect(url, options)
 function logEvent(eventTxt) {
     console.log(eventTxt);
     eventTxtArray = eventTxt.split(" ");
-    padding = longestRecognisedClientID.length - eventTxtArray[0].length
+    padding = longestRecognisedClientID.length - eventTxtArray[0].length + 2
     for(var i = 0; i < padding; i++) {
         eventTxtArray[0] += " ";
     }
@@ -37,7 +39,7 @@ function logEvent(eventTxt) {
     var datetime = 
     `${d.getDate().toString().padStart(2, '0')}${(d.getMonth()+1).toString().padStart(2, '0')}${d.getFullYear()}-${d.getHours().toString().padStart(2, '0')}${d.getMinutes().toString().padStart(2, '0')}${d.getSeconds().toString().padStart(2, '0')}`
     data = datetime + " " + eventTxtArray.join(" ") + "\n"
-    fs.appendFile('./logs.txt', data, (err) => {
+    fs.appendFile(`./logs-${clientID}.txt`, data, (err) => {
         if (err) throw err;
     })
 }
@@ -61,11 +63,13 @@ client.on('error', function(error){
 });
 
 function beginExecution(seq, res) {
-    if (isRobotExecuting) {
+    if (isRobotExecuting || isGUIExecuting) {
+        currentStatus = "Failed"
         logEvent("[Local] Execution of code failed: Robot busy")
-        res.status(500).send("Command failed");
+        res.status(200).send("Command failed");
     } else {
         isRobotExecuting = true;
+        isGUIExecuting = true;
         currentStatus = "Running";
         logEvent("[Local] Execution of code started");
         res.status(200).send("Command succeeded");
@@ -74,7 +78,7 @@ function beginExecution(seq, res) {
 }
 
 function interruptExecution(res) {
-    if (!isRobotExecuting) {
+    if (!isGUIExecuting) {
         res.status(200).send("Command redundant")
     } else {
         res.status(200).send("Interrupting execution")
@@ -90,10 +94,13 @@ client.on('message', function (topic, message) {
     logEvent(txt)
     if (txt === "[Mazerunner] Status: Free") {
         isRobotExecuting = false;
+        isGUIExecuting = false;
         currentStatus = "Clear";
     } else if (txt == "[Mazerunner] Command Received. Running...") {
         isRobotExecuting = true;
         currentStatus = "Running";
+    } else if (txt.replace(`[${opposingClientID}] Run`) !== txt) {
+        isRobotExecuting = true;
     }
 })
 
@@ -111,6 +118,9 @@ app.post('/interruptexecution', (req, res) => {
 
 app.get('/runstatus', (req, res) => {
     res.send(currentStatus)
+    if(currentStatus === "Failed") {
+        currentStatus = "Clear";
+    }
 })
 
 app.listen(port, () => {
