@@ -40,7 +40,7 @@ class Robot():
 
                     #TODO test working 
                     robotcmd = msg[msg.find("[") : ]
-                    self.fileb.buildrobotcmd(robotcmd)
+                    self.fileb.buildcmds(robotcmd)
                     self.pyb.runcmd()
 
                     self.status = "Free"
