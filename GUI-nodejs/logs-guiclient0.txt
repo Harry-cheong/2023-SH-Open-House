@@ -1,0 +1,3 @@
+12012023-202747 [Local]      Node.JS running on port 5001
+12012023-202747 [Local]      guiclient0 connected to MQTT
+12012023-202747 [Local]      guiclient0 subscribed to 'Comms'

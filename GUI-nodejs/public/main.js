@@ -66,7 +66,6 @@ function renderLocalStorage() {
 function runCode() {
     pullCodeSequenceToString();
     updateLocalStorage()
-    console.log("update modal to sending")
     updateModal("Sending");
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {

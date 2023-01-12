@@ -98,7 +98,6 @@ client.on('message', function (topic, message) {
         currentStatus = "Clear";
     } else if (txt == "[Mazerunner] Command Received. Running...") {
         isRobotExecuting = true;
-        currentStatus = "Running";
     } else if (txt.replace(`[${opposingClientID}] Run`) !== txt) {
         isRobotExecuting = true;
     }
