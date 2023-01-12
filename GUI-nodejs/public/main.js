@@ -39,7 +39,12 @@ function updateLocalStorage() {
         }
         var id = allBlocks[i].id.split('_')[1];
         var val = $(`#${allBlocks[i].id} input`).val()
-        finalText = finalText + id + "_" + val;
+        if (id === "w" || id === "for") {
+            finalText = finalText + id + "_" + val + "_" + $(allBlocks[i]).attr("data-numblocks");
+        } else {
+            finalText = finalText + id + "_" + val;
+        }
+        
         if (i !== allBlocks.length-1) {
             finalText = finalText + "-";
         }
@@ -50,6 +55,7 @@ function updateLocalStorage() {
 function renderLocalStorage() {
     window.counter = 0;
     seq = localStorage.getItem("codesequence").split("-")
+    console.log(seq)
     if(seq.length > 0) {
     for(var i = 0; i < seq.length; i++) {
         let key = seq[i].split("_")[0]
@@ -59,6 +65,9 @@ function renderLocalStorage() {
             // jquery throws a funny error if not caught -> this has no implications on functionality
         }
         $(`#${window.codeCounter-1}_${key} input`).val(parseInt(seq[i].split("_")[1]))
+        if(key === "w" || key === "for") {
+            $(`#${window.codeCounter-1}_${key}`).attr("data-numblocks", parseInt(seq[i].split("_")[2]))
+        }
     }}
     
 }
@@ -223,6 +232,42 @@ function findBlock(blockNumber) {
     return "not found";
 }
 
+
+function renderLoopIndentation() {
+    var allBlocks = $("#codecontainer .block")
+    var indentRemaining = 0
+    for (var i = 0; i < allBlocks.length; i++) {
+        blockID = allBlocks[i].id
+        var blocktype = blockID.split("_")[1]
+        if (blocktype === "w" || blocktype === "for") {
+            indentRemaining += parseInt($(allBlocks[i]).attr("data-numblocks"))
+        } else if (indentRemaining > 0) {
+            $(allBlocks[i]).addClass("indent");
+            indentRemaining -= 1;
+        } else {
+            $(allBlocks[i]).removeClass("indent");
+        }
+    }
+}
+
+function addlayer(e) {
+    var btn = e.currentTarget;
+    var block = $(btn).parent().parent();
+    var currentlayer = $(block).attr("data-numblocks")
+    $(block).attr("data-numblocks", parseInt(currentlayer)+1)
+    renderLoopIndentation()
+}
+
+function removelayer(e) {
+    var btn = e.currentTarget;
+    var block = $(btn).parent().parent();
+    var currentlayer = $(block).attr("data-numblocks")
+    if (currentlayer > 1) {
+        $(block).attr("data-numblocks", parseInt(currentlayer)-1)
+    }
+    renderLoopIndentation()
+}
+
 function moveUp(e) {
     var btn = e.currentTarget;
     var block = $(btn).parent().parent();
@@ -239,6 +284,7 @@ function moveUp(e) {
         $(`#temp_${blockNumber-1}_${blockID.split("_")[1]}`).attr("id", `${blockNumber-1}_${blockID.split("_")[1]}`)
     }
     updateLocalStorage()
+    renderLoopIndentation()
 }
 
 function moveDown(e) {
@@ -257,6 +303,7 @@ function moveDown(e) {
         $(`#temp_${blockNumber+1}_${blockID.split("_")[1]}`).attr("id", `${blockNumber+1}_${blockID.split("_")[1]}`)
     }
     updateLocalStorage()
+    renderLoopIndentation()
 }
 
 function trash(e) {
@@ -277,10 +324,11 @@ function trash(e) {
     window.codeCounter = counter;
     verifySequence()
     updateLocalStorage()
+    renderLoopIndentation()
 }
 function addToCode(key) {
     contents = $(`#${key}`).html();
-    copy = $(`<button id="${window.codeCounter}_${key}" class="block fillblock"></button>`);
+    copy = $(`<button id="${window.codeCounter}_${key}" class="block fillblock ${allBlocks[key].color}"></button>`);
     $('#codecontainer').append(copy.append(contents));
     $(`#${window.codeCounter}_${key} input`).prop('disabled', false);
     $(`#${window.codeCounter}_${key} input`).val(100);
@@ -296,22 +344,32 @@ function addToCode(key) {
     $(`#${window.codeCounter}_${key} button.trash`).on('click', function(e) {
         trash(e);
     });
+    if (key === "w" || key === "for") {
+        $(`#${window.codeCounter}_${key}`).attr('data-numblocks', 1);
+        $(`#${window.codeCounter}_${key} button.addlayer`).on('click', function(e) {
+            addlayer(e);
+        });
+        $(`#${window.codeCounter}_${key} button.removelayer`).on('click', function(e) {
+            removelayer(e);
+        });
+    }
     window.codeCounter += 1;
     verifySequence();
     updateLocalStorage();
+    renderLoopIndentation()
 }
 
 const allBlocks = {
-    "f": {pretext: "Move forward ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot forward by degrees of wheel rotation"},
-    "r": {pretext: "Turn right ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Turns the robot right by degrees of robot"},
-    "l": {pretext: "Turn left ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot left by degrees of robot"},
-    "b": {pretext: "Move backward ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot backward by degrees of wheel rotation"},
-    "lt": {pretext: "Line trace ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot forward by tracing the line by degrees of wheel rotation"},
+    "f": {pretext: "Move forward ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot forward by degrees of wheel rotation", color: "orange"},
+    "r": {pretext: "Turn right ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Turns the robot right by degrees of robot", color: "orange"},
+    "l": {pretext: "Turn left ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot left by degrees of robot", color: "orange"},
+    "b": {pretext: "Move backward ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot backward by degrees of wheel rotation", color: "orange"},
+    "t": {pretext: "Line trace ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot forward by tracing the line by degrees of wheel rotation", color: "orange"},
+    "w": {pretext: "Repeat continuously", posttext: "", inputRequired: false, info: "Repeats code blocks within it infinitely", color: "blue"},
+    "for": {pretext: "Repeat ", posttext: "times", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Repeats code blocks within it a set number of times", color: "blue"},
 }
 
-
-$(function() {
-    reloadToCompletion();
+function renderAddBlocks() {
     for (const [key, value] of Object.entries(allBlocks)) {
         contents = $('#template').html();
         copy = $(`<button id="${key}" class="block addblock" onclick="addToCode('${key}')"></button>`);
@@ -331,14 +389,21 @@ $(function() {
             $(`#${key} .blockdetail`).addClass('d-none');
         }
         $(`#${key} .blockinfo`).attr("data-bs-title", value.info);
+        $(`#${key}`).addClass(value.color)
     }
-    
+}
+
+
+$(function() {
+    reloadToCompletion();
+    renderAddBlocks();
     $("body").tooltip({ selector: '[data-bs-toggle=tooltip]' });
     verifySequence()
-    try {
+    // try {
         renderLocalStorage();
-    } catch (error) {
-        localStorage.setItem("codesequence", "");
-        renderLocalStorage();
-    }
+    // } catch (error) {
+        // localStorage.setItem("codesequence", "");
+        // renderLocalStorage();
+    // }
+    renderLoopIndentation()
 })
