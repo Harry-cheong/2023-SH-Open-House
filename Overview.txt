@@ -93,23 +93,23 @@ _____________________ Robot cmd _____________________
     - t : line trace 
     - 1000 : for 1000 deg
 
-| Gyro | 
+| Gyro | [❌]
 
-    1. gf1000 
+    1. gf1000 [❌]
     gf : pid gyro straight
     1000 : by 1000 deg
 
-    2. gt90
+    2. gt90 [❌]
     gf : p gyro turn
     90 : until bearing 90 is reached
 
 [* New *] | Sensors |
 
-    1. lr 
+    1. lr [MazeRobot✅]
     - lr : returns light reflection value (0 - 100 arbitrary units)
 
-    2. ud
-    - usd : returns distance value from ultrasonic sensor (0 - 256 cm)
+    2. ud [MazeRobot✅]
+    - usd : returns distance value from ultrasonic sensor (0 - 2000 mm)
 
 [* New *] | Loops & Logic |
 
@@ -126,12 +126,15 @@ _____________________ Robot cmd _____________________
     4. w(if^...^,...) 
     - if/else statement nested inside while loop
 
+    5. for|i, ...| [MazeRobot✅]
+    - executes the loop i times
+
 [* New *] | Operators |
 
-    1. >, <, ==, (optional) <=, (optional) >=
+    1. >, <, ==, (optional) <=, (optional) >= [MazeRobot✅]
     - comparison operators
 
-    2. +, -, *, / 
+    2. +, -, *, / [❌]
     - arithmetic operators
     
 

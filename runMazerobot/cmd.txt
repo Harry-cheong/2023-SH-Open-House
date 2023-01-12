@@ -1,15 +1,17 @@
-if: 
+if ls.reflections() == 10: 
     pair.turn(-331.25) 
-elif: 
+elif ls.reflections() == 30: 
     pair.turn(110.41666666666666) 
-pair.straight(80) 
 else: 
     pair.turn(-110.41666666666666) 
+pair.straight(80) 
 pair.turn(-331.25) 
-if: 
+if us.distance() > 300: 
     pair.turn(-36.80555555555555) 
 pair.straight(-100) 
 pair.turn(368.0555555555556) 
 while True: 
     pair.straight(80) 
 line_trace(1000) 
+for i in range(2): 
+    pair.straight(30) 

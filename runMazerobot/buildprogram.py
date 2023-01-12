@@ -34,28 +34,61 @@ class Builder():
         #     pass
         # else:
         #     return
-
-        while True:
-            if incmd.find(keyword) == -1:
-                return incmd, statement_list
+        
+        if incmd.find(keyword) == -1:
+            return incmd, statement_list, False
                 
-            elif incmd.find(keyword) != -1:
-                # print("Found")
-                # Finding the statement
-                i = incmd.find(keyword) # Find the keyword i.e. "if^"
-                statement = incmd[i : incmd.find(separator, i + 3) + 1] # Slice the statement from the string
-                cmdpos = incmd[ : i].count(",") # Determine the pos of the string if applicable
-                
-                # removing the sliced string fr incmds
-                incmd = incmd[ : i] + incmd[incmd.find(separator, i + 3) + 1 : ]
+        elif incmd.find(keyword) != -1:
+            # print("Found")
+            # Finding the statement
+            i = incmd.find(keyword) # Find the keyword i.e. "if^"
+            statement = incmd[i : incmd.find(separator, i + len(keyword)) + 1] # Slice the statement from the string
+            cmdpos = incmd[ : i].count(",") # Determine the pos of the string if applicable
+            
+            # removing the sliced string fr incmds
+            incmd = incmd[ : i] + incmd[incmd.find(separator, i + len(keyword)) + 1 : ]
 
-                # parsing incmds into indiv cmds
-                statement = statement.split(separator)
-                statement.remove("")
-                # print(incmd)
-                # Appending it to statement
-                statement_list.append([statement, cmdpos])
-                # print(incmd, statement_list)
+            # parsing incmds into indiv cmds
+            statement = statement.split(separator)
+            statement.remove("")
+            if statement[1].find(",") != -1:
+                for i in statement[1].split(","):
+                    statement.append(i)
+                del statement[1]
+            # print(incmd)
+
+            # Appending it to statement
+            statement_list.append([statement, cmdpos])
+            # print(incmd, statement_list)
+
+            return incmd, statement_list, True
+
+    def buildcondition(self, condition):
+        # Finding input
+        ssor = condition[:2]
+
+        # Finding num
+        for char in condition:
+            try:
+                int(char)
+                value = condition[condition.find(char) : ]
+                break
+            except:
+                continue
+
+        # Finding comparator
+        comp = condition[2 : condition.find(char)]
+
+        # print(ssor, value, comp)
+        if ssor == "us":
+            # print(f"us.distance() {comp} {value}")
+            return (f"us.distance() {comp} {value}")
+        elif ssor == "lr":
+            # print(f"ls.reflections() {comp} {value}")
+            return (f"ls.reflections() {comp} {value}")
+
+
+
     def buildlogiccmd(self, command):
 
         if type(command) is not list:
@@ -63,15 +96,15 @@ class Builder():
 
         if command[0] == "if":
             self.cglobalindent(1)
-            self.outFile.writelines(f"if: \n")
-            for i in range(1, len(command)):
+            self.outFile.writelines("if " + self.buildcondition(command[1]) + ": \n")
+            for i in range(2, len(command)):
                 self.buildrobotcmd(command[i])
             self.cglobalindent(-1)
 
         elif command[0] == "ef":
             self.cglobalindent(1)
-            self.outFile.writelines(f"elif: \n")
-            for i in range(1, len(command)):
+            self.outFile.writelines("elif " + self.buildcondition(command[1]) + ": \n")
+            for i in range(2, len(command)):
                 self.buildrobotcmd(command[i])
             self.cglobalindent(-1)
 
@@ -86,6 +119,13 @@ class Builder():
             self.cglobalindent(1)
             self.outFile.writelines(f"while True: \n")
             for i in range(1, len(command)):
+                self.buildrobotcmd(command[i])
+            self.cglobalindent(-1)
+        
+        elif command[0] == "for":
+            self.cglobalindent(1)
+            self.outFile.writelines(f"for i in range({command[1]}): \n")
+            for i in range(2, len(command)):
                 self.buildrobotcmd(command[i])
             self.cglobalindent(-1)
 
@@ -140,15 +180,22 @@ class Builder():
         commands = commands.replace("[", "").replace("]", "")
 
         # Finding while, if, elif, else statements
-        print(commands)
-        commands, statement_list = self.find("w|", "|", commands, statement_list)
-        commands, statement_list = self.find("if^", "^", commands, statement_list)
-        commands, statement_list = self.find("ef^", "^", commands, statement_list)
-        commands, statement_list = self.find("el^", "^", commands, statement_list)
+        # print(commands)
+        status = True
+        while True:
+            if status:
+                commands, statement_list, status = self.find("if^", "^", commands, statement_list)
+                commands, statement_list, status = self.find("ef^", "^", commands, statement_list)
+                commands, statement_list, status = self.find("el^", "^", commands, statement_list)
+            else:
+                break
+        commands, statement_list, status = self.find("for|", "|", commands, statement_list)
+        commands, statement_list, status = self.find("w|", "|", commands, statement_list)
 
         #TODO Nested statements
 
         # Splitting norm commands into indiv cmds
+        # print(commands)
         ic = commands.count(",") + 1
         command_list = commands.split(",")
 
@@ -209,4 +256,5 @@ class Builder():
 
 if __name__ == "__main__":
     b = Builder()
-    b.buildcmds("[if^r90^,ef^l30^,f80,el^r30^,r90,if^r10^,b100,l100,w|f80|,t1000]") # Test Case
+    b.buildcmds("[if^lr==10,r90^,ef^lr==30,l30^,el^r30^,f80,r90,if^us>300,r10^,b100,l100,w|f80|,t1000],for|2,f30|") # Test Case
+    # print("if " + b.buildcondition("us>300") + ": \n")
