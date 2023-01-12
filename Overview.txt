@@ -97,16 +97,33 @@ _____________________ Robot cmd _____________________
     gf : p gyro turn
     90 : until bearing 90 is reached
 
-| Loops & Logic |
+[* New *] | Sensors |
 
-    1. w(...)
-    w() -> while true, execute functions inside the bracket
+    1. lr 
+    - lr : returns light reflection value (0 - 100 arbitrary units)
 
-    2. if(conditon, ...)
+    2. ud
+    - usd : returns distance value from ultrasonic sensor (0 - 256 cm)
+
+[* New *] | Loops & Logic |
+
+    1. w{...}
+    w{} -> while true, execute functions inside the bracket
+
+    2. if(conditon, ...), elif(condition, ...), else(...)
+    - checking of syntax done on gui side
     if() -> if condition is true
 
     3. kb 
     kb : keyword break 
+
+[* New *] | Operators |
+
+    1. >, <, ==, (optional) <=, (optional) >=
+    - comparison operators
+
+    2. +, -, *, / 
+    - arithmetic operators
     
 
 
