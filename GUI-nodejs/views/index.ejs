@@ -21,6 +21,7 @@
             <section id="blockscontainer" class="col p-0 m-0 h-100">
                 <div id="allblocks" class="w-100 h-85 m-0 p-0">
                     <template id="template" class="d-none">
+                        <div class="indentbox"></div>
                         <div class="block1">
                             <button class="blockinfo" type="button"
                             data-bs-toggle="tooltip" data-bs-placement="right" 
@@ -108,6 +109,23 @@
                 </div>
                 <div class="modal-body">
                     <p>Robot is currently busy. Please wait until robot finishes executing code to try again.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+     <div id="errormessage" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Error!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Please do not lest loops within other loops.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

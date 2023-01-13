@@ -150,15 +150,24 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
 .block {
     margin: 2vh 0;
     /* border-radius: 100px; */
-    padding: 3vh 2vw !important;
+    padding: 3vh 2vw;
     width: 100%;
     border: none;
     transition: 0.3s;
     display: flex;
     flex-wrap: wrap;
 }
-.block.indent {
-    border-left: 30px solid rgb(0, 175, 240) !important;
+.block .indentbox {
+    display: none;
+}
+.block.indent .indentbox {
+    display: inline-block;
+    margin: -3vh -2vw;
+    border-left: 30px solid rgb(0, 175, 240);
+    background-color: #0000;
+    height: 80px;
+    width: calc(2vw + 60px);
+    width: -moz-calc(2vw + 60px);
 }
 .block.orange {
     background-color: rgb(255, 155, 0);

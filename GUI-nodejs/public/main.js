@@ -2,9 +2,11 @@ function openConfirmationBox() {
     $('#confirmclearmodal').modal('show'); 
 }
 
-function clearAllCode() {
+function clearAllCode(clearMemory = true) {
     $('#confirmclearmodal').modal('hide'); 
-    localStorage.setItem("codesequence", "")
+    if(clearMemory) {
+        localStorage.setItem("codesequence", "")
+    }
     var allBlocks = $("#codecontainer .block")
     for(var i = 0; i < allBlocks.length; i++) {
         if (allBlocks[i].id === "startblock") {
@@ -53,6 +55,7 @@ function updateLocalStorage() {
 }
 
 function renderLocalStorage() {
+    clearAllCode(clearMemory = false)
     window.counter = 0;
     seq = localStorage.getItem("codesequence").split("-")
     console.log(seq)
@@ -69,7 +72,6 @@ function renderLocalStorage() {
             $(`#${window.codeCounter-1}_${key}`).attr("data-numblocks", parseInt(seq[i].split("_")[2]))
         }
     }}
-    
 }
 
 function runCode() {
@@ -233,17 +235,25 @@ function findBlock(blockNumber) {
 }
 
 
-function renderLoopIndentation() {
+function renderLoopIndentation(revertIfError = true) {
     var allBlocks = $("#codecontainer .block")
     var indentRemaining = 0
     for (var i = 0; i < allBlocks.length; i++) {
         blockID = allBlocks[i].id
         var blocktype = blockID.split("_")[1]
-        if (blocktype === "w" || blocktype === "for") {
+        if (indentRemaining > 0) {
+            if ((blocktype === "w" || blocktype === "for") && revertIfError) {
+                console.log("error")
+                renderLocalStorage()
+                renderLoopIndentation()
+                $("#errormessage").modal("show")
+                return;
+            } else {
+                $(allBlocks[i]).addClass("indent");
+                indentRemaining -= 1;
+            }
+        } else if (blocktype === "w" || blocktype === "for") {
             indentRemaining += parseInt($(allBlocks[i]).attr("data-numblocks"))
-        } else if (indentRemaining > 0) {
-            $(allBlocks[i]).addClass("indent");
-            indentRemaining -= 1;
         } else {
             $(allBlocks[i]).removeClass("indent");
         }
@@ -256,6 +266,7 @@ function addlayer(e) {
     var currentlayer = $(block).attr("data-numblocks")
     $(block).attr("data-numblocks", parseInt(currentlayer)+1)
     renderLoopIndentation()
+    updateLocalStorage()
 }
 
 function removelayer(e) {
@@ -266,6 +277,7 @@ function removelayer(e) {
         $(block).attr("data-numblocks", parseInt(currentlayer)-1)
     }
     renderLoopIndentation()
+    updateLocalStorage()
 }
 
 function moveUp(e) {
@@ -283,8 +295,9 @@ function moveUp(e) {
         $(`#temp_${blockNumber}_${blockAboveID.split("_")[1]}`).attr("id", `${blockNumber}_${blockAboveID.split("_")[1]}`)
         $(`#temp_${blockNumber-1}_${blockID.split("_")[1]}`).attr("id", `${blockNumber-1}_${blockID.split("_")[1]}`)
     }
-    updateLocalStorage()
     renderLoopIndentation()
+    updateLocalStorage()
+    
 }
 
 function moveDown(e) {
@@ -302,8 +315,8 @@ function moveDown(e) {
         $(`#temp_${blockNumber}_${blockBelowID.split("_")[1]}`).attr("id", `${blockNumber}_${blockBelowID.split("_")[1]}`)
         $(`#temp_${blockNumber+1}_${blockID.split("_")[1]}`).attr("id", `${blockNumber+1}_${blockID.split("_")[1]}`)
     }
-    updateLocalStorage()
     renderLoopIndentation()
+    updateLocalStorage()
 }
 
 function trash(e) {
@@ -323,8 +336,8 @@ function trash(e) {
     }
     window.codeCounter = counter;
     verifySequence()
-    updateLocalStorage()
     renderLoopIndentation()
+    updateLocalStorage()
 }
 function addToCode(key) {
     contents = $(`#${key}`).html();
@@ -355,8 +368,8 @@ function addToCode(key) {
     }
     window.codeCounter += 1;
     verifySequence();
-    updateLocalStorage();
     renderLoopIndentation()
+    updateLocalStorage();
 }
 
 const allBlocks = {

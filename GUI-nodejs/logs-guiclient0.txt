@@ -7,3 +7,4 @@
 12012023-204436 [Local]      Node.JS running on port 5001
 12012023-204436 [Local]      guiclient0 connected to MQTT
 12012023-204436 [Local]      guiclient0 subscribed to 'Comms'
+13012023-082015 [Local]      Node.JS running on port 5001
