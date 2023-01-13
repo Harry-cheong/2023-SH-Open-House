@@ -1,3 +1,5 @@
+import logging
+
 class Builder():
     def __init__(self):
 
@@ -268,6 +270,9 @@ class Builder():
         # Closing File
         self.outFile.close()
 
+        # Logging
+        logging.info(f"[Builder] Built {_commands}")
+        
     # Basic Movements
     def r(self, turn_angle):
         self.outFile.writelines(f"{self.lstr}pair.turn({-round(turn_angle/360 * 1325)})\n")

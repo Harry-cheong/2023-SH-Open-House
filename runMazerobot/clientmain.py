@@ -5,6 +5,7 @@ import pybricks
 from buildprogram import Builder
 from runpybricks import autopybricks
 import threading
+import logging
 class Robot():
     def __init__(self):
 
@@ -119,12 +120,14 @@ class client_ev3():
 
     # The callback for when the client receives a CONNACK response from the server
     def on_connect(self, client, userdata, flags, rc):
+        logging.info(f"[Local] Connected to broker@{self.broker}.{self.port}")
         if int(rc) == 0 : print("Connected")
         else: print("Connection Failed.")
     
     # The callback for when a PUBLIC message message is received from the server
     def on_message(self, _client, userdata, msg):
         decrypted_data = str(msg.payload.decode("utf-8"))
+        logging.info(decrypted_data)
         print(decrypted_data)
 
         msg_filtered = decrypted_data[decrypted_data.find("]") + 2 :]
@@ -160,19 +163,20 @@ class client_ev3():
         status = result[0]
         if not status == 0: print(f"Failed to send {message} to topic {self.topic}")
     
-    # def tpublish(self, message):
-    #     self._publish = threading.Thread(target = self.publish, args = (message,))
-    #     self._publish.start()
+if __name__ == "__main__":
+    # Logging 
+    logging.basicConfig(filename = r"C:\Users\harry\Desktop\SH Robotics\2023-SH-Open-House\runMazerobot\logs.txt", filemode = "a", format='%(asctime)s - %(message)s',level=logging.INFO)
 
+    # Instances 
+    cmd = Robot()
+    ev3 = client_ev3(cmd)
+    cmd.addMQTT_object(ev3)
 
+    # Start Loop
+    cmd.start()
 
-# Instances 
-cmd = Robot()
-ev3 = client_ev3(cmd)
-cmd.addMQTT_object(ev3)
+    # Loop
+    ev3.client.loop_forever()
 
-# Start Loop
-cmd.start()
-
-# Loop
-ev3.client.loop_forever()
+    # End Log 
+    logging.info("[Local] Session Ended \n")

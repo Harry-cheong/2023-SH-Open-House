@@ -2,7 +2,8 @@ from selenium import webdriver
 import pyautogui
 import time
 from selenium.webdriver.chrome.options import Options
-import threading
+import pyperclip
+import logging
 
 class autopybricks():
     def __init__(self):
@@ -18,6 +19,7 @@ class autopybricks():
         self.driver.maximize_window()
         self.driver.get("https://code.pybricks.com/")
         self.load(timeout = 0.3)
+        logging.info("[Pybricks] Loaded https://code.pybricks.com/")
 
     def load(self, timeout = 0.2):
         time.sleep(timeout)
@@ -47,6 +49,7 @@ class autopybricks():
         pyautogui.write("MazeRunner") # Name of file
         pyautogui.press("enter") # Confirm file
         self.load(timeout = 0.30)
+        logging.info("[Pybricks] File \"MazeRunner\" Created")
 
     def runprogram(self):
         # print(pyautogui.screenshot().getpixel((558, 216)))
@@ -54,6 +57,9 @@ class autopybricks():
             if pyautogui.screenshot().getpixel((558, 216)) != (117, 186, 223):
                 pyautogui.press("F5") # runprogram if option is available
                 break
+        
+        # Logging
+        logging.info("[Pybricks] Executed File \"MazeRunner\"")
     
     def stopprogram(self):
         # print(pyautogui.screenshot().getpixel((637, 220)))
@@ -61,39 +67,20 @@ class autopybricks():
             if pyautogui.screenshot().getpixel((637, 220)) != (117, 186, 223):
                 pyautogui.press("F6") # stopprogram if option is available
                 break
+        
+        logging.info("[Pybricks] Program Interrupted")
     
     def copyfrfile(self, path):
         infile = open(path, "r")
         lines = infile.readlines()
-        iline = 0
 
-        c_indent = p_indent = 0
+        txt = ""
 
         for line in lines:
-            iline += 1
+            txt += line
 
-            # To avoid: blank line is len0.25, thus round to 0
-            c_indent = round((len(line) - len(line.lstrip()))/4)
-            # print(f"{iline} : {c_indent}, {p_indent}")
-
-            # Writing line
-            if line == "\n":
-                pyautogui.press("enter")
-
-            else:
-                # Fixing Indentation
-                if c_indent < p_indent:
-                    if (p_indent - c_indent) == 1:
-                        pyautogui.press("Backspace")
-                    else:
-                        for i in range(0, (p_indent - c_indent)):
-                            pyautogui.press("Backspace")
-                pyautogui.write(line.lstrip())
-
-                # Updating prev indent num
-                if c_indent != p_indent:
-                    p_indent = c_indent
-            time.sleep(0.08)
+        pyperclip.copy(txt)
+        pyautogui.hotkey("ctrl", "v")
 
     def initalise(self):
 
@@ -118,7 +105,7 @@ class autopybricks():
 
         # For testing check
         if check:
-            self.load(timeout = 0.5)
+            self.load(timeout = 1)
             while self.Isprogramrunning():
                 pass
 
@@ -142,6 +129,7 @@ class autopybricks():
 
         # Writing cmd file
         self.copyfrfile(self.PATH_TO_CMD)
+        self.load(timeout = 0.25)
     
     def connectspike(self):
         
@@ -160,7 +148,8 @@ class autopybricks():
                 break
 
         self.load()
-        print("Hub Found")
+        logging.info("[Pybricks] Hub Found")
+        # print("Hub Found")
 
         pyautogui.click(543, 593) # Click on "pair"
         self.load()
@@ -181,9 +170,6 @@ class autopybricks():
     def reload(self):
         self.driver.refresh()
 
-    def checkterminal(self):
-        pass
-
     def exec(self):
         self.start()
 
@@ -197,15 +183,23 @@ class autopybricks():
         self.hidewindow()
 
 if __name__ == "__main__":
+    # Logging
+    logging.basicConfig(filename = r"C:\Users\harry\Desktop\SH Robotics\2023-SH-Open-House\runMazerobot\logs.txt", filemode = "a", format='%(asctime)s - %(message)s',level=logging.INFO)
+
+    # Execution 1
     pyb = autopybricks()
     pyb.writecmd()
     pyb.runprogram()
     pyb.exit(check = True)
 
     time.sleep(5)
+
+    # Execution 2
     pyb.writecmd()
     pyb.runprogram()
     pyb.exit(check = True)
-    # pyb.closewindow()
-    # pyb.closewindow()
-    # pyb.showwindow()
+
+    pyb.closewindow()
+
+    # End Log 
+    logging.info("[Local] Session Ended \n")
