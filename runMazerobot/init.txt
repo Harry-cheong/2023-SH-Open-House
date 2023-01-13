@@ -9,6 +9,7 @@ hub = PrimeHub()
 
 # Initialising Sensors 
 ls = ColorSensor(Port.C)
+us = UltrasonicSensor(Port.D)
 
 # Initialising Motors
 lm = Motor(Port.A, Direction.CLOCKWISE)

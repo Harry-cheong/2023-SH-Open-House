@@ -114,7 +114,13 @@ class autopybricks():
         else:
             return False
             
-    def exit(self):
+    def exit(self, check = False):
+
+        # For testing check
+        if check:
+            self.load(timeout = 0.5)
+            while self.Isprogramrunning():
+                pass
 
         # Deleting the file
         pyautogui.click(341, 208)
@@ -194,12 +200,12 @@ if __name__ == "__main__":
     pyb = autopybricks()
     pyb.writecmd()
     pyb.runprogram()
-    pyb.exit()
+    pyb.exit(check = True)
 
     time.sleep(5)
     pyb.writecmd()
     pyb.runprogram()
-    pyb.exit()
+    pyb.exit(check = True)
     # pyb.closewindow()
     # pyb.closewindow()
     # pyb.showwindow()

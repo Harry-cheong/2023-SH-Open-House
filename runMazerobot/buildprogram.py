@@ -298,5 +298,5 @@ class Builder():
 
 if __name__ == "__main__":
     b = Builder()
-    b.buildcmds("[if^lr==10,r90^,ef^lr==30,l30^,el^r30^,f80,r90,if^us>300,r10^,b100,l100,w|inf^us>300,kb^,enf^us>500,r90^,f80|,t1000],for|2,f30|]") # Test Case
+    b.buildcmds("[f1000,r90]") # Test Case
     # print("if " + b.buildcondition("us>300") + ": \n")

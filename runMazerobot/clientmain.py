@@ -23,8 +23,8 @@ class Robot():
         self.pyb_isprogramrunning = False
         
         # Threading
-        self.cmd_processor1 = threading.thread()
-        self.cmd_processor2 = threading.thread()
+        self.cmd_processor1 = threading.Thread()
+        self.cmd_processor2 = threading.Thread()
 
     # Adding MQTT client instance
     def addMQTT_object(self, ev3_client):
@@ -34,10 +34,10 @@ class Robot():
     #TODO test whether threading works
     def _process_cmd(self, client, msg):
         if not self.cmd_processor1.is_alive():
-            self._cmdprocessor1 = threading.thread(target = self.process_cmd, args=(client, msg,))
+            self._cmdprocessor1 = threading.Thread(target = self.process_cmd, args=(client, msg,))
             self._cmdprocessor1.start()
         elif not self.cmd_processor2.is_alive():
-            self._cmdprocess2 = threading.thread(target = self.process_cmd, args=(client, msg,))
+            self._cmdprocess2 = threading.Thread(target = self.process_cmd, args=(client, msg,))
             self._comdprocessor.start()
         else:
             self.client_ev3.publish("Client Overloaded. Too many command requests")
