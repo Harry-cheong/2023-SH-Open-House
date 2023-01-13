@@ -537,7 +537,7 @@ const allBlocks = {
     "l": {pretext: "Turn left ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot left by degrees of robot", color: "orange"},
     "b": {pretext: "Move backward ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot backward by degrees of wheel rotation", color: "orange"},
     "t": {pretext: "Line trace ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot forward by tracing the line by degrees of wheel rotation", color: "orange"},
-    "if": {pretext: "If ", posttext: "", inputRequired: false, info: "Executes code blocks within it if condition is fulfilled", color: "purple"},
+    "if": {pretext: "If ", posttext: "", inputRequired: true, info: "Executes code blocks within it if condition is fulfilled", color: "purple"},
     "w": {pretext: "Repeat continuously", posttext: "", inputRequired: false, info: "Repeats code blocks within it infinitely", color: "blue"},
     "for": {pretext: "Repeat ", posttext: "times", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Repeats code blocks within it a set number of times", color: "blue"},
     "kb": {pretext: "End loop", posttext: "", inputRequired: false, info: "Ends the loop", color: "orange"},

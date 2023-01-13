@@ -54,3 +54,11 @@
 13012023-231541 [Local]      Node.JS running on port 5001
 13012023-231541 [Local]      guiclient0 connected to MQTT
 13012023-231541 [Local]      guiclient0 subscribed to 'Comms'
+13012023-233449 [Local]      Node.JS running on port 5001
+13012023-233449 [Local]      guiclient0 connected to MQTT
+13012023-233449 [Local]      guiclient0 subscribed to 'Comms'
+13012023-233548 [Local]      Execution of code started
+13012023-233548 [guiclient0] Run f100,if^ud<100,t100,l2000^,r100,w|kb|,t100,for|100,f100,inf^ud>2000,kb,t100^|
+13012023-233608 [Local]      Node.JS running on port 5001
+13012023-233608 [Local]      guiclient0 connected to MQTT
+13012023-233608 [Local]      guiclient0 subscribed to 'Comms'
