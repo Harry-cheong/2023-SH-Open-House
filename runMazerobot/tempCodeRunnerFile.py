@@ -1,1 +1,0 @@
-        commands, statement_list, status = self.find("for", "|", commands, statement_list, nested = False)
