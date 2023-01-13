@@ -40,33 +40,32 @@ msg 5 : [MazeRunner] status: Free
 
 ____________________ Break-down ____________________
 
-    # msg 1 : [Mazerobot] status: Free
+    # msg 1 : [Mazerobot] status: Free [MazeRobot✅] [GUI✅]
 
     - Once the robot is ready, this msg will be sent by the robot to the channel
     - Once received by GUIs, GUIs can go ahead to run the seq of movements on the robot
 
 
-    # msg 2 : [GUI1] Maze_robot run [...]
+    # msg 2 : [GUI1] Maze_robot run [...] [MazeRobot✅] [GUI✅]
 
     - ... : commands for the movement of the robot
     - [Optional] : GUI shows that the program is being loaded
 
-
-    # msg 3 : [Mazerunner] Received
+    # msg 3 : [Mazerunner] Received [MazeRobot✅] [GUI✅]
 
     - cfmation from the Maze-Runner 
     - [Optional] GUI shows that the robot is running
 
 
-    # msg 4 : [Mazerunner] status: Occupied
-
-    - The robot is running a program at the momemt
-    - Once received by GUIS, GUIs are not allowed to send any commands
-
-
-    # msg 5 : [Mazerunner] status: Free
+    # msg 5 : [Mazerunner] status: Free [MazeRobot✅] [GUI✅]
 
     - The loop continues 
+
+    # Other messages : [GUI] Interrupt Execution [MazeRobot✅] [GUI✅]
+
+    - if program on pybricks is running, immediately stops the program
+    - [Software specification] threading: - one thread to receive incoming cmd and interrupt execution, another one to close pybricks once execution is done
+
 
 
 _____________________ Robot cmd _____________________
@@ -120,10 +119,10 @@ _____________________ Robot cmd _____________________
     - checking of syntax done on gui side
     if() -> if condition is true
 
-    3. kb 
+    3. kb [MazeRobot✅]
     kb : keyword break 
 
-    4. w(if^...^,...) 
+    4. w(inf^conditon, ...^, enf^condition, ...^, enl^...^,...) [MazeRobot✅]
     - if/else statement nested inside while loop
 
     5. for|i, ...| [MazeRobot✅]

@@ -20,38 +20,63 @@ class Robot():
 
         # Pybricks
         self.pyb = autopybricks()
+        self.pyb_isprogramrunning = False
+        
+        # Threading
+        self.cmd_processor1 = threading.thread()
+        self.cmd_processor2 = threading.thread()
 
     # Adding MQTT client instance
     def addMQTT_object(self, ev3_client):
         self.client_ev3 = ev3_client
 
     # Commands
+    #TODO test whether threading works
+    def _process_cmd(self, client, msg):
+        if not self.cmd_processor1.is_alive():
+            self._cmdprocessor1 = threading.thread(target = self.process_cmd, args=(client, msg,))
+            self._cmdprocessor1.start()
+        elif not self.cmd_processor2.is_alive():
+            self._cmdprocess2 = threading.thread(target = self.process_cmd, args=(client, msg,))
+            self._comdprocessor.start()
+        else:
+            self.client_ev3.publish("Client Overloaded. Too many command requests")
+        
     def process_cmd(self, client, msg):
         # print(client)
-        if client != self.client_ev3.client_id:
-            if self.status == "Free":
+
+        if client != self.client_ev3.client_id: # making sure that the msg received is not from the client itself
+
+            if self.status == "Free": 
 
                 # Responding to run cmd
                 if msg[:3] == "Run":
                     self.status = "Running"
 
-                    #TODO Execute commands in msg
-                    self.client_ev3.publish("Command Received. Running...")
+                    # Publishes status to guis
+                    self.client_ev3.publish("Received")
 
-                    #TODO test working 
+                    # Building cmd.txt
                     robotcmd = msg[msg.find("[") : ]
                     self.fileb.buildcmds(robotcmd)
+
+                    # Copies cmd.txt and runs it on pybricks
                     self.pyb.runcmd()
 
+                    # Checking for when the robot is done executing the program
+                    self.pyb_isprogramrunning = True
+                    self.pyb.load(timeout = 0.5)
+                    while self.pyb.Isprogramrunning():
+                        pass
+                    self.pyb_isprogramrunning = False
+                    self.pyb.exit()
+                    
                     self.status = "Free"
                     self.status_published = False
                     self.publish_status()
                     # print("status received")
-
-            elif self.status == "Running": 
-                print("Program Running in Progress...")
             
-            elif msg == "Interrupt execution":
+            elif self.pyb_isprogramrunning and msg == "Interrupt execution":
                 self.pyb.stopprogram()
 
 
@@ -105,7 +130,7 @@ class client_ev3():
         msg_filtered = decrypted_data[decrypted_data.find("]") + 2 :]
         client = decrypted_data[: decrypted_data.find("]") + 1].replace("[", "").replace("]","")
 
-        self.cmd.process_cmd(client, msg_filtered)
+        self.cmd._process_cmd(client, msg_filtered)
 
     # Function to connect with server
     def connect_mqtt(self):

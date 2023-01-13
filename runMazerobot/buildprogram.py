@@ -19,22 +19,11 @@ class Builder():
         self.indentation += i
         self.lstr = self.indentation * self.indent
 
-    # Finding while, if, elif, else statements
-    def find(self, keyword, separator, incmd, statement_list):
-        #TODO Splitting inside while loop (implement exception when incmd is list type)
-        # cmdislist = False
-
-        # if type(incmd) is list:
-        #     cmdislist = True
-        #     for i in incmd:
-        #         if incmd.find(keyword) != -1:
-        #             incmd = i
+    # Finding keyword, separators in cmd
+    def find(self, _keyword, separator, incmd, statement_list, nested = False):
+        #TODO Implement keyword arg nested
         
-        # if type(incmd) is not list:
-        #     pass
-        # else:
-        #     return
-        
+        keyword = _keyword + separator # e.g. if + ^ to form "if^"
         if incmd.find(keyword) == -1:
             return incmd, statement_list, False
                 
@@ -42,6 +31,8 @@ class Builder():
             # print("Found")
             # Finding the statement
             i = incmd.find(keyword) # Find the keyword i.e. "if^"
+
+
             statement = incmd[i : incmd.find(separator, i + len(keyword)) + 1] # Slice the statement from the string
             cmdpos = incmd[ : i].count(",") # Determine the pos of the string if applicable
             
@@ -51,17 +42,58 @@ class Builder():
             # parsing incmds into indiv cmds
             statement = statement.split(separator)
             statement.remove("")
-            if statement[1].find(",") != -1:
-                for i in statement[1].split(","):
-                    statement.append(i)
-                del statement[1]
+
+            # parsing gen cmds 
+            if not nested:
+                if statement[1].find(",") != -1:
+                    for i in statement[1].split(","):
+                        statement.append(i)
+                    del statement[1]
             # print(incmd)
+
+            else:
+                # print(statement[1])
+                statement[1], statement= self.findifelse(statement[1], statement, ifkey = "inf", elifkey = "enf", elsekey = "enl")
+ 
+                for cmd in statement:
+                    icmd = statement.index(cmd)
+
+                    # parsing gen cmds inside nested loops into indv cmds
+                    if cmd != _keyword and type(cmd) == str:
+                        if statement[icmd].find(",") != -1:
+                            # print(statement[icmd].split(","))
+                            for i in statement[icmd].split(","):
+                                if i != "": 
+                                    del statement[icmd]
+                                    statement.insert(icmd, i)
+
+                    # merging nested loops back into the statement
+                    elif type(cmd) == list:
+                        statement.insert(statement[icmd][1] + 1, statement[icmd][0])
+                        statement.remove(cmd)
+                                    
+                
+                # print(statement)
 
             # Appending it to statement
             statement_list.append([statement, cmdpos])
             # print(incmd, statement_list)
 
             return incmd, statement_list, True
+
+    def findifelse(self, commands, statement_list, ifkey = "if", elifkey = "ef", elsekey = "el"):
+        status = True
+        while True:
+            if status:
+                commands, statement_list, status = self.find(ifkey, "^", commands, statement_list)
+                if status:
+                    commands, statement_list, status = self.find(elifkey, "^", commands, statement_list)
+                
+                if status:
+                    commands, statement_list, status = self.find(elsekey, "^", commands, statement_list)
+            else:
+                break
+        return commands, statement_list
 
     def buildcondition(self, condition):
         # Finding input
@@ -94,43 +126,54 @@ class Builder():
         if type(command) is not list:
             print(f"{command} Invalid")
 
-        if command[0] == "if":
+        if command[0] == "if" or command[0] == "inf":
+            self.outFile.writelines(f"{self.lstr}if " + self.buildcondition(command[1]) + ":\n")
             self.cglobalindent(1)
-            self.outFile.writelines("if " + self.buildcondition(command[1]) + ": \n")
+
             for i in range(2, len(command)):
-                self.buildrobotcmd(command[i])
+                self.buildgencmds(command[i])
             self.cglobalindent(-1)
 
-        elif command[0] == "ef":
+        elif command[0] == "ef" or command[0] == "enf":
+            self.outFile.writelines(f"{self.lstr}elif " + self.buildcondition(command[1]) + ":\n")
             self.cglobalindent(1)
-            self.outFile.writelines("elif " + self.buildcondition(command[1]) + ": \n")
+
             for i in range(2, len(command)):
-                self.buildrobotcmd(command[i])
+                self.buildgencmds(command[i])
             self.cglobalindent(-1)
 
-        elif command[0] == "el":
+        elif command[0] == "el" or command[0] == "enl":
+            self.outFile.writelines(f"{self.lstr}else:\n")
             self.cglobalindent(1)
-            self.outFile.writelines(f"else: \n")
+
             for i in range(1, len(command)):
-                self.buildrobotcmd(command[i])
+                self.buildgencmds(command[i])
             self.cglobalindent(-1)
 
         elif command[0] == "w":
+            self.outFile.writelines(f"{self.lstr}while True:\n")
             self.cglobalindent(1)
-            self.outFile.writelines(f"while True: \n")
+            
             for i in range(1, len(command)):
-                self.buildrobotcmd(command[i])
+                if type(command[i]) is list: self.buildlogiccmd(command[i])
+                else: self.buildgencmds(command[i])
             self.cglobalindent(-1)
         
-        elif command[0] == "for":
+        elif command[0] == "for": 
+            self.outFile.writelines(f"{self.lstr}for i in range({command[1]}):\n")
             self.cglobalindent(1)
-            self.outFile.writelines(f"for i in range({command[1]}): \n")
+
             for i in range(2, len(command)):
-                self.buildrobotcmd(command[i])
+                self.buildgencmds(command[i])
             self.cglobalindent(-1)
 
-    def buildrobotcmd(self, command):
+    def buildgencmds(self, command):
         
+        # Special case : kb
+        if command[:2] == "kb":
+            self.outFile.writelines(f"{self.lstr}break\n")
+            return
+
         # Writing robot cmds into file
         try: 
             m = command[0]
@@ -164,8 +207,11 @@ class Builder():
         elif m == "t":
             self.lt(v)
 
-    def buildcmds(self, commands):
+    def buildcmds(self, _commands):
         
+        # Copy of og cmds
+        commands = _commands
+
         # Make sure that the command is in the right format [...]
         if commands.find("[") == -1 or commands.find("]") == -1:
             raise ValueError("Invalid Robot Commands")
@@ -180,22 +226,14 @@ class Builder():
         commands = commands.replace("[", "").replace("]", "")
 
         # Finding while, if, elif, else statements
-        # print(commands)
-        status = True
-        while True:
-            if status:
-                commands, statement_list, status = self.find("if^", "^", commands, statement_list)
-                commands, statement_list, status = self.find("ef^", "^", commands, statement_list)
-                commands, statement_list, status = self.find("el^", "^", commands, statement_list)
-            else:
-                break
-        commands, statement_list, status = self.find("for|", "|", commands, statement_list)
-        commands, statement_list, status = self.find("w|", "|", commands, statement_list)
-
+        print("\n Commands: " + commands + "\n") # the original cmds passed into the fn
+        commands, statement_list, = self.findifelse(commands, statement_list)
+        commands, statement_list, status = self.find("w", "|", commands, statement_list, nested = True)
+        commands, statement_list, status = self.find("for", "|", commands, statement_list, nested = False)
         #TODO Nested statements
 
         # Splitting norm commands into indiv cmds
-        # print(commands)
+        # print(scommands)
         ic = commands.count(",") + 1
         command_list = commands.split(",")
 
@@ -205,14 +243,18 @@ class Builder():
                 command_list.remove("")
             except:
                 break
+        
+        # Fix index of nested loops:
+
+        # Findin the index of the while statement in statement_list
 
         # Merging statement_list into command_list
         for i in range(ic):
             for statement in statement_list:
                 if statement[1] == i:
                     command_list.insert(statement[1], statement[0])
-        # print(statement_list)
-        print(command_list)
+        print(statement_list, "\n")
+        print(command_list, "\n")
 
         # Writing to cmd file
         for command in command_list:
@@ -221,26 +263,26 @@ class Builder():
                 self.buildlogiccmd(command)
   
             else:
-                self.buildrobotcmd(command)
+                self.buildgencmds(command)
         
         # Closing File
         self.outFile.close()
 
     # Basic Movements
     def r(self, turn_angle):
-        self.outFile.writelines(f"{self.lstr}pair.turn({-(turn_angle/360 * 1325)}) \n")
+        self.outFile.writelines(f"{self.lstr}pair.turn({-round(turn_angle/360 * 1325)})\n")
         # print(f"pair.turn(speed = {turn_angle}) \n")
 
     def l(self, turn_angle):
-        self.outFile.writelines(f"{self.lstr}pair.turn({turn_angle/360 * 1325}) \n")
+        self.outFile.writelines(f"{self.lstr}pair.turn({round(turn_angle/360 * 1325)})\n")
         # print(f"pair.turn(speed = {-turn_angle}) \n")
 
     def f(self, deg):
-        self.outFile.writelines(f"{self.lstr}pair.straight({deg}) \n")
+        self.outFile.writelines(f"{self.lstr}pair.straight({deg})\n")
         # print(f"pair.straight({deg}) \n")
 
     def b(self, deg):
-        self.outFile.writelines(f"{self.lstr}pair.straight({-deg}) \n")
+        self.outFile.writelines(f"{self.lstr}pair.straight({-deg})\n")
         # print(f"pair.straight({-deg}) \n")
     
     # Gyro
@@ -252,9 +294,9 @@ class Builder():
 
     # Line-Tracing
     def lt(self, deg):
-        self.outFile.writelines(f"{self.lstr}line_trace({deg}) \n")
+        self.outFile.writelines(f"{self.lstr}line_trace({deg})\n")
 
 if __name__ == "__main__":
     b = Builder()
-    b.buildcmds("[if^lr==10,r90^,ef^lr==30,l30^,el^r30^,f80,r90,if^us>300,r10^,b100,l100,w|f80|,t1000],for|2,f30|") # Test Case
+    b.buildcmds("[if^lr==10,r90^,ef^lr==30,l30^,el^r30^,f80,r90,if^us>300,r10^,b100,l100,w|inf^us>300,kb^,enf^us>500,r90^,f80|,t1000],for|2,f30|]") # Test Case
     # print("if " + b.buildcondition("us>300") + ": \n")
