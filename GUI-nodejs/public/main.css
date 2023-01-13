@@ -144,7 +144,8 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
     cursor: default;
 }
 .fillblock {
-    border: 1px solid black !important;
+    border: 1.5px solid black !important;
+    margin-top: -1.5px !important;
     cursor: default !important;
 }
 .block {
@@ -160,12 +161,30 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
 .block .indentbox {
     display: none;
 }
-.block.indent .indentbox {
+.block.loopindent .indentbox {
     display: inline-block;
     margin: -3vh -2vw;
     border-left: 30px solid rgb(0, 175, 240);
     background-color: #0000;
-    height: 80px;
+    height: 81px;
+    width: calc(2vw + 60px);
+    width: -moz-calc(2vw + 60px);
+}
+.block.ifindent .indentbox {
+    display: inline-block;
+    margin: -3vh -2vw;
+    border-left: 30px solid rgb(155, 0, 255);
+    background-color: #0000;
+    height: 81px;
+    width: calc(2vw + 60px);
+    width: -moz-calc(2vw + 60px);
+}
+.block.ifloopindent .indentbox {
+    display: inline-block;
+    margin: -3vh -2vw;
+    border-left: 30px solid rgb(0, 175, 240);
+    background: linear-gradient(90deg, rgb(155, 0, 255) 60%, #0000 60%);
+    height: 81px;
     width: calc(2vw + 60px);
     width: -moz-calc(2vw + 60px);
 }
@@ -187,6 +206,15 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
 .addblock.blue:active {
     background-color: rgb(0, 140, 205);
 }
+.block.purple {
+    background-color: rgb(155, 0, 255);
+}
+.block.purple:hover {
+    background-color: rgb(130, 0, 230);
+}
+.addblock.purple:active {
+    background-color: rgb(120, 0, 220);
+}
 button:disabled, button[disabled] {
     cursor: not-allowed;
 }
@@ -206,9 +234,25 @@ button:disabled, button[disabled] {
 }
 
 .block input[type=number] {
-  -moz-appearance: textfield; 
+    appearance: textfield;
+    -moz-appearance: textfield; 
 }
+.block .selectcondition, .block .selectvariable {
+    background-color: white;
+    border-radius: 1em;
+    border: none;
+}
+.block .selectvariable {
+    width: 12em;
+    padding: 0.3em 1em;
+    margin: 0;
+}
+.block .selectcondition { 
+    width: 2em;
+    padding: 0.3em 0.5em;
+    margin: 0 0.5em;
 
+}
 .block p {
     text-align: center;
 }
@@ -229,10 +273,11 @@ button:disabled, button[disabled] {
     flex: 1 0 95%;
 }
 .fillblock .block1, .fillblock .block3 {
-    flex: 1 0 23%;
+    flex: 1 0 16%;
+    
 }
 .fillblock .block2 {
-    flex: 2 0 46%;
+    flex: 2 0 62%;
 }
 .fillblock .block1 {
     text-align: left;
@@ -242,6 +287,9 @@ button:disabled, button[disabled] {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+}
+.fillblock.ifloopindent .block1 {
+    padding-left: 30px;
 }
 .fillblock .block3 {
     text-align: right;

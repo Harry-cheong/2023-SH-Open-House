@@ -41,7 +41,7 @@ function updateLocalStorage() {
         }
         var id = allBlocks[i].id.split('_')[1];
         var val = $(`#${allBlocks[i].id} input`).val()
-        if (id === "w" || id === "for") {
+        if (id === "w" || id === "for" || id === "if") {
             finalText = finalText + id + "_" + val + "_" + $(allBlocks[i]).attr("data-numblocks");
         } else {
             finalText = finalText + id + "_" + val;
@@ -68,7 +68,7 @@ function renderLocalStorage() {
             // jquery throws a funny error if not caught -> this has no implications on functionality
         }
         $(`#${window.codeCounter-1}_${key} input`).val(parseInt(seq[i].split("_")[1]))
-        if(key === "w" || key === "for") {
+        if(key === "w" || key === "for" || key === "if") {
             $(`#${window.codeCounter-1}_${key}`).attr("data-numblocks", parseInt(seq[i].split("_")[2]))
         }
     }}
@@ -237,25 +237,70 @@ function findBlock(blockNumber) {
 
 function renderLoopIndentation(revertIfError = true) {
     var allBlocks = $("#codecontainer .block")
-    var indentRemaining = 0
+    var loopIndentRemaining = 0
+    var ifIndentRemaining = 0
     for (var i = 0; i < allBlocks.length; i++) {
         blockID = allBlocks[i].id
         var blocktype = blockID.split("_")[1]
-        if (indentRemaining > 0) {
-            if ((blocktype === "w" || blocktype === "for") && revertIfError) {
+        if (blocktype === "w" || blocktype === "for") {
+            if (loopIndentRemaining > 0 && revertIfError) {
                 console.log("error")
                 renderLocalStorage()
                 renderLoopIndentation()
                 $("#errormessage").modal("show")
                 return;
+            } else if (ifIndentRemaining > 0 && revertIfError) {
+                console.log("error")
+                renderLocalStorage()
+                renderLoopIndentation()
+                $("#errormessage").modal("show")
             } else {
-                $(allBlocks[i]).addClass("indent");
-                indentRemaining -= 1;
+                loopIndentRemaining += parseInt($(allBlocks[i]).attr("data-numblocks"))
+                $(allBlocks[i]).removeClass("loopindent");
+                $(allBlocks[i]).removeClass("ifindent");
+                $(allBlocks[i]).removeClass("ifloopindent");
             }
-        } else if (blocktype === "w" || blocktype === "for") {
-            indentRemaining += parseInt($(allBlocks[i]).attr("data-numblocks"))
+        } else if (blocktype === "if") {
+            if (ifIndentRemaining > 0 && revertIfError) {
+                console.log("error")
+                renderLocalStorage()
+                renderLoopIndentation()
+                $("#errormessage").modal("show")
+            } else {
+                ifIndentRemaining += parseInt($(allBlocks[i]).attr("data-numblocks"))
+                if (loopIndentRemaining > 0) { 
+                    $(allBlocks[i]).addClass("loopindent");
+                    $(allBlocks[i]).removeClass("ifindent");
+                    $(allBlocks[i]).removeClass("ifloopindent");
+                    loopIndentRemaining -= 1;
+                } else {
+                    $(allBlocks[i]).removeClass("loopindent");
+                    $(allBlocks[i]).removeClass("ifindent");
+                    $(allBlocks[i]).removeClass("ifloopindent");
+                }
+            }
         } else {
-            $(allBlocks[i]).removeClass("indent");
+            if (loopIndentRemaining > 0 && ifIndentRemaining > 0) {
+                $(allBlocks[i]).removeClass("loopindent");
+                $(allBlocks[i]).removeClass("ifindent");
+                $(allBlocks[i]).addClass("ifloopindent");
+                loopIndentRemaining -= 1;
+                ifIndentRemaining -= 1;
+            } else if (loopIndentRemaining > 0) {
+                $(allBlocks[i]).addClass("loopindent");
+                $(allBlocks[i]).removeClass("ifindent");
+                $(allBlocks[i]).removeClass("ifloopindent");
+                loopIndentRemaining -= 1;
+            } else if (ifIndentRemaining > 0) {
+                $(allBlocks[i]).removeClass("loopindent");
+                $(allBlocks[i]).addClass("ifindent");
+                $(allBlocks[i]).removeClass("ifloopindent");
+                ifIndentRemaining -= 1;
+            } else {
+                $(allBlocks[i]).removeClass("loopindent");
+                $(allBlocks[i]).removeClass("ifindent");
+                $(allBlocks[i]).removeClass("ifloopindent");
+            }
         }
     }
 }
@@ -357,7 +402,7 @@ function addToCode(key) {
     $(`#${window.codeCounter}_${key} button.trash`).on('click', function(e) {
         trash(e);
     });
-    if (key === "w" || key === "for") {
+    if (key === "w" || key === "for" || key === "if") {
         $(`#${window.codeCounter}_${key}`).attr('data-numblocks', 1);
         $(`#${window.codeCounter}_${key} button.addlayer`).on('click', function(e) {
             addlayer(e);
@@ -365,6 +410,22 @@ function addToCode(key) {
         $(`#${window.codeCounter}_${key} button.removelayer`).on('click', function(e) {
             removelayer(e);
         });
+    }
+
+    if (key === "if") {
+        var variable = $(`<select class="selectvariable" aria-label="Select variable">
+        <option value="lr" selected>Light reflected (%)</option>
+        <option value="ud">Obstacle distance (m)</option>
+        </select>`)
+        var condition = $(`<select class="selectcondition" aria-label="Select variable">
+        <option value="<" selected>&#60;</option>
+        <option value="<=">≤</option>
+        <option value="==">=</option>
+        <option value=">=">≥</option>
+        <option value=">">&#62;</option>
+        </select>`)
+        $(`#${window.codeCounter}_${key} input`).before(condition)
+        $(`#${window.codeCounter}_${key} .selectcondition`).before(variable)
     }
     window.codeCounter += 1;
     verifySequence();
@@ -378,6 +439,7 @@ const allBlocks = {
     "l": {pretext: "Turn left ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot left by degrees of robot", color: "orange"},
     "b": {pretext: "Move backward ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot backward by degrees of wheel rotation", color: "orange"},
     "t": {pretext: "Line trace ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot forward by tracing the line by degrees of wheel rotation", color: "orange"},
+    "if": {pretext: "If ", posttext: "", inputRequired: false, info: "Executes code blocks within it if condition is fulfilled", color: "purple"},
     "w": {pretext: "Repeat continuously", posttext: "", inputRequired: false, info: "Repeats code blocks within it infinitely", color: "blue"},
     "for": {pretext: "Repeat ", posttext: "times", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Repeats code blocks within it a set number of times", color: "blue"},
 }
@@ -398,8 +460,11 @@ function renderAddBlocks() {
             $(`#${key} .blockdetail`).attr('type', value.inputType);
             $(`#${key} .blockdetail`).attr('min', value.min);
             $(`#${key} .blockdetail`).attr('max', value.max);
-        } else {
+        } else if (key !== "if") {
             $(`#${key} .blockdetail`).addClass('d-none');
+        } else {
+            // key === if : true
+            $(`#${key} .blockdetail`).attr("placeholder", "");
         }
         $(`#${key} .blockinfo`).attr("data-bs-title", value.info);
         $(`#${key}`).addClass(value.color)
@@ -412,11 +477,11 @@ $(function() {
     renderAddBlocks();
     $("body").tooltip({ selector: '[data-bs-toggle=tooltip]' });
     verifySequence()
-    // try {
+    try {
         renderLocalStorage();
-    // } catch (error) {
-        // localStorage.setItem("codesequence", "");
-        // renderLocalStorage();
-    // }
+    } catch (error) {
+        localStorage.setItem("codesequence", "");
+        renderLocalStorage();
+    }
     renderLoopIndentation()
 })

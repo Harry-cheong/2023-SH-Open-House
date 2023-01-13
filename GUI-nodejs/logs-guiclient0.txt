@@ -8,3 +8,22 @@
 12012023-204436 [Local]      guiclient0 connected to MQTT
 12012023-204436 [Local]      guiclient0 subscribed to 'Comms'
 13012023-082015 [Local]      Node.JS running on port 5001
+13012023-155627 [Local]      Node.JS running on port 5001
+13012023-160257 [Local]      Node.JS running on port 5001
+13012023-160345 [Local]      Execution of code started
+13012023-160354 [Local]      Node.JS running on port 5001
+13012023-161637 [Local]      Node.JS running on port 5001
+13012023-161723 [Local]      Node.JS running on port 5001
+13012023-164443 [Local]      Node.JS running on port 5001
+13012023-173841 [Local]      Node.JS running on port 5001
+13012023-181621 [Local]      Execution of code started
+13012023-181624 [Local]      Node.JS running on port 5001
+13012023-181657 [Local]      Execution of code started
+13012023-181706 [Local]      Node.JS running on port 5001
+13012023-182442 [Local]      Node.JS running on port 5001
+13012023-182529 [Local]      Node.JS running on port 5001
+13012023-182559 [Local]      guiclient0 connected to MQTT
+13012023-182559 [Local]      guiclient0 subscribed to 'Comms'
+13012023-182716 [Local]      Node.JS running on port 5001
+13012023-182716 [Local]      guiclient0 connected to MQTT
+13012023-182716 [Local]      guiclient0 subscribed to 'Comms'
