@@ -18,22 +18,13 @@ rm = Motor(Port.B, Direction.COUNTERCLOCKWISE)
 wheelSize = 5.6 * umath.pi * 10 # Sizes: Small (5.6cm) Large (17.6cm)); in mm
 axleTrack = 7 * 10 # Distance bet the points where both wheels touch the gnd; in mm
 pair = DriveBase(lm, rm, wheelSize, axleTrack) 
-# pair.settings(): Using default values which are selected such that your robot drives at 40% of its maximum speed
-
-# Timer
-t = StopWatch() 
-t.reset()
-t.resume()
 
 # Simple Line Tracing
 def line_trace(deg, speed = 1500, threshold = 32, right_side = True):
     turn_rate = -500
-
     if right_side:
         turn_rate = 500
-
     pair.reset()
-
     while not abs(pair.angle()) > deg:
         # print(ls.reflection())
         if ls.reflection() > threshold:

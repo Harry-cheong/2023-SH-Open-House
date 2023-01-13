@@ -59,7 +59,7 @@ class autopybricks():
         # print(pyautogui.screenshot().getpixel((637, 220)))
         while True:
             if pyautogui.screenshot().getpixel((637, 220)) != (117, 186, 223):
-                pyautogui.press("F6") # runprogram if option is available
+                pyautogui.press("F6") # stopprogram if option is available
                 break
     
     def copyfrfile(self, path):
@@ -95,52 +95,44 @@ class autopybricks():
                     p_indent = c_indent
             time.sleep(0.08)
 
-    def erasefile(self, path):
-        infile = open(path, "r")
-        lines = infile.readlines()
-        iline = len(lines)
-
-        for line in lines:
-            for char in line:
-                pyautogui.press("Backspace")
-            # if iline != 1: pyautogui.press("Backspace")
-            iline -= 1
-        # pyautogui.press("enter")
-
     def initalise(self):
 
         # Go to text line
         pyautogui.click(457, 317) # Clicking on the space beside the first line
+        self.load()
 
         # Writing init file
         self.copyfrfile(self.PATH_TO_INIT)
-
-        # Resizing robot cmd txt box
-        for i in range(15):
-            pyautogui.press("enter")
-        
-        for i in range(16):
-            pyautogui.press("backspace")
-        pyautogui.press("enter")
 
     def runcmd(self):
         self.writecmd()
         self.runprogram()
 
+    def Isprogramrunning(self):
+        if pyautogui.screenshot().getpixel((558, 216)) == (117, 186, 223): # Option is unavailable
+            return True 
+        else:
+            return False
+            
     def exit(self):
-        # TODO A thread to check the run button when it is blanked out, the program is running. 
 
-        # Resetting
-        self.erasefile(self.PATH_TO_CMD)
+        # Deleting the file
+        pyautogui.click(341, 208)
+        self.load(timeout= 0.30)
+        pyautogui.click(1140, 598)
+        self.load()
         self.hidewindow()
 
     def writecmd(self):
 
         self.showwindow()
-
         self.load(timeout = 0.3)
+
         # Go to text line
-        pyautogui.click(454, 335) # Clicking on the right line
+        self.createnewfile()
+
+        # Writing init file
+        self.initalise()
 
         # Writing cmd file
         self.copyfrfile(self.PATH_TO_CMD)
@@ -172,12 +164,12 @@ class autopybricks():
 
     def showwindow(self):
         if not self.show_hide:
-            pyautogui.click(1330, 1047)
+            pyautogui.click(1350, 1047)
             self.show_hide = True
 
     def hidewindow(self):
         if self.show_hide:
-            pyautogui.click(1330, 1047)
+            pyautogui.click(1350, 1047)
             self.show_hide = False
     
     def reload(self):
@@ -189,12 +181,8 @@ class autopybricks():
     def exec(self):
         self.start()
 
-        # Creating a new file
+        # navigating the menu
         self.navigatetodocs()
-        self.createnewfile()
-
-        # Writing init file
-        self.initalise()
 
         # Connect to spikeprime
         self.connectspike()
@@ -205,7 +193,13 @@ class autopybricks():
 if __name__ == "__main__":
     pyb = autopybricks()
     pyb.writecmd()
-    # pyb.closewindow()
+    pyb.runprogram()
+    pyb.exit()
+
+    time.sleep(5)
     pyb.writecmd()
+    pyb.runprogram()
+    pyb.exit()
+    # pyb.closewindow()
     # pyb.closewindow()
     # pyb.showwindow()
