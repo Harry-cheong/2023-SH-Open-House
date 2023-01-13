@@ -166,16 +166,16 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
     margin: -3vh -2vw;
     border-left: 30px solid rgb(0, 175, 240);
     background-color: #0000;
-    height: 81px;
+    height: 80px;
     width: calc(2vw + 60px);
     width: -moz-calc(2vw + 60px);
 }
 .block.ifindent .indentbox {
     display: inline-block;
     margin: -3vh -2vw;
-    border-left: 30px solid rgb(155, 0, 255);
+    border-left: 30px solid rgb(180, 70, 255);
     background-color: #0000;
-    height: 81px;
+    height: 80px;
     width: calc(2vw + 60px);
     width: -moz-calc(2vw + 60px);
 }
@@ -183,8 +183,8 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
     display: inline-block;
     margin: -3vh -2vw;
     border-left: 30px solid rgb(0, 175, 240);
-    background: linear-gradient(90deg, rgb(155, 0, 255) 60%, #0000 60%);
-    height: 81px;
+    background: linear-gradient(90deg, rgb(180, 70, 255) 60%, #0000 60%);
+    height: 80px;
     width: calc(2vw + 60px);
     width: -moz-calc(2vw + 60px);
 }
@@ -207,13 +207,13 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
     background-color: rgb(0, 140, 205);
 }
 .block.purple {
-    background-color: rgb(155, 0, 255);
+    background-color: rgb(180, 70, 255);
 }
 .block.purple:hover {
-    background-color: rgb(130, 0, 230);
+    background-color: rgb(155, 45, 230);
 }
 .addblock.purple:active {
-    background-color: rgb(120, 0, 220);
+    background-color: rgb(145, 35, 220);
 }
 button:disabled, button[disabled] {
     cursor: not-allowed;

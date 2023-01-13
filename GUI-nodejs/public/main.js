@@ -19,18 +19,69 @@ function clearAllCode(clearMemory = true) {
 function pullCodeSequenceToString() {
     var finalText = ""
     var allBlocks = $("#codecontainer .block")
+    var loopIndentRemaining = 0;
+    var ifIndentRemaining = 0;
     for(var i = 0; i < allBlocks.length; i++) {
         if (allBlocks[i].id === "startblock") {
             continue;
         }
         var id = allBlocks[i].id.split('_')[1];
         var val = $(`#${allBlocks[i].id} input`).val()
-        finalText = finalText + id + val;
-        if (i !== allBlocks.length-1) {
-            finalText = finalText + ",";
+        if(id !== "w" && id !== "for" && id !== "if") {
+            if(id === "kb") {
+                finalText = finalText + id;
+                if(loopIndentRemaining === 0) {
+                    $("#errormodal .modal-body").text("Please place 'end loop' block within a loop")
+                    $("#errormodal").modal("show")
+                    return false;
+                }
+            } else {
+                finalText = finalText + id + val;
+            }
+            if(ifIndentRemaining === 1 && loopIndentRemaining > 1) {
+                finalText = finalText + "^";
+            } else if (ifIndentRemaining === 1 && loopIndentRemaining === 1) {
+                finalText = finalText + "^|";
+            } else if (ifIndentRemaining === 0 && loopIndentRemaining === 1) {
+                finalText = finalText + "|";
+            } else if (ifIndentRemaining === 1 && loopIndentRemaining === 0) {
+                finalText = finalText + "^";
+            } 
+            if (i !== allBlocks.length-1) {
+                finalText = finalText + ",";
+            }
+
+            if (ifIndentRemaining > 0 && loopIndentRemaining > 0) {
+                if(ifIndentRemaining === 1) {loopIndentRemaining -= 1;}
+                ifIndentRemaining -= 1;
+            } else if (loopIndentRemaining > 0) {
+                loopIndentRemaining -= 1;
+            } else if (ifIndentRemaining > 0) {
+                ifIndentRemaining -= 1;
+            }
+        } else if (id === "w" || id === "for") {
+            loopIndentRemaining = parseInt($(allBlocks[i]).attr("data-numblocks"))
+            if (id === "w") {
+                finalText = finalText + "w|"
+            } else {
+                finalText = finalText + "for|" + $(`#${allBlocks[i].id} input`).val() + ","
+            }
+        } else if (id === "if") {
+            ifIndentRemaining = parseInt($(allBlocks[i]).attr("data-numblocks"))
+            if (loopIndentRemaining > 0) {
+                finalText = finalText + "inf^" + $(`#${allBlocks[i].id} .selectvariable`).val() + $(`#${allBlocks[i].id} .selectcondition`).val() + $(`#${allBlocks[i].id} input`).val() + ","
+            } else {
+                finalText = finalText + "if^" + $(`#${allBlocks[i].id} .selectvariable`).val() + $(`#${allBlocks[i].id} .selectcondition`).val() + $(`#${allBlocks[i].id} input`).val() + ","
+            }
         }
+        
     }
-    $("#name").val(`[${finalText}]`)
+    if(loopIndentRemaining > 0 || ifIndentRemaining > 0) {
+        $("#errormodal .modal-body").text("Please do not leave loops/conditionals that require blocks. Press '-' button on loop/conditional if no more blocks are needed.")
+        $("#errormodal").modal("show")
+        return false;
+    }
+    return finalText;
 }
 function updateLocalStorage() {
     var finalText = ""
@@ -41,8 +92,11 @@ function updateLocalStorage() {
         }
         var id = allBlocks[i].id.split('_')[1];
         var val = $(`#${allBlocks[i].id} input`).val()
-        if (id === "w" || id === "for" || id === "if") {
+        if (id === "w" || id === "for") {
             finalText = finalText + id + "_" + val + "_" + $(allBlocks[i]).attr("data-numblocks");
+        } else if (id === "if") {
+            console.log(`${$(`#${allBlocks[i].id} .selectvariable`).val()} [#${allBlocks[i].id} .selectvariable]`)
+            finalText = finalText + id + "_" + val + "_" + $(allBlocks[i]).attr("data-numblocks") + "_" + $(`#${allBlocks[i].id} .selectvariable`).val() + "_" + $(`#${allBlocks[i].id} .selectcondition`).val();
         } else {
             finalText = finalText + id + "_" + val;
         }
@@ -71,22 +125,31 @@ function renderLocalStorage() {
         if(key === "w" || key === "for" || key === "if") {
             $(`#${window.codeCounter-1}_${key}`).attr("data-numblocks", parseInt(seq[i].split("_")[2]))
         }
+        if (key === "if") {
+            console.log()
+            $(`#${window.codeCounter-1}_${key} .selectvariable`).val(seq[i].split("_")[3])
+            $(`#${window.codeCounter-1}_${key} .selectcondition`).val(seq[i].split("_")[4])
+        }
     }}
 }
 
 function runCode() {
-    pullCodeSequenceToString();
-    updateLocalStorage()
-    updateModal("Sending");
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            reloadToCompletion()
-        }
-    };
-    xhttp.open("POST", "/formdata", true);
-    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhttp.send(`cmd=${$("#name").val()}`);    
+    var seq = pullCodeSequenceToString();
+    if (!!seq)  {
+        updateLocalStorage()
+        updateModal("Sending");
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                reloadToCompletion()
+            }
+        };
+        xhttp.open("POST", "/formdata", true);
+        xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhttp.send(`cmd=${seq}`);  
+    }  else {
+
+    }
 }
 
 function updateModal(state) {
@@ -272,7 +335,7 @@ function renderLoopIndentation(revertIfError = true) {
                     $(allBlocks[i]).addClass("loopindent");
                     $(allBlocks[i]).removeClass("ifindent");
                     $(allBlocks[i]).removeClass("ifloopindent");
-                    loopIndentRemaining -= 1;
+                    // loopIndentRemaining -= 1;
                 } else {
                     $(allBlocks[i]).removeClass("loopindent");
                     $(allBlocks[i]).removeClass("ifindent");
@@ -284,7 +347,10 @@ function renderLoopIndentation(revertIfError = true) {
                 $(allBlocks[i]).removeClass("loopindent");
                 $(allBlocks[i]).removeClass("ifindent");
                 $(allBlocks[i]).addClass("ifloopindent");
-                loopIndentRemaining -= 1;
+                if(ifIndentRemaining === 1) {
+                    loopIndentRemaining -= 1;
+                }
+                // loopIndentRemaining -= 1;
                 ifIndentRemaining -= 1;
             } else if (loopIndentRemaining > 0) {
                 $(allBlocks[i]).addClass("loopindent");
@@ -424,6 +490,12 @@ function addToCode(key) {
         <option value=">=">≥</option>
         <option value=">">&#62;</option>
         </select>`)
+        condition.on("change", function() {
+            updateLocalStorage();
+        })
+        variable.on("change", function() {
+            updateLocalStorage();
+        })
         $(`#${window.codeCounter}_${key} input`).before(condition)
         $(`#${window.codeCounter}_${key} .selectcondition`).before(variable)
     }
@@ -442,6 +514,7 @@ const allBlocks = {
     "if": {pretext: "If ", posttext: "", inputRequired: false, info: "Executes code blocks within it if condition is fulfilled", color: "purple"},
     "w": {pretext: "Repeat continuously", posttext: "", inputRequired: false, info: "Repeats code blocks within it infinitely", color: "blue"},
     "for": {pretext: "Repeat ", posttext: "times", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Repeats code blocks within it a set number of times", color: "blue"},
+    "kb": {pretext: "End loop", posttext: "", inputRequired: false, info: "Ends the loop", color: "orange"},
 }
 
 function renderAddBlocks() {
