@@ -17,7 +17,7 @@ function clearAllCode(clearMemory = true) {
 }
 
 function pullCodeSequenceToString() {
-    var finalText = ""
+    var finalText = "["
     var allBlocks = $("#codecontainer .block")
     var loopIndentRemaining = 0;
     var ifIndentRemaining = 0;
@@ -76,6 +76,7 @@ function pullCodeSequenceToString() {
         }
         
     }
+    finalText = finalText + "]"
     if(loopIndentRemaining > 0 || ifIndentRemaining > 0) {
         $("#errormodal .modal-body").text("Please do not leave loops/conditionals that require blocks. Press '-' button on loop/conditional if no more blocks are needed.")
         $("#errormodal").modal("show")
