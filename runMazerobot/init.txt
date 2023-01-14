@@ -21,13 +21,13 @@ axleTrack = 7 * 10 # Distance bet the points where both wheels touch the gnd; in
 pair = DriveBase(lm, rm, wheelSize, axleTrack) 
 
 # Simple Line Tracing
-def line_trace(deg, speed = 1500, threshold = 32, right_side = True):
-    turn_rate = -500
+def line_trace(deg, speed = 300, threshold = 50, right_side = True):
+    turn_rate = -300
     if right_side:
-        turn_rate = 500
+        turn_rate = 300
     pair.reset()
     while not abs(pair.angle()) > deg:
-        # print(ls.reflection())
+        print(ls.reflection())
         if ls.reflection() > threshold:
             pair.drive(speed, turn_rate)
         elif ls.reflection() < threshold:

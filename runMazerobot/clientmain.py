@@ -1,7 +1,5 @@
 import paho.mqtt.client as mqtt
-import time
 import sys
-import pybricks
 from buildprogram import Builder
 from runpybricks import autopybricks
 import threading
@@ -77,7 +75,7 @@ class Robot():
                     self.publish_status()
                     # print("status received")
             
-            elif self.pyb_isprogramrunning and msg == "Interrupt execution":
+            elif msg == "Interrupt execution":
                 self.pyb.stopprogram()
 
 
@@ -164,8 +162,12 @@ class client_ev3():
         if not status == 0: print(f"Failed to send {message} to topic {self.topic}")
     
 if __name__ == "__main__":
+
     # Logging 
-    logging.basicConfig(filename = r"C:\Users\harry\Desktop\SH Robotics\2023-SH-Open-House\runMazerobot\logs.txt", filemode = "a", format='%(asctime)s - %(message)s',level=logging.INFO)
+    file_handler = logging.FileHandler(filename=r"C:\Users\harry\Desktop\SH Robotics\2023-SH-Open-House\runMazerobot\logs.txt",mode="a")
+    stdout_handler = logging.StreamHandler(stream=sys.stdout)
+    handlers = [file_handler, stdout_handler]
+    logging.basicConfig(format='%(asctime)s - %(message)s',level=logging.INFO, handlers=handlers)
 
     # Instances 
     cmd = Robot()
@@ -179,4 +181,4 @@ if __name__ == "__main__":
     ev3.client.loop_forever()
 
     # End Log 
-    logging.info("[Local] Session Ended \n")
+    logging.info("[Local] Session Ended \n\n")

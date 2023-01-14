@@ -1,2 +1,6 @@
-pair.straight(1000)
+pair.straight(300)
+pair.turn(-331)
+pair.turn(1104)
+pair.turn(331)
+pair.straight(300)
 pair.turn(-331)

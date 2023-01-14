@@ -58,6 +58,7 @@ class Builder():
                 statement[1], statement= self.findifelse(statement[1], statement, ifkey = "inf", elifkey = "enf", elsekey = "enl")
  
                 for cmd in statement:
+                    print(cmd)
                     icmd = statement.index(cmd)
 
                     # parsing gen cmds inside nested loops into indv cmds
@@ -114,25 +115,28 @@ class Builder():
         comp = condition[2 : condition.find(char)]
 
         # print(ssor, value, comp)
-        if ssor == "us":
+        if ssor == "ud":
             # print(f"us.distance() {comp} {value}")
             return (f"us.distance() {comp} {value}")
         elif ssor == "lr":
             # print(f"ls.reflections() {comp} {value}")
-            return (f"ls.reflections() {comp} {value}")
+            return (f"ls.reflection() {comp} {value}")
 
 
 
     def buildlogiccmd(self, command):
-
+        
         if type(command) is not list:
             print(f"{command} Invalid")
 
         if command[0] == "if" or command[0] == "inf":
+            # print(command)
+            self.buildcondition(command[1])
             self.outFile.writelines(f"{self.lstr}if " + self.buildcondition(command[1]) + ":\n")
             self.cglobalindent(1)
 
             for i in range(2, len(command)):
+                # print(command[i])
                 self.buildgencmds(command[i])
             self.cglobalindent(-1)
 
@@ -157,7 +161,8 @@ class Builder():
             self.cglobalindent(1)
             
             for i in range(1, len(command)):
-                if type(command[i]) is list: self.buildlogiccmd(command[i])
+                if type(command[i]) is list: 
+                    self.buildlogiccmd(command[i])
                 else: self.buildgencmds(command[i])
             self.cglobalindent(-1)
         
@@ -166,7 +171,10 @@ class Builder():
             self.cglobalindent(1)
 
             for i in range(2, len(command)):
-                self.buildgencmds(command[i])
+                if type(command[i]) is list: 
+                    self.buildlogiccmd(command[i])
+                else: self.buildgencmds(command[i])
+
             self.cglobalindent(-1)
 
     def buildgencmds(self, command):
@@ -230,7 +238,7 @@ class Builder():
         # Finding while, if, elif, else statements
         print("\n Commands: " + commands + "\n") # the original cmds passed into the fn
         commands, statement_list, = self.findifelse(commands, statement_list)
-        commands, statement_list, status = self.find("w", "|", commands, statement_list, nested = True)
+        commands, statement_list, status = self.find("w", "|", commands, statement_list, nested = False)
         commands, statement_list, status = self.find("for", "|", commands, statement_list, nested = False)
         #TODO Nested statements
 
@@ -271,7 +279,8 @@ class Builder():
         self.outFile.close()
 
         # Logging
-        logging.info(f"[Builder] Built {_commands}")
+        try: logging.info(f"[Builder] Built {_commands}")
+        except: pass
         
     # Basic Movements
     def r(self, turn_angle):
@@ -303,5 +312,5 @@ class Builder():
 
 if __name__ == "__main__":
     b = Builder()
-    b.buildcmds("[f1000,r90]") # Test Case
+    b.buildcmds("[w|inf^lr<50,r10^,inf^lr<100,l10^|]") # Test Case
     # print("if " + b.buildcondition("us>300") + ": \n")

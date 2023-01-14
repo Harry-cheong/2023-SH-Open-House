@@ -1,22 +1,1001 @@
-2023-01-13 20:20:17,736 - [Pybricks] Loaded https://code.pybricks.com/
-2023-01-13 20:20:24,271 - [Pybricks] Hub Found
-2023-01-13 20:20:26,562 - [Pybricks] File "MazeRunner" Created
-2023-01-13 20:20:27,543 - [Pybricks] Executed File "MazeRunner"
-2023-01-13 20:20:39,248 - [Pybricks] File "MazeRunner" Created
-2023-01-13 20:20:40,216 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 08:24:06,391 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 08:24:09,841 - [Pybricks] Connecting to Hub...
+2023-01-14 08:24:16,209 - [Pybricks] Connecting to Hub...
+2023-01-14 08:24:18,464 - [Pybricks] Hub Connected.
+2023-01-14 08:24:18,606 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 08:24:18,665 - [Mazerunner] Status: Free
+2023-01-14 08:24:25,766 - [guiclient0] Run [t100,if^lr==10,t100^,w|f100,inf^ud>=20,t100,kb^|,f100,for|5,l100|]
+2023-01-14 08:24:25,782 - [Mazerunner] Received
+2023-01-14 08:59:03,902 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:00:04,110 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:00:07,207 - [Pybricks] Connecting to Hub...
+2023-01-14 09:00:09,468 - [Pybricks] Hub Connected.
+2023-01-14 09:00:09,641 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 09:00:09,723 - [Mazerunner] Status: Free
+2023-01-14 09:01:28,952 - [guiclient1] Run [for|5,f100,r90|]
+2023-01-14 09:01:28,960 - [Builder] Built [for|5,f100,r90|]
+2023-01-14 09:01:28,976 - [Mazerunner] Received
+2023-01-14 09:01:30,848 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:01:31,866 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:01:40,128 - [Mazerunner] Status: Free
+2023-01-14 09:02:03,460 - [guiclient1] Run [for|5,f100,r90|]
+2023-01-14 09:02:03,469 - [Builder] Built [for|5,f100,r90|]
+2023-01-14 09:02:03,490 - [Mazerunner] Received
+2023-01-14 09:02:05,245 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:02:06,290 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:02:08,894 - [guiclient1] Interrupt execution
+2023-01-14 09:02:09,151 - [Pybricks] Program Interrupted
+2023-01-14 09:02:10,073 - [Mazerunner] Status: Free
+2023-01-14 09:02:49,235 - [guiclient1] Run [for|5,f100,r90|]
+2023-01-14 09:02:49,236 - [Builder] Built [for|5,f100,r90|]
+2023-01-14 09:02:49,252 - [Mazerunner] Received
+2023-01-14 09:02:50,534 - [guiclient1] Interrupt execution
+2023-01-14 09:02:50,976 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:02:51,962 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:02:59,752 - [Mazerunner] Status: Free
+2023-01-14 09:03:39,053 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:03:54,970 - [Pybricks] Connecting to Hub...
+2023-01-14 09:03:57,262 - [Pybricks] Hub Connected.
+2023-01-14 09:03:57,403 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 09:03:57,489 - [Mazerunner] Status: Free
+2023-01-14 09:04:01,496 - [guiclient0] Run [r100,if^lr<100,t100^]
+2023-01-14 09:04:01,502 - [Builder] Built [r100,if^lr<100,t100^]
+2023-01-14 09:04:01,543 - [Mazerunner] Received
+2023-01-14 09:04:02,453 - [guiclient0] Interrupt execution
+2023-01-14 09:04:02,606 - [Pybricks] Program Interrupted
+2023-01-14 09:04:03,386 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:04:04,420 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:04:07,191 - [Mazerunner] Status: Free
+2023-01-14 09:04:44,989 - [guiclient0] Run [w|f100,inf^lr<=30,kb^|]
+2023-01-14 09:04:45,005 - [Builder] Built [w|f100,inf^lr<=30,kb^|]
+2023-01-14 09:04:45,027 - [Mazerunner] Received
+2023-01-14 09:04:46,777 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:04:47,820 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:04:49,935 - [Mazerunner] Status: Free
+2023-01-14 09:05:54,358 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:05:59,974 - [Pybricks] Connecting to Hub...
+2023-01-14 09:06:02,244 - [Pybricks] Hub Connected.
+2023-01-14 09:06:02,394 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 09:06:02,490 - [Mazerunner] Status: Free
+2023-01-14 09:06:17,749 - [guiclient0] Run [w|f100,inf^lr<=30,kb^|]
+2023-01-14 09:06:17,763 - [Builder] Built [w|f100,inf^lr<=30,kb^|]
+2023-01-14 09:06:17,780 - [Mazerunner] Received
+2023-01-14 09:06:19,633 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:06:20,701 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:06:35,999 - [Mazerunner] Status: Free
+2023-01-14 09:07:00,624 - [guiclient1] Run [t1000]
+2023-01-14 09:07:00,641 - [Builder] Built [t1000]
+2023-01-14 09:07:00,679 - [Mazerunner] Received
+2023-01-14 09:07:02,398 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:07:03,412 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:07:11,668 - [guiclient1] Interrupt execution
+2023-01-14 09:07:11,903 - [Pybricks] Program Interrupted
+2023-01-14 09:07:12,823 - [Mazerunner] Status: Free
+2023-01-14 09:08:16,192 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:08:19,594 - [Pybricks] Connecting to Hub...
+2023-01-14 09:08:21,850 - [Pybricks] Hub Connected.
+2023-01-14 09:08:21,994 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 09:08:22,059 - [Mazerunner] Status: Free
+2023-01-14 09:08:33,029 - [guiclient1] Run [t1000]
+2023-01-14 09:08:33,035 - [Builder] Built [t1000]
+2023-01-14 09:08:33,038 - [Mazerunner] Received
+2023-01-14 09:08:34,951 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:08:35,969 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:08:39,980 - [Mazerunner] Status: Free
+2023-01-14 09:08:46,663 - [guiclient1] Run [t1000]
+2023-01-14 09:08:46,674 - [Builder] Built [t1000]
+2023-01-14 09:08:46,719 - [Mazerunner] Received
+2023-01-14 09:08:48,439 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:08:49,469 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:08:50,978 - [Mazerunner] Status: Free
+2023-01-14 09:10:21,016 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:10:29,832 - [Pybricks] Connecting to Hub...
+2023-01-14 09:10:36,216 - [Pybricks] Connecting to Hub...
+2023-01-14 09:10:42,748 - [Pybricks] Connecting to Hub...
+2023-01-14 09:10:49,281 - [Pybricks] Connecting to Hub...
+2023-01-14 09:10:51,589 - [Pybricks] Hub Connected.
+2023-01-14 09:10:51,778 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 09:10:51,859 - [Mazerunner] Status: Free
+2023-01-14 09:11:40,610 - [guiclient1] Run [t1000]
+2023-01-14 09:11:40,625 - [Builder] Built [t1000]
+2023-01-14 09:11:40,634 - [Mazerunner] Received
+2023-01-14 09:11:42,548 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:11:43,578 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:11:48,133 - [Mazerunner] Status: Free
+2023-01-14 09:11:51,720 - [guiclient1] Run [t1000]
+2023-01-14 09:11:51,739 - [Builder] Built [t1000]
+2023-01-14 09:11:51,748 - [Mazerunner] Received
+2023-01-14 09:11:53,518 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:11:54,541 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:11:59,117 - [Mazerunner] Status: Free
+2023-01-14 09:12:37,756 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:12:51,636 - [Pybricks] Connecting to Hub...
+2023-01-14 09:12:53,911 - [Pybricks] Hub Connected.
+2023-01-14 09:12:54,046 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 09:12:54,127 - [Mazerunner] Status: Free
+2023-01-14 09:12:57,611 - [guiclient1] Run [t1000]
+2023-01-14 09:12:57,622 - [Builder] Built [t1000]
+2023-01-14 09:12:57,625 - [Mazerunner] Received
+2023-01-14 09:12:59,525 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:13:00,525 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:13:05,830 - [Mazerunner] Status: Free
+2023-01-14 09:13:10,328 - [guiclient1] Run [t1000]
+2023-01-14 09:13:10,342 - [Builder] Built [t1000]
+2023-01-14 09:13:10,352 - [Mazerunner] Received
+2023-01-14 09:13:12,159 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:13:13,192 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:13:14,801 - [Mazerunner] Status: Free
+2023-01-14 09:13:21,523 - [guiclient1] Run [t1000]
+2023-01-14 09:13:21,535 - [Builder] Built [t1000]
+2023-01-14 09:13:21,548 - [Mazerunner] Received
+2023-01-14 09:13:23,314 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:13:24,348 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:13:29,033 - [Mazerunner] Status: Free
+2023-01-14 09:14:49,138 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:14:52,185 - [Pybricks] Connecting to Hub...
+2023-01-14 09:14:54,456 - [Pybricks] Hub Connected.
+2023-01-14 09:14:54,604 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 09:14:54,669 - [Mazerunner] Status: Free
+2023-01-14 09:15:27,389 - [guiclient1] Run [t1000]
+2023-01-14 09:15:27,405 - [Builder] Built [t1000]
+2023-01-14 09:15:27,413 - [Mazerunner] Received
+2023-01-14 09:15:29,291 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:15:30,339 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:15:35,481 - [Mazerunner] Status: Free
+2023-01-14 09:16:17,986 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:16:33,481 - [Pybricks] Connecting to Hub...
+2023-01-14 09:16:35,788 - [Pybricks] Hub Connected.
+2023-01-14 09:16:35,955 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 09:16:36,022 - [Mazerunner] Status: Free
+2023-01-14 09:16:41,552 - [guiclient1] Run [t1000]
+2023-01-14 09:16:41,566 - [Builder] Built [t1000]
+2023-01-14 09:16:41,573 - [Mazerunner] Received
+2023-01-14 09:16:43,482 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:16:44,507 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:16:48,641 - [Mazerunner] Status: Free
+2023-01-14 09:17:00,064 - [guiclient1] Run [t99999]
+2023-01-14 09:17:00,069 - [Builder] Built [t99999]
+2023-01-14 09:17:00,083 - [Mazerunner] Received
+2023-01-14 09:17:01,866 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:17:02,881 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:17:39,183 - [guiclient1] Interrupt execution
+2023-01-14 09:17:52,226 - [Mazerunner] Status: Free
+2023-01-14 09:18:28,678 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:18:42,555 - [Pybricks] Connecting to Hub...
+2023-01-14 09:18:48,901 - [Pybricks] Connecting to Hub...
+2023-01-14 09:18:55,302 - [Pybricks] Connecting to Hub...
+2023-01-14 09:19:01,733 - [Pybricks] Connecting to Hub...
+2023-01-14 09:19:08,379 - [Pybricks] Connecting to Hub...
+2023-01-14 09:19:15,048 - [Pybricks] Connecting to Hub...
+2023-01-14 09:19:22,312 - [Pybricks] Connecting to Hub...
+2023-01-14 09:19:28,961 - [Pybricks] Connecting to Hub...
+2023-01-14 09:19:36,293 - [Pybricks] Connecting to Hub...
+2023-01-14 09:20:17,850 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:20:20,612 - [Pybricks] Connecting to Hub...
+2023-01-14 09:20:28,205 - [Pybricks] Connecting to Hub...
+2023-01-14 09:20:35,580 - [Pybricks] Connecting to Hub...
+2023-01-14 09:20:43,112 - [Pybricks] Connecting to Hub...
+2023-01-14 09:20:50,459 - [Pybricks] Connecting to Hub...
+2023-01-14 09:20:57,828 - [Pybricks] Connecting to Hub...
+2023-01-14 09:21:05,211 - [Pybricks] Connecting to Hub...
+2023-01-14 09:21:12,630 - [Pybricks] Connecting to Hub...
+2023-01-14 09:22:31,518 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:22:34,362 - [Pybricks] Connecting to Hub...
+2023-01-14 09:22:41,607 - [Pybricks] Connecting to Hub...
+2023-01-14 09:22:48,895 - [Pybricks] Connecting to Hub...
+2023-01-14 09:23:26,160 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:23:29,125 - [Pybricks] Connecting to Hub...
+2023-01-14 09:23:32,349 - [Pybricks] Hub Connected.
+2023-01-14 09:23:32,496 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 09:23:32,574 - [Mazerunner] Status: Free
+2023-01-14 09:23:43,669 - [guiclient1] Run [t10000]
+2023-01-14 09:23:43,680 - [Builder] Built [t10000]
+2023-01-14 09:23:43,700 - [Mazerunner] Received
+2023-01-14 09:23:45,570 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:23:46,630 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:24:03,784 - [Mazerunner] Status: Free
+2023-01-14 09:24:49,908 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:25:04,789 - [Pybricks] Connecting to Hub...
+2023-01-14 09:25:08,014 - [Pybricks] Hub Connected.
+2023-01-14 09:25:08,180 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 09:25:08,240 - [Mazerunner] Status: Free
+2023-01-14 09:26:00,371 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:26:04,293 - [Pybricks] Connecting to Hub...
+2023-01-14 09:26:07,514 - [Pybricks] Hub Connected.
+2023-01-14 09:26:07,711 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 09:26:07,900 - [Mazerunner] Status: Free
+2023-01-14 09:26:14,071 - [guiclient1] Run [t10000]
+2023-01-14 09:26:14,076 - [Builder] Built [t10000]
+2023-01-14 09:26:14,085 - [Mazerunner] Received
+2023-01-14 09:26:15,953 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:26:23,065 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:26:24,509 - [Mazerunner] Status: Free
+2023-01-14 09:26:44,162 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:26:47,031 - [Pybricks] Connecting to Hub...
+2023-01-14 09:26:50,252 - [Pybricks] Hub Connected.
+2023-01-14 09:26:50,401 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 09:26:50,489 - [Mazerunner] Status: Free
+2023-01-14 09:26:58,681 - [guiclient1] Run [t10000]
+2023-01-14 09:26:58,698 - [Builder] Built [t10000]
+2023-01-14 09:26:58,710 - [Mazerunner] Received
+2023-01-14 09:27:00,599 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:27:01,619 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:27:03,593 - [Mazerunner] Status: Free
+2023-01-14 09:27:32,996 - [guiclient1] Run [t10000]
+2023-01-14 09:27:33,003 - [Builder] Built [t10000]
+2023-01-14 09:27:33,055 - [Mazerunner] Received
+2023-01-14 09:27:34,830 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:27:35,863 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:27:47,201 - [guiclient1] Interrupt execution
+2023-01-14 09:27:47,401 - [Pybricks] Program Interrupted
+2023-01-14 09:27:48,388 - [Mazerunner] Status: Free
+2023-01-14 09:29:01,706 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:29:13,016 - [Pybricks] Connecting to Hub...
+2023-01-14 09:29:16,235 - [Pybricks] Hub Connected.
+2023-01-14 09:29:16,384 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 09:29:16,470 - [Mazerunner] Status: Free
+2023-01-14 09:29:20,343 - [guiclient1] Run [t10000]
+2023-01-14 09:29:20,349 - [Builder] Built [t10000]
+2023-01-14 09:29:20,373 - [Mazerunner] Received
+2023-01-14 09:29:22,276 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:29:23,303 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:29:45,741 - [guiclient1] Interrupt execution
+2023-01-14 09:29:45,969 - [Pybricks] Program Interrupted
+2023-01-14 09:29:46,940 - [Mazerunner] Status: Free
+2023-01-14 09:33:53,442 - [guiclient1] Run [w|inf^lr<50,r10^,inf^lr<100,l100^|]
+2023-01-14 09:33:53,444 - [Builder] Built [w|inf^lr<50,r10^,inf^lr<100,l100^|]
+2023-01-14 09:33:53,458 - [Mazerunner] Received
+2023-01-14 09:33:55,203 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:33:56,192 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:34:17,239 - [guiclient1] Interrupt execution
+2023-01-14 09:34:17,441 - [Pybricks] Program Interrupted
+2023-01-14 09:34:18,347 - [Mazerunner] Status: Free
+2023-01-14 09:35:01,577 - [guiclient1] Run [w|inf^lr<50,r10^,inf^lr<100,l10^|]
+2023-01-14 09:35:01,590 - [Builder] Built [w|inf^lr<50,r10^,inf^lr<100,l10^|]
+2023-01-14 09:35:01,622 - [Mazerunner] Received
+2023-01-14 09:35:03,347 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:35:04,371 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:35:23,863 - [Mazerunner] Status: Free
+2023-01-14 09:50:01,093 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 09:50:27,576 - [Pybricks] Connecting to Hub...
+2023-01-14 09:50:30,795 - [Pybricks] Hub Connected.
+2023-01-14 09:50:30,952 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 09:50:31,023 - [Mazerunner] Status: Free
+2023-01-14 09:50:57,773 - [guiclient0] Run [l360,w|f360|]
+2023-01-14 09:50:57,795 - [Builder] Built [l360,w|f360|]
+2023-01-14 09:50:57,803 - [Mazerunner] Received
+2023-01-14 09:50:59,761 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:51:00,874 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:51:11,891 - [guiclient0] Interrupt execution
+2023-01-14 09:51:12,144 - [Pybricks] Program Interrupted
+2023-01-14 09:51:13,143 - [Mazerunner] Status: Free
+2023-01-14 09:51:42,856 - [guiclient0] Run [l360,f100,r90]
+2023-01-14 09:51:42,874 - [Builder] Built [l360,f100,r90]
+2023-01-14 09:51:42,881 - [Mazerunner] Received
+2023-01-14 09:51:44,737 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:51:45,837 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:51:47,613 - [Mazerunner] Status: Free
+2023-01-14 09:52:01,672 - [guiclient0] Run [l360,f10000,r90]
+2023-01-14 09:52:01,692 - [Builder] Built [l360,f10000,r90]
+2023-01-14 09:52:01,714 - [Mazerunner] Received
+2023-01-14 09:52:03,523 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:52:04,610 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:52:13,872 - [guiclient0] Interrupt execution
+2023-01-14 09:52:14,187 - [Pybricks] Program Interrupted
+2023-01-14 09:52:15,196 - [Mazerunner] Status: Free
+2023-01-14 09:52:26,559 - [guiclient0] Run [l360,f1000,r90]
+2023-01-14 09:52:26,570 - [Builder] Built [l360,f1000,r90]
+2023-01-14 09:52:26,575 - [Mazerunner] Received
+2023-01-14 09:52:28,408 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:52:29,511 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:52:36,222 - [Mazerunner] Status: Free
+2023-01-14 09:53:02,977 - [guiclient0] Run [l360,f1000,r90,f500]
+2023-01-14 09:53:02,997 - [Builder] Built [l360,f1000,r90,f500]
+2023-01-14 09:53:03,000 - [Mazerunner] Received
+2023-01-14 09:53:04,855 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:53:05,909 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:53:07,368 - [Mazerunner] Status: Free
+2023-01-14 09:53:13,344 - [guiclient0] Run [l360,f1000,r90,f500]
+2023-01-14 09:53:13,366 - [Builder] Built [l360,f1000,r90,f500]
+2023-01-14 09:53:13,379 - [Mazerunner] Received
+2023-01-14 09:53:15,195 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:53:16,316 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:53:24,069 - [Mazerunner] Status: Free
+2023-01-14 09:54:09,357 - [guiclient0] Run [l360,f1000,r90,f500,l90,f750]
+2023-01-14 09:54:09,381 - [Builder] Built [l360,f1000,r90,f500,l90,f750]
+2023-01-14 09:54:09,390 - [Mazerunner] Received
+2023-01-14 09:54:11,228 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:54:12,305 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:54:22,645 - [Mazerunner] Status: Free
+2023-01-14 09:54:35,676 - [guiclient0] Run [l360,f1000,r90,f500,l90,f690]
+2023-01-14 09:54:35,694 - [Builder] Built [l360,f1000,r90,f500,l90,f690]
+2023-01-14 09:54:35,699 - [Mazerunner] Received
+2023-01-14 09:54:37,534 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:54:38,645 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:54:48,562 - [Mazerunner] Status: Free
+2023-01-14 09:55:16,951 - [guiclient0] Run [l360,f1000,r90,f490,l90,f650]
+2023-01-14 09:55:16,965 - [Builder] Built [l360,f1000,r90,f490,l90,f650]
+2023-01-14 09:55:16,976 - [Mazerunner] Received
+2023-01-14 09:55:18,830 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:55:19,945 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:55:29,953 - [Mazerunner] Status: Free
+2023-01-14 09:56:16,744 - [guiclient0] Run [l360,f950,r90,f490,l90,f650,r90,f650]
+2023-01-14 09:56:16,769 - [Builder] Built [l360,f950,r90,f490,l90,f650,r90,f650]
+2023-01-14 09:56:16,774 - [Mazerunner] Received
+2023-01-14 09:56:18,625 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:56:19,726 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:56:21,458 - [Mazerunner] Status: Free
+2023-01-14 09:57:04,874 - [guiclient0] Run [l360,f1050,r90,f490,l90,f650,r90,f600]
+2023-01-14 09:57:04,894 - [Builder] Built [l360,f1050,r90,f490,l90,f650,r90,f600]
+2023-01-14 09:57:04,904 - [Mazerunner] Received
+2023-01-14 09:57:06,691 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:57:07,800 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:57:09,299 - [Mazerunner] Status: Free
+2023-01-14 09:57:15,738 - [guiclient0] Run [l360,f1050,r90,f490,l90,f650,r90,f600]
+2023-01-14 09:57:15,750 - [Builder] Built [l360,f1050,r90,f490,l90,f650,r90,f600]
+2023-01-14 09:57:15,756 - [Mazerunner] Received
+2023-01-14 09:57:17,579 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:57:18,656 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:57:30,845 - [Mazerunner] Status: Free
+2023-01-14 09:58:18,801 - [guiclient0] Run [l360,f1050,r90,f490,l90,f650,r90,f600,r90,f1050]
+2023-01-14 09:58:18,827 - [Builder] Built [l360,f1050,r90,f490,l90,f650,r90,f600,r90,f1050]
+2023-01-14 09:58:18,834 - [Mazerunner] Received
+2023-01-14 09:58:20,698 - [Pybricks] File "MazeRunner" Created
+2023-01-14 09:58:21,785 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 09:58:37,013 - [Mazerunner] Status: Free
+2023-01-14 10:00:08,674 - [guiclient0] Run [l360,f1050,r90,f490,l90,f650,r90,f600,r90,f1050,l90,f569]
+2023-01-14 10:00:08,693 - [Builder] Built [l360,f1050,r90,f490,l90,f650,r90,f600,r90,f1050,l90,f569]
+2023-01-14 10:00:08,705 - [Mazerunner] Received
+2023-01-14 10:00:10,438 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:00:11,489 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:00:28,419 - [Mazerunner] Status: Free
+2023-01-14 10:02:13,306 - [guiclient0] Run [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1050,l90,f569,l93,f1600]
+2023-01-14 10:02:13,314 - [Builder] Built [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1050,l90,f569,l93,f1600]
+2023-01-14 10:02:13,326 - [Mazerunner] Received
+2023-01-14 10:02:15,111 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:02:15,665 - [guiclient0] Interrupt execution
+2023-01-14 10:02:16,463 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:02:17,932 - [Pybricks] Program Interrupted
+2023-01-14 10:02:18,980 - [Mazerunner] Status: Free
+2023-01-14 10:02:24,777 - [guiclient0] Run [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1050,l90,f569,l93,f1600]
+2023-01-14 10:02:24,780 - [Builder] Built [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1050,l90,f569,l93,f1600]
+2023-01-14 10:02:24,825 - [Mazerunner] Received
+2023-01-14 10:02:26,496 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:02:27,485 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:02:29,302 - [Mazerunner] Status: Free
+2023-01-14 10:03:41,875 - [guiclient0] Run [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1050,l90,f600,l93,f1650,r90,b550]
+2023-01-14 10:03:41,889 - [Builder] Built [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1050,l90,f600,l93,f1650,r90,b550]
+2023-01-14 10:03:41,900 - [Mazerunner] Received
+2023-01-14 10:03:43,681 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:03:44,744 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:04:08,012 - [Mazerunner] Status: Free
+2023-01-14 10:04:59,284 - [guiclient0] Run [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1050,l90,f600,l93,f1650,r90,b550,r270,f300]
+2023-01-14 10:04:59,302 - [Builder] Built [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1050,l90,f600,l93,f1650,r90,b550,r270,f300]
+2023-01-14 10:04:59,313 - [Mazerunner] Received
+2023-01-14 10:05:01,102 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:05:02,154 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:05:15,303 - [guiclient0] Interrupt execution
+2023-01-14 10:05:15,544 - [Pybricks] Program Interrupted
+2023-01-14 10:05:16,401 - [Mazerunner] Status: Free
+2023-01-14 10:05:25,501 - [guiclient0] Run [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1050,l90,f600,l93,f1650,r90,b550,r270,f300]
+2023-01-14 10:05:25,522 - [Builder] Built [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1050,l90,f600,l93,f1650,r90,b550,r270,f300]
+2023-01-14 10:05:25,528 - [Mazerunner] Received
+2023-01-14 10:05:27,305 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:05:28,331 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:05:36,998 - [Mazerunner] Status: Free
+2023-01-14 10:05:44,965 - [guiclient0] Run [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1050,l90,f600,l93,f1650,r90,b550,r270,f300]
+2023-01-14 10:05:44,978 - [Builder] Built [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1050,l90,f600,l93,f1650,r90,b550,r270,f300]
+2023-01-14 10:05:44,991 - [Mazerunner] Received
+2023-01-14 10:05:46,792 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:05:47,858 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:05:55,903 - [Mazerunner] Status: Free
+2023-01-14 10:06:14,245 - [guiclient0] Run [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1050,l90,f600,l93,f1650,r90,b550,r270,f300]
+2023-01-14 10:06:14,261 - [Builder] Built [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1050,l90,f600,l93,f1650,r90,b550,r270,f300]
+2023-01-14 10:06:14,268 - [Mazerunner] Received
+2023-01-14 10:06:16,084 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:06:17,175 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:06:19,040 - [Mazerunner] Status: Free
+2023-01-14 10:06:54,803 - [guiclient1] Run [f600,r90,f100,l90,f100]
+2023-01-14 10:06:54,814 - [Builder] Built [f600,r90,f100,l90,f100]
+2023-01-14 10:06:54,821 - [Mazerunner] Received
+2023-01-14 10:06:56,691 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:06:57,826 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:07:03,408 - [Mazerunner] Status: Free
+2023-01-14 10:07:57,667 - [guiclient0] Run [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1150,l90,f650,l93,f1650,r90,b550,r270,f300]
+2023-01-14 10:07:57,689 - [Builder] Built [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1150,l90,f650,l93,f1650,r90,b550,r270,f300]
+2023-01-14 10:07:57,693 - [Mazerunner] Received
+2023-01-14 10:07:59,525 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:08:00,641 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:08:26,525 - [Mazerunner] Status: Free
+2023-01-14 10:08:40,882 - [guiclient1] Run [f6000,r90,f1000,l90,f2000,r90,f4000,r90,f6000,l100]
+2023-01-14 10:08:40,901 - [Builder] Built [f6000,r90,f1000,l90,f2000,r90,f4000,r90,f6000,l100]
+2023-01-14 10:08:40,906 - [Mazerunner] Received
+2023-01-14 10:08:42,737 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:08:43,851 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:08:52,794 - [guiclient1] Interrupt execution
+2023-01-14 10:08:53,480 - [Pybricks] Program Interrupted
+2023-01-14 10:08:54,029 - [Mazerunner] Status: Free
+2023-01-14 10:09:02,586 - [guiclient0] Run [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1150,l90,f650,l93,f1650,r90,b550,r270,f600]
+2023-01-14 10:09:02,610 - [Builder] Built [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1150,l90,f650,l93,f1650,r90,b550,r270,f600]
+2023-01-14 10:09:02,617 - [Mazerunner] Received
+2023-01-14 10:09:04,420 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:09:05,526 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:09:32,048 - [Mazerunner] Status: Free
+2023-01-14 10:10:06,541 - [guiclient0] Run [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1150,l90,f650,l90,f1650,r90,b500,r270,f600]
+2023-01-14 10:10:06,564 - [Builder] Built [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1150,l90,f650,l90,f1650,r90,b500,r270,f600]
+2023-01-14 10:10:06,575 - [Mazerunner] Received
+2023-01-14 10:10:08,399 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:10:09,496 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:10:12,914 - [guiclient0] Interrupt execution
+2023-01-14 10:10:13,201 - [Pybricks] Program Interrupted
+2023-01-14 10:10:14,163 - [Mazerunner] Status: Free
+2023-01-14 10:10:24,212 - [guiclient1] Run [f1000,r90,f400,l90,f500,r90,f800,r90,f500,l90]
+2023-01-14 10:10:24,222 - [Builder] Built [f1000,r90,f400,l90,f500,r90,f800,r90,f500,l90]
+2023-01-14 10:10:24,229 - [Mazerunner] Received
+2023-01-14 10:10:26,051 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:10:27,154 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:10:39,816 - [Mazerunner] Status: Free
+2023-01-14 10:10:50,938 - [guiclient0] Run [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1150,l90,f650,l90,f1650,r90,b500,r270,f600]
+2023-01-14 10:10:50,954 - [Builder] Built [l360,f1050,r90,f450,l90,f650,r90,f600,r90,f1150,l90,f650,l90,f1650,r90,b500,r270,f600]
+2023-01-14 10:10:50,959 - [Mazerunner] Received
+2023-01-14 10:10:52,826 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:10:53,911 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:11:20,068 - [Mazerunner] Status: Free
+2023-01-14 10:13:40,819 - [guiclient1] Run [f1000,r90,f400,l90,f500,r90,f600,r90,f1000,l90,f400,r90,f3000,l90,f600,r90,f300]
+2023-01-14 10:13:40,833 - [Builder] Built [f1000,r90,f400,l90,f500,r90,f600,r90,f1000,l90,f400,r90,f3000,l90,f600,r90,f300]
+2023-01-14 10:13:40,838 - [Mazerunner] Received
+2023-01-14 10:13:42,668 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:13:43,798 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:14:00,397 - [guiclient1] Interrupt execution
+2023-01-14 10:14:00,665 - [Pybricks] Program Interrupted
+2023-01-14 10:14:01,729 - [Mazerunner] Status: Free
+2023-01-14 10:15:31,609 - [guiclient1] Run [f1000,r90,f400,l90,f600,r90,f600,r90,f1000,l90,f400,r90,f3000,l90,f600,r90,f300]
+2023-01-14 10:15:31,625 - [Builder] Built [f1000,r90,f400,l90,f600,r90,f600,r90,f1000,l90,f400,r90,f3000,l90,f600,r90,f300]
+2023-01-14 10:15:31,630 - [Mazerunner] Received
+2023-01-14 10:15:33,475 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:15:34,600 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:15:36,123 - [Mazerunner] Status: Free
+2023-01-14 10:15:48,608 - [guiclient1] Run [f1000,r90,f400,l90,f600,r90,f600,r90,f1000,l90,f400,r90,f3000,l90,f600,r90,f300]
+2023-01-14 10:15:48,631 - [Builder] Built [f1000,r90,f400,l90,f600,r90,f600,r90,f1000,l90,f400,r90,f3000,l90,f600,r90,f300]
+2023-01-14 10:15:48,636 - [Mazerunner] Received
+2023-01-14 10:15:50,508 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:15:51,619 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:16:07,668 - [guiclient1] Interrupt execution
+2023-01-14 10:16:07,930 - [Pybricks] Program Interrupted
+2023-01-14 10:16:08,966 - [Mazerunner] Status: Free
+2023-01-14 10:17:53,537 - [guiclient1] Run [f900,r90,f400,l90,f600,r90,f600,r90,f1000,l90,f500,l90,f3000,l90,f600,r90,f300]
+2023-01-14 10:17:53,560 - [Builder] Built [f900,r90,f400,l90,f600,r90,f600,r90,f1000,l90,f500,l90,f3000,l90,f600,r90,f300]
+2023-01-14 10:17:53,564 - [Mazerunner] Received
+2023-01-14 10:17:55,433 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:17:56,526 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:18:16,180 - [guiclient1] Interrupt execution
+2023-01-14 10:18:16,481 - [Pybricks] Program Interrupted
+2023-01-14 10:18:17,535 - [Mazerunner] Status: Free
+2023-01-14 10:19:10,030 - [guiclient1] Run [f900,r90,f400,l90,f500,r90,f600,r90,f1000,l90,f500,l90,f2000,l90,f600,r90,f300]
+2023-01-14 10:19:10,045 - [Builder] Built [f900,r90,f400,l90,f500,r90,f600,r90,f1000,l90,f500,l90,f2000,l90,f600,r90,f300]
+2023-01-14 10:19:10,088 - [Mazerunner] Received
+2023-01-14 10:19:11,897 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:19:12,974 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:19:34,404 - [guiclient1] Interrupt execution
+2023-01-14 10:19:34,686 - [Pybricks] Program Interrupted
+2023-01-14 10:19:35,656 - [Mazerunner] Status: Free
+2023-01-14 10:20:14,239 - [guiclient1] Run [f900,r90,f400,l90,f500,r90,f600,r90,f1000,l90,f500,l90,f1700,l90,f600,r90,f300]
+2023-01-14 10:20:14,251 - [Builder] Built [f900,r90,f400,l90,f500,r90,f600,r90,f1000,l90,f500,l90,f1700,l90,f600,r90,f300]
+2023-01-14 10:20:14,257 - [Mazerunner] Received
+2023-01-14 10:20:16,088 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:20:17,204 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:20:39,399 - [Mazerunner] Status: Free
+2023-01-14 10:21:37,078 - [guiclient1] Run [f900,r90,f400,l90,f600,r90,f600,r90,f1000,l90,f600,l90,f1700,l90,f600,r90,f300]
+2023-01-14 10:21:37,089 - [Builder] Built [f900,r90,f400,l90,f600,r90,f600,r90,f1000,l90,f600,l90,f1700,l90,f600,r90,f300]
+2023-01-14 10:21:37,095 - [Mazerunner] Received
+2023-01-14 10:21:39,021 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:21:40,124 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:22:02,494 - [Mazerunner] Status: Free
+2023-01-14 10:28:25,026 - [guiclient1] Run [f100,r90,f100,l90,f100,r90,f100,r90,f100,l90,f100,l90,f100,l90,f100,r90,f100]
+2023-01-14 10:28:25,055 - [Builder] Built [f100,r90,f100,l90,f100,r90,f100,r90,f100,l90,f100,l90,f100,l90,f100,r90,f100]
+2023-01-14 10:28:25,060 - [Mazerunner] Received
+2023-01-14 10:28:26,985 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:28:28,105 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:28:38,515 - [guiclient1] Interrupt execution
+2023-01-14 10:28:38,835 - [Pybricks] Program Interrupted
+2023-01-14 10:28:39,789 - [Mazerunner] Status: Free
+2023-01-14 10:29:19,007 - [guiclient1] Run [f10000,r90,f10000,l90,f10000,r90,f10000,r90,f10000,l90,f10000,l90,f10000,l90,f10000,r90,f10000]
+2023-01-14 10:29:19,021 - [Builder] Built [f10000,r90,f10000,l90,f10000,r90,f10000,r90,f10000,l90,f10000,l90,f10000,l90,f10000,r90,f10000]
+2023-01-14 10:29:19,027 - [Mazerunner] Received
+2023-01-14 10:29:20,880 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:29:21,926 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:29:23,825 - [Mazerunner] Status: Free
+2023-01-14 10:29:28,323 - [guiclient1] Run [f10000,r90,f10000,l90,f10000,r90,f10000,r90,f10000,l90,f10000,l90,f10000,l90,f10000,r90,f10000]
+2023-01-14 10:29:28,334 - [Builder] Built [f10000,r90,f10000,l90,f10000,r90,f10000,r90,f10000,l90,f10000,l90,f10000,l90,f10000,r90,f10000]
+2023-01-14 10:29:28,339 - [Mazerunner] Received
+2023-01-14 10:29:29,141 - [guiclient1] Interrupt execution
+2023-01-14 10:29:29,454 - [Pybricks] Program Interrupted
+2023-01-14 10:29:30,205 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:29:31,285 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:29:51,627 - [Mazerunner] Status: Free
+2023-01-14 10:30:26,074 - [guiclient0] Run [f100]
+2023-01-14 10:30:26,081 - [Builder] Built [f100]
+2023-01-14 10:30:26,104 - [Mazerunner] Received
+2023-01-14 10:30:27,923 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:30:29,020 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:30:31,422 - [Mazerunner] Status: Free
+2023-01-14 10:30:40,506 - [guiclient0] Run [f10000]
+2023-01-14 10:30:40,530 - [Builder] Built [f10000]
+2023-01-14 10:30:40,547 - [Mazerunner] Received
+2023-01-14 10:30:42,379 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:30:43,468 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:30:53,355 - [guiclient0] Interrupt execution
+2023-01-14 10:30:53,656 - [Pybricks] Program Interrupted
+2023-01-14 10:30:54,688 - [Mazerunner] Status: Free
+2023-01-14 10:31:04,884 - [guiclient1] Run [f1000,r90,f500,l90,f600,r90,f500,r90,f1000,l90,f500,l90,f2000,l90,f600,r90,f200]
+2023-01-14 10:31:04,897 - [Builder] Built [f1000,r90,f500,l90,f600,r90,f500,r90,f1000,l90,f500,l90,f2000,l90,f600,r90,f200]
+2023-01-14 10:31:04,923 - [Mazerunner] Received
+2023-01-14 10:31:06,736 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:31:07,836 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:31:30,754 - [Mazerunner] Status: Free
+2023-01-14 10:43:48,112 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 10:45:18,313 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 10:45:23,737 - [Pybricks] Connecting to Hub...
+2023-01-14 10:45:26,961 - [Pybricks] Hub Connected.
+2023-01-14 10:45:27,119 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 10:45:27,197 - [Mazerunner] Status: Free
+2023-01-14 10:56:52,747 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 10:56:54,560 - [Pybricks] Connecting to Hub...
+2023-01-14 10:56:57,771 - [Pybricks] Hub Connected.
+2023-01-14 10:56:57,921 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 10:56:57,996 - [Mazerunner] Status: Free
+2023-01-14 10:57:36,867 - [guiclient0] Run [f120]
+2023-01-14 10:57:36,874 - [Builder] Built [f120]
+2023-01-14 10:57:36,882 - [Mazerunner] Received
+2023-01-14 10:57:38,717 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:57:39,700 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:57:42,046 - [Mazerunner] Status: Free
+2023-01-14 10:57:51,235 - [guiclient0] Run [f120]
+2023-01-14 10:57:51,242 - [Builder] Built [f120]
+2023-01-14 10:57:51,250 - [Mazerunner] Received
+2023-01-14 10:57:52,977 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:57:53,940 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:57:55,593 - [Mazerunner] Status: Free
+2023-01-14 10:58:40,563 - [guiclient0] Run [f360]
+2023-01-14 10:58:40,575 - [Builder] Built [f360]
+2023-01-14 10:58:40,579 - [Mazerunner] Received
+2023-01-14 10:58:42,417 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:58:43,535 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:58:45,015 - [Mazerunner] Status: Free
+2023-01-14 10:58:55,403 - [guiclient0] Run [f360]
+2023-01-14 10:58:55,423 - [Builder] Built [f360]
+2023-01-14 10:58:55,429 - [Mazerunner] Received
+2023-01-14 10:58:57,296 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:58:58,377 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:59:01,167 - [Mazerunner] Status: Free
+2023-01-14 10:59:42,241 - [guiclient0] Run [f99999]
+2023-01-14 10:59:42,243 - [Builder] Built [f99999]
+2023-01-14 10:59:42,257 - [Mazerunner] Received
+2023-01-14 10:59:44,021 - [Pybricks] File "MazeRunner" Created
+2023-01-14 10:59:45,042 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 10:59:50,005 - [guiclient0] Interrupt execution
+2023-01-14 10:59:50,289 - [Pybricks] Program Interrupted
+2023-01-14 10:59:51,305 - [Mazerunner] Status: Free
+2023-01-14 11:02:09,561 - [guiclient1] Run [w|f100,b100|]
+2023-01-14 11:02:09,567 - [Builder] Built [w|f100,b100|]
+2023-01-14 11:02:09,574 - [Mazerunner] Received
+2023-01-14 11:02:11,381 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:02:12,439 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:02:22,265 - [guiclient1] Interrupt execution
+2023-01-14 11:02:22,503 - [Pybricks] Program Interrupted
+2023-01-14 11:02:23,424 - [Mazerunner] Status: Free
+2023-01-14 11:02:30,762 - [guiclient1] Run [w|f100,b100|]
+2023-01-14 11:02:30,765 - [Builder] Built [w|f100,b100|]
+2023-01-14 11:02:30,776 - [Mazerunner] Received
+2023-01-14 11:02:32,493 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:02:33,475 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:02:46,225 - [guiclient1] Interrupt execution
+2023-01-14 11:02:46,460 - [Pybricks] Program Interrupted
+2023-01-14 11:02:47,303 - [Mazerunner] Status: Free
+2023-01-14 11:03:24,180 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 11:03:28,798 - [Pybricks] Connecting to Hub...
+2023-01-14 11:03:32,025 - [Pybricks] Hub Connected.
+2023-01-14 11:03:33,990 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:03:34,993 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:03:43,664 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:03:44,672 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:03:52,153 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:03:53,212 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:04:00,399 - [Local] Session Ended 
 
-2023-01-13 20:25:01,098 - [Pybricks] Loaded https://code.pybricks.com/
 
-2023-01-13 20:25:41,824 - [Pybricks] Loaded https://code.pybricks.com/
-2023-01-13 20:25:46,240 - [Pybricks] Hub Found
-2023-01-13 20:25:46,744 - [Local] Connected to broker@58.182.191.109.1883
-2023-01-13 20:25:46,817 - [Mazerunner] Status: Free
-
-2023-01-13 20:30:19,838 - [Pybricks] Loaded https://code.pybricks.com/
-2023-01-13 20:30:23,660 - [Pybricks] Hub Found
-2023-01-13 20:30:26,008 - [Pybricks] File "MazeRunner" Created
-2023-01-13 20:30:26,968 - [Pybricks] Executed File "MazeRunner"
-2023-01-13 20:30:38,512 - [Pybricks] File "MazeRunner" Created
-2023-01-13 20:30:39,447 - [Pybricks] Executed File "MazeRunner"
-2023-01-13 20:30:46,106 - [Local] Session Ended 
-
+2023-01-14 11:04:20,231 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 11:04:24,130 - [Pybricks] Connecting to Hub...
+2023-01-14 11:04:27,356 - [Pybricks] Hub Connected.
+2023-01-14 11:04:27,509 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 11:04:27,584 - [Mazerunner] Status: Free
+2023-01-14 11:04:34,628 - [guiclient1] Run [w|f100,b100|]
+2023-01-14 11:04:34,633 - [Builder] Built [w|f100,b100|]
+2023-01-14 11:04:34,646 - [Mazerunner] Received
+2023-01-14 11:04:36,516 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:04:37,624 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:04:43,941 - [guiclient1] Interrupt execution
+2023-01-14 11:04:44,281 - [Pybricks] Program Interrupted
+2023-01-14 11:04:45,240 - [Mazerunner] Status: Free
+2023-01-14 11:07:12,552 - [guiclient1] Run [w|f100,b100|]
+2023-01-14 11:07:12,573 - [Builder] Built [w|f100,b100|]
+2023-01-14 11:07:12,590 - [Mazerunner] Received
+2023-01-14 11:07:14,469 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:07:15,545 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:08:14,660 - [guiclient1] Interrupt execution
+2023-01-14 11:08:14,942 - [Pybricks] Program Interrupted
+2023-01-14 11:08:16,019 - [Mazerunner] Status: Free
+2023-01-14 11:08:37,656 - [guiclient0] Run [w|l360|]
+2023-01-14 11:08:37,666 - [Builder] Built [w|l360|]
+2023-01-14 11:08:37,686 - [Mazerunner] Received
+2023-01-14 11:08:39,464 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:08:40,552 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:08:55,973 - [guiclient0] Interrupt execution
+2023-01-14 11:08:56,222 - [Pybricks] Program Interrupted
+2023-01-14 11:08:57,177 - [Mazerunner] Status: Free
+2023-01-14 11:09:29,771 - [guiclient1] Run [f100]
+2023-01-14 11:09:29,789 - [Builder] Built [f100]
+2023-01-14 11:09:29,793 - [Mazerunner] Received
+2023-01-14 11:09:31,680 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:09:32,781 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:09:35,001 - [Mazerunner] Status: Free
+2023-01-14 11:09:38,371 - [guiclient1] Run [f100]
+2023-01-14 11:09:38,387 - [Builder] Built [f100]
+2023-01-14 11:09:38,399 - [Mazerunner] Received
+2023-01-14 11:09:40,205 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:09:41,267 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:09:43,634 - [Mazerunner] Status: Free
+2023-01-14 11:09:52,200 - [guiclient1] Run [f900]
+2023-01-14 11:09:52,215 - [Builder] Built [f900]
+2023-01-14 11:09:52,219 - [Mazerunner] Received
+2023-01-14 11:09:54,039 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:09:55,097 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:09:58,717 - [Mazerunner] Status: Free
+2023-01-14 11:10:35,719 - [guiclient1] Run [f1100,r90,f300,l180,f500]
+2023-01-14 11:10:35,735 - [Builder] Built [f1100,r90,f300,l180,f500]
+2023-01-14 11:10:35,747 - [Mazerunner] Received
+2023-01-14 11:10:37,596 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:10:38,695 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:10:40,181 - [Mazerunner] Status: Free
+2023-01-14 11:10:47,909 - [guiclient1] Run [f1100,r90,f300,l180,f500]
+2023-01-14 11:10:47,922 - [Builder] Built [f1100,r90,f300,l180,f500]
+2023-01-14 11:10:47,935 - [Mazerunner] Received
+2023-01-14 11:10:49,735 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:10:50,805 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:10:52,637 - [Mazerunner] Status: Free
+2023-01-14 11:11:18,010 - [guiclient1] Run [f1100,r90,f300,l90,f500]
+2023-01-14 11:11:18,028 - [Builder] Built [f1100,r90,f300,l90,f500]
+2023-01-14 11:11:18,032 - [Mazerunner] Received
+2023-01-14 11:11:19,879 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:11:20,978 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:11:28,647 - [Mazerunner] Status: Free
+2023-01-14 11:13:26,210 - [guiclient1] Run [f1100,r90,f400,l90,f600,r90,f700,r90,f1100,l90,f500,l90,f2100,l90,f400,r90,f200]
+2023-01-14 11:13:26,223 - [Builder] Built [f1100,r90,f400,l90,f600,r90,f700,r90,f1100,l90,f500,l90,f2100,l90,f400,r90,f200]
+2023-01-14 11:13:26,231 - [Mazerunner] Received
+2023-01-14 11:13:28,032 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:13:29,079 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:13:52,128 - [Mazerunner] Status: Free
+2023-01-14 11:17:19,484 - [guiclient0] Run [t1000]
+2023-01-14 11:17:19,489 - [Builder] Built [t1000]
+2023-01-14 11:17:19,508 - [Mazerunner] Received
+2023-01-14 11:17:21,290 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:17:22,331 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:17:30,663 - [Mazerunner] Status: Free
+2023-01-14 11:17:35,156 - [guiclient0] Run [t1000]
+2023-01-14 11:17:35,159 - [Builder] Built [t1000]
+2023-01-14 11:17:35,175 - [Mazerunner] Received
+2023-01-14 11:17:36,883 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:17:37,865 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:17:38,331 - [guiclient0] Interrupt execution
+2023-01-14 11:17:38,831 - [Pybricks] Program Interrupted
+2023-01-14 11:17:39,711 - [Mazerunner] Status: Free
+2023-01-14 11:17:53,879 - [guiclient0] Run [f200,t1000]
+2023-01-14 11:17:53,898 - [Builder] Built [f200,t1000]
+2023-01-14 11:17:53,910 - [Mazerunner] Received
+2023-01-14 11:17:55,669 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:17:56,713 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:18:06,010 - [Mazerunner] Status: Free
+2023-01-14 11:22:01,584 - [guiclient0] Run [f1000,r90,f500,l90,f500,r90,f500,r90,f1500,l90,f500,l90,t2300,l90,f500,r90,f500]
+2023-01-14 11:22:01,609 - [Builder] Built [f1000,r90,f500,l90,f500,r90,f500,r90,f1500,l90,f500,l90,t2300,l90,f500,r90,f500]
+2023-01-14 11:22:01,628 - [Mazerunner] Received
+2023-01-14 11:22:03,477 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:22:04,554 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:22:24,277 - [guiclient0] Interrupt execution
+2023-01-14 11:22:24,635 - [Pybricks] Program Interrupted
+2023-01-14 11:22:25,618 - [Mazerunner] Status: Free
+2023-01-14 11:22:46,329 - [guiclient0] Run [f1300,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f500,l90,t2300,l90,f500,r90,f500]
+2023-01-14 11:22:46,353 - [Builder] Built [f1300,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f500,l90,t2300,l90,f500,r90,f500]
+2023-01-14 11:22:46,368 - [Mazerunner] Received
+2023-01-14 11:22:48,158 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:22:49,269 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:23:08,359 - [guiclient0] Interrupt execution
+2023-01-14 11:23:08,569 - [Pybricks] Program Interrupted
+2023-01-14 11:23:09,020 - [Mazerunner] Status: Free
+2023-01-14 11:23:47,159 - [guiclient0] Run [f1300,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f750,l90,t2300,l90,f500,r90,f500]
+2023-01-14 11:23:47,182 - [Builder] Built [f1300,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f750,l90,t2300,l90,f500,r90,f500]
+2023-01-14 11:23:47,187 - [Mazerunner] Received
+2023-01-14 11:23:49,098 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:23:50,196 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:24:13,283 - [guiclient0] Interrupt execution
+2023-01-14 11:24:13,600 - [Pybricks] Program Interrupted
+2023-01-14 11:24:14,720 - [Mazerunner] Status: Free
+2023-01-14 11:24:28,318 - [guiclient0] Run [f1300,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f850,l90,t2300,l90,f500,r90,f500]
+2023-01-14 11:24:28,345 - [Builder] Built [f1300,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f850,l90,t2300,l90,f500,r90,f500]
+2023-01-14 11:24:28,386 - [Mazerunner] Received
+2023-01-14 11:24:30,212 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:24:31,264 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:25:04,513 - [guiclient0] Interrupt execution
+2023-01-14 11:25:04,859 - [Pybricks] Program Interrupted
+2023-01-14 11:25:05,835 - [Mazerunner] Status: Free
+2023-01-14 11:25:48,395 - [guiclient0] Run [f1300,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f800,l90,t2000,l90,f500,r90,f500]
+2023-01-14 11:25:48,422 - [Builder] Built [f1300,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f800,l90,t2000,l90,f500,r90,f500]
+2023-01-14 11:25:48,426 - [Mazerunner] Received
+2023-01-14 11:25:50,328 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:25:51,384 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:26:25,420 - [Mazerunner] Status: Free
+2023-01-14 11:26:48,725 - [guiclient0] Run [f1300,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f800,l90,t1500,l90,f500,r90,f500]
+2023-01-14 11:26:48,738 - [Builder] Built [f1300,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f800,l90,t1500,l90,f500,r90,f500]
+2023-01-14 11:26:48,746 - [Mazerunner] Received
+2023-01-14 11:26:50,562 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:26:51,679 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:27:22,847 - [Mazerunner] Status: Free
+2023-01-14 11:30:56,939 - [guiclient1] Run [w|inf^lr<50,l10^,inf^lr<100,r10^|]
+2023-01-14 11:30:56,959 - [Builder] Built [w|inf^lr<50,l10^,inf^lr<100,r10^|]
+2023-01-14 11:30:56,962 - [Mazerunner] Received
+2023-01-14 11:30:58,854 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:30:59,936 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:31:01,442 - [Mazerunner] Status: Free
+2023-01-14 11:31:01,493 - [guiclient1] Interrupt execution
+2023-01-14 11:33:11,069 - [guiclient1] Run [w|b100,f100|]
+2023-01-14 11:33:11,074 - [Builder] Built [w|b100,f100|]
+2023-01-14 11:33:11,077 - [Mazerunner] Received
+2023-01-14 11:33:12,882 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:33:14,006 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:33:43,877 - [guiclient1] Interrupt execution
+2023-01-14 11:33:44,192 - [Pybricks] Program Interrupted
+2023-01-14 11:33:45,281 - [Mazerunner] Status: Free
+2023-01-14 11:33:54,297 - [guiclient1] Run [w|b100,f100|]
+2023-01-14 11:33:54,307 - [Builder] Built [w|b100,f100|]
+2023-01-14 11:33:54,312 - [Mazerunner] Received
+2023-01-14 11:33:56,109 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:33:57,202 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:34:32,856 - [guiclient1] Interrupt execution
+2023-01-14 11:34:33,155 - [Pybricks] Program Interrupted
+2023-01-14 11:34:34,167 - [Mazerunner] Status: Free
+2023-01-14 11:36:01,162 - [guiclient0] Run [t1000]
+2023-01-14 11:36:01,182 - [Builder] Built [t1000]
+2023-01-14 11:36:01,191 - [Mazerunner] Received
+2023-01-14 11:36:03,055 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:36:04,163 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:36:16,245 - [Mazerunner] Status: Free
+2023-01-14 11:37:31,998 - [guiclient0] Run [f100]
+2023-01-14 11:37:32,008 - [Builder] Built [f100]
+2023-01-14 11:37:32,013 - [Mazerunner] Received
+2023-01-14 11:37:33,843 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:37:34,920 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:37:36,401 - [Mazerunner] Status: Free
+2023-01-14 11:37:39,164 - [guiclient0] Run [f100]
+2023-01-14 11:37:39,176 - [Builder] Built [f100]
+2023-01-14 11:37:39,182 - [Mazerunner] Received
+2023-01-14 11:37:41,019 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:37:42,066 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:37:44,220 - [Mazerunner] Status: Free
+2023-01-14 11:38:10,705 - [guiclient0] Run [f1000]
+2023-01-14 11:38:10,718 - [Builder] Built [f1000]
+2023-01-14 11:38:10,726 - [Mazerunner] Received
+2023-01-14 11:38:12,539 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:38:13,645 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:38:15,385 - [Mazerunner] Status: Free
+2023-01-14 11:38:44,180 - [guiclient0] Run [f1000,r300]
+2023-01-14 11:38:44,196 - [Builder] Built [f1000,r300]
+2023-01-14 11:38:44,218 - [Mazerunner] Received
+2023-01-14 11:38:46,019 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:38:47,120 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:38:52,614 - [Mazerunner] Status: Free
+2023-01-14 11:39:13,682 - [guiclient0] Run [r300]
+2023-01-14 11:39:13,695 - [Builder] Built [r300]
+2023-01-14 11:39:13,722 - [Mazerunner] Received
+2023-01-14 11:39:15,551 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:39:16,645 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:39:20,108 - [Mazerunner] Status: Free
+2023-01-14 11:39:46,755 - [guiclient0] Run [f1000]
+2023-01-14 11:39:46,768 - [Builder] Built [f1000]
+2023-01-14 11:39:46,787 - [Mazerunner] Received
+2023-01-14 11:39:48,611 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:39:49,697 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:39:53,538 - [Mazerunner] Status: Free
+2023-01-14 11:45:50,874 - [guiclient1] Run [f100]
+2023-01-14 11:45:50,902 - [Builder] Built [f100]
+2023-01-14 11:45:50,950 - [Mazerunner] Received
+2023-01-14 11:45:52,740 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:45:53,848 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:45:56,178 - [Mazerunner] Status: Free
+2023-01-14 11:46:09,209 - [guiclient0] Run [f1100,r90,f300,l90,f400,r90,f400,r90,f1000,l90,f400,l90,f1500,l90,f400,r90,f200]
+2023-01-14 11:46:09,228 - [Builder] Built [f1100,r90,f300,l90,f400,r90,f400,r90,f1000,l90,f400,l90,f1500,l90,f400,r90,f200]
+2023-01-14 11:46:09,236 - [Mazerunner] Received
+2023-01-14 11:46:11,072 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:46:12,177 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:46:32,745 - [Mazerunner] Status: Free
+2023-01-14 11:52:03,106 - [guiclient0] Run [f360,f360,f360]
+2023-01-14 11:52:03,119 - [Builder] Built [f360,f360,f360]
+2023-01-14 11:52:03,137 - [Mazerunner] Received
+2023-01-14 11:52:05,020 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:52:06,126 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:52:07,815 - [Mazerunner] Status: Free
+2023-01-14 11:53:58,196 - [guiclient0] Run [f360,f360,f360,r90,f100]
+2023-01-14 11:53:58,224 - [Builder] Built [f360,f360,f360,r90,f100]
+2023-01-14 11:53:58,225 - [Mazerunner] Received
+2023-01-14 11:54:00,055 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:54:01,155 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:54:03,635 - [Mazerunner] Status: Free
+2023-01-14 11:54:40,500 - [guiclient0] Run [f360,f360,f360,r90,f300,l90,f400]
+2023-01-14 11:54:40,513 - [Builder] Built [f360,f360,f360,r90,f300,l90,f400]
+2023-01-14 11:54:40,515 - [Mazerunner] Received
+2023-01-14 11:54:42,414 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:54:43,521 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:54:51,801 - [Mazerunner] Status: Free
+2023-01-14 11:55:32,924 - [guiclient0] Run [f360,f360,f360,r90,f290,l90,f500,r90]
+2023-01-14 11:55:32,948 - [Builder] Built [f360,f360,f360,r90,f290,l90,f500,r90]
+2023-01-14 11:55:32,953 - [Mazerunner] Received
+2023-01-14 11:55:34,762 - [Pybricks] File "MazeRunner" Created
+2023-01-14 11:55:35,843 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 11:55:44,859 - [Mazerunner] Status: Free
+2023-01-14 12:04:15,806 - [guiclient0] Run [f360]
+2023-01-14 12:04:15,838 - [Mazerunner] Received
+2023-01-14 12:04:15,839 - [Builder] Built [f360]
+2023-01-14 12:04:17,689 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:04:42,892 - [guiclient0] Interrupt execution
+2023-01-14 12:04:51,324 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:04:51,340 - [Pybricks] Program Interrupted
+2023-01-14 12:04:52,812 - [Mazerunner] Status: Free
+2023-01-14 12:05:25,630 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 12:05:30,517 - [Pybricks] Connecting to Hub...
+2023-01-14 12:05:33,744 - [Pybricks] Hub Connected.
+2023-01-14 12:05:33,901 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 12:05:33,976 - [Mazerunner] Status: Free
+2023-01-14 12:05:43,562 - [guiclient0] Run [f360]
+2023-01-14 12:05:43,578 - [Builder] Built [f360]
+2023-01-14 12:05:43,587 - [Mazerunner] Received
+2023-01-14 12:05:45,483 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:05:46,547 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:05:49,795 - [Mazerunner] Status: Free
+2023-01-14 12:07:06,381 - [guiclient0] Run [f360]
+2023-01-14 12:07:06,395 - [Builder] Built [f360]
+2023-01-14 12:07:06,398 - [Mazerunner] Received
+2023-01-14 12:07:08,204 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:07:09,242 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:07:12,060 - [Mazerunner] Status: Free
+2023-01-14 12:07:32,617 - [guiclient1] Run [t0,f750,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f500,l1500,l90,f500,r90,f100]
+2023-01-14 12:07:32,638 - [Builder] Built [t0,f750,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f500,l1500,l90,f500,r90,f100]
+2023-01-14 12:07:32,640 - [Mazerunner] Received
+2023-01-14 12:07:34,505 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:07:35,602 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:07:49,521 - [guiclient1] Interrupt execution
+2023-01-14 12:07:49,897 - [Pybricks] Program Interrupted
+2023-01-14 12:07:50,872 - [Mazerunner] Status: Free
+2023-01-14 12:08:11,948 - [guiclient1] Run [t0,f1200,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f500,l1500,l90,f500,r90,f100]
+2023-01-14 12:08:11,961 - [Builder] Built [t0,f1200,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f500,l1500,l90,f500,r90,f100]
+2023-01-14 12:08:11,964 - [Mazerunner] Received
+2023-01-14 12:08:13,802 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:08:14,875 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:08:16,904 - [Mazerunner] Status: Free
+2023-01-14 12:09:48,905 - [guiclient1] Run [t0,f1200,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f500,l90,f1500,l90,f500,r90,f100]
+2023-01-14 12:09:48,931 - [Builder] Built [t0,f1200,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f500,l90,f1500,l90,f500,r90,f100]
+2023-01-14 12:09:48,935 - [Mazerunner] Received
+2023-01-14 12:09:50,790 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:09:51,835 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:10:13,581 - [Mazerunner] Status: Free
+2023-01-14 12:20:58,649 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 12:23:41,933 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 12:23:46,278 - [Pybricks] Connecting to Hub...
+2023-01-14 12:23:49,505 - [Pybricks] Hub Connected.
+2023-01-14 12:23:49,656 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 12:23:49,725 - [Mazerunner] Status: Free
+2023-01-14 12:24:15,080 - [guiclient0] Run [f100]
+2023-01-14 12:24:15,091 - [Builder] Built [f100]
+2023-01-14 12:24:15,101 - [Mazerunner] Received
+2023-01-14 12:24:17,043 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:24:18,094 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:24:20,757 - [Mazerunner] Status: Free
+2023-01-14 12:27:26,354 - [guiclient0] Run [f100,w|kb|]
+2023-01-14 12:27:26,375 - [Builder] Built [f100,w|kb|]
+2023-01-14 12:27:26,409 - [Mazerunner] Received
+2023-01-14 12:27:28,241 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:27:28,410 - [guiclient0] Interrupt execution
+2023-01-14 12:27:29,589 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:27:31,058 - [Pybricks] Program Interrupted
+2023-01-14 12:27:31,962 - [Mazerunner] Status: Free
+2023-01-14 12:28:24,731 - [guiclient0] Run [for|100,f100|]
+2023-01-14 12:28:24,742 - [Builder] Built [for|100,f100|]
+2023-01-14 12:28:24,746 - [Mazerunner] Received
+2023-01-14 12:28:26,552 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:28:27,651 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:28:54,153 - [guiclient0] Interrupt execution
+2023-01-14 12:28:54,354 - [Pybricks] Program Interrupted
+2023-01-14 12:28:55,256 - [Mazerunner] Status: Free
+2023-01-14 12:31:15,432 - [guiclient0] Run [f900,r90,f200,l90,f500,r90,f600,l90,f400,l90,f1200,l90,f500,r90,f200]
+2023-01-14 12:31:15,437 - [Builder] Built [f900,r90,f200,l90,f500,r90,f600,l90,f400,l90,f1200,l90,f500,r90,f200]
+2023-01-14 12:31:15,477 - [Mazerunner] Received
+2023-01-14 12:31:17,234 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:31:18,289 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:31:33,554 - [guiclient0] Interrupt execution
+2023-01-14 12:31:33,718 - [Pybricks] Program Interrupted
+2023-01-14 12:31:34,348 - [Mazerunner] Status: Free
+2023-01-14 12:32:21,887 - [guiclient0] Run [f1200,r90,f400,l90,f700,r90,f800,l270,f1000,l90,f1200,l90,f500,r90,f200]
+2023-01-14 12:32:21,893 - [Builder] Built [f1200,r90,f400,l90,f700,r90,f800,l270,f1000,l90,f1200,l90,f500,r90,f200]
+2023-01-14 12:32:21,900 - [Mazerunner] Received
+2023-01-14 12:32:23,710 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:32:24,782 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:32:43,851 - [Mazerunner] Status: Free
+2023-01-14 12:33:42,789 - [guiclient0] Run [f1200,r90,f400,l90,f700,r90,f800,l270,f1000,l90,f600,l90,f1200,r270,f600,r90,f300]
+2023-01-14 12:33:42,795 - [Builder] Built [f1200,r90,f400,l90,f700,r90,f800,l270,f1000,l90,f600,l90,f1200,r270,f600,r90,f300]
+2023-01-14 12:33:42,802 - [Mazerunner] Received
+2023-01-14 12:33:44,601 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:33:45,636 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:34:09,807 - [Mazerunner] Status: Free
+2023-01-14 12:46:39,937 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 12:46:42,206 - [Pybricks] Connecting to Hub...
+2023-01-14 12:46:45,430 - [Pybricks] Hub Connected.
+2023-01-14 12:46:45,576 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 12:46:45,637 - [Mazerunner] Status: Free
+2023-01-14 12:46:52,078 - [guiclient1] Run [f100,f100]
+2023-01-14 12:46:52,094 - [Builder] Built [f100,f100]
+2023-01-14 12:46:52,103 - [Mazerunner] Received
+2023-01-14 12:46:53,957 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:47:07,464 - [Pybricks] Loaded https://code.pybricks.com/
+2023-01-14 12:47:09,978 - [Pybricks] Connecting to Hub...
+2023-01-14 12:47:13,200 - [Pybricks] Hub Connected.
+2023-01-14 12:47:13,340 - [Local] Connected to broker@58.182.191.109.1883
+2023-01-14 12:47:13,419 - [Mazerunner] Status: Free
+2023-01-14 12:47:19,023 - [guiclient1] Run [f100,f100]
+2023-01-14 12:47:19,032 - [Builder] Built [f100,f100]
+2023-01-14 12:47:19,048 - [Mazerunner] Received
+2023-01-14 12:47:20,903 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:47:21,881 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:47:24,716 - [Mazerunner] Status: Free
+2023-01-14 12:47:38,634 - [guiclient1] Run [f100,f100,f800]
+2023-01-14 12:47:38,641 - [Builder] Built [f100,f100,f800]
+2023-01-14 12:47:38,649 - [Mazerunner] Received
+2023-01-14 12:47:40,391 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:47:41,437 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:47:45,869 - [Mazerunner] Status: Free
+2023-01-14 12:48:15,938 - [guiclient1] Run [f900]
+2023-01-14 12:48:15,945 - [Builder] Built [f900]
+2023-01-14 12:48:15,949 - [Mazerunner] Received
+2023-01-14 12:48:17,763 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:48:18,856 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:48:22,499 - [Mazerunner] Status: Free
+2023-01-14 12:49:01,117 - [guiclient1] Run [f900,r100,l100,f100,f100]
+2023-01-14 12:49:01,128 - [Builder] Built [f900,r100,l100,f100,f100]
+2023-01-14 12:49:01,133 - [Mazerunner] Received
+2023-01-14 12:49:02,979 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:49:04,089 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:49:10,364 - [Mazerunner] Status: Free
+2023-01-14 12:50:12,494 - [guiclient1] Run [f1000,r300,l400]
+2023-01-14 12:50:12,507 - [Builder] Built [f1000,r300,l400]
+2023-01-14 12:50:12,512 - [Mazerunner] Received
+2023-01-14 12:50:14,387 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:50:15,486 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:50:23,123 - [Mazerunner] Status: Free
+2023-01-14 12:51:55,404 - [guiclient1] Run [f1000,r90,l300,l90,f300,r90]
+2023-01-14 12:51:55,413 - [Builder] Built [f1000,r90,l300,l90,f300,r90]
+2023-01-14 12:51:55,424 - [Mazerunner] Received
+2023-01-14 12:51:57,241 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:51:58,295 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:52:04,841 - [guiclient1] Interrupt execution
+2023-01-14 12:52:05,084 - [Pybricks] Program Interrupted
+2023-01-14 12:52:06,033 - [Mazerunner] Status: Free
+2023-01-14 12:52:14,964 - [guiclient1] Run [f300,r90,l300,l90,f300,r90]
+2023-01-14 12:52:14,968 - [Builder] Built [f300,r90,l300,l90,f300,r90]
+2023-01-14 12:52:14,986 - [Mazerunner] Received
+2023-01-14 12:52:16,690 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:52:17,715 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:52:23,062 - [guiclient1] Interrupt execution
+2023-01-14 12:52:23,309 - [Pybricks] Program Interrupted
+2023-01-14 12:52:24,256 - [Mazerunner] Status: Free
+2023-01-14 12:52:33,193 - [guiclient1] Run [f300,r90,l300,l90,f300,r90]
+2023-01-14 12:52:33,197 - [Builder] Built [f300,r90,l300,l90,f300,r90]
+2023-01-14 12:52:33,209 - [Mazerunner] Received
+2023-01-14 12:52:34,968 - [Pybricks] File "MazeRunner" Created
+2023-01-14 12:52:35,986 - [Pybricks] Executed File "MazeRunner"
+2023-01-14 12:52:43,287 - [Mazerunner] Status: Free

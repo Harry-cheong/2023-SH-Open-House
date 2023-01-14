@@ -4,6 +4,7 @@ import time
 from selenium.webdriver.chrome.options import Options
 import pyperclip
 import logging
+import sys
 
 class autopybricks():
     def __init__(self):
@@ -129,11 +130,12 @@ class autopybricks():
 
         # Writing cmd file
         self.copyfrfile(self.PATH_TO_CMD)
-        self.load(timeout = 0.25)
+        self.load(timeout = 0.3)
     
     def connectspike(self):
         
         # Interacting with pop-up bluetooth selection
+        pyautogui.click(431, 197)
         pyautogui.click(431, 197) # Click on bluetooth icon
         self.load(timeout = 0.30)
 
@@ -148,11 +150,15 @@ class autopybricks():
                 break
 
         self.load()
-        logging.info("[Pybricks] Hub Found")
+        logging.info("[Pybricks] Connecting to Hub...")
         # print("Hub Found")
 
         pyautogui.click(543, 593) # Click on "pair"
-        self.load()
+        self.load(timeout = 3)
+        pyautogui.moveTo(1350, 1047)
+
+        # if pyautogui.screenshot().getpixel((434, 175)) == (255, 255, 255):
+        #     self.connectspike()
     
     def closewindow(self):
         self.driver.quit()
@@ -177,29 +183,29 @@ class autopybricks():
         self.navigatetodocs()
 
         # Connect to spikeprime
-        self.connectspike()
+        self.connectspike()# To ensure that the spike prime is connected 
+
+        logging.info("[Pybricks] Hub Connected.")
 
         # Hide Window
         self.hidewindow()
 
 if __name__ == "__main__":
     # Logging
-    logging.basicConfig(filename = r"C:\Users\harry\Desktop\SH Robotics\2023-SH-Open-House\runMazerobot\logs.txt", filemode = "a", format='%(asctime)s - %(message)s',level=logging.INFO)
+    file_handler = logging.FileHandler(filename=r"C:\Users\harry\Desktop\SH Robotics\2023-SH-Open-House\runMazerobot\logs.txt",mode="a")
+    stdout_handler = logging.StreamHandler(stream=sys.stdout)
+    handlers = [file_handler, stdout_handler]
+    logging.basicConfig(format='%(asctime)s - %(message)s',level=logging.INFO, handlers=handlers)
 
-    # Execution 1
+    # Pybricks instance
     pyb = autopybricks()
-    pyb.writecmd()
-    pyb.runprogram()
-    pyb.exit(check = True)
 
-    time.sleep(5)
-
-    # Execution 2
-    pyb.writecmd()
-    pyb.runprogram()
-    pyb.exit(check = True)
+    # Execution(s)
+    for i in range(3):
+        pyb.writecmd()
+        pyb.runprogram()
+        pyb.exit(check = True)
 
     pyb.closewindow()
-
     # End Log 
-    logging.info("[Local] Session Ended \n")
+    logging.info("[Local] Session Ended \n\n")
