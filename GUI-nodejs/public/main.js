@@ -573,13 +573,8 @@ $(function () {
   reloadToCompletion();
   renderAddBlocks();
   $("body").tooltip({ selector: "[data-bs-toggle=tooltip]" });
-  verifySequence();
-  // try {
   renderLocalStorage();
-  // } catch (error) {
-  // localStorage.setItem("codesequence", "");
-  // renderLocalStorage();
-  // }
   renderLoopIndentation();
   verifyAllInputs();
+  verifySequence();
 });
