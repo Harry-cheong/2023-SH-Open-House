@@ -1,0 +1,52 @@
+14012023-084710 [Local]      Node.JS running on port 5001
+14012023-084710 [Local]      guiclient0 connected to MQTT
+14012023-084710 [Local]      guiclient0 subscribed to 'Comms'
+14012023-085651 [Local]      Execution of code started
+14012023-085651 [guiclient0] Run [if^lr<100,t100^,w|t100|,l100]
+14012023-085717 [Local]      Node.JS running on port 5001
+14012023-085717 [Local]      guiclient0 connected to MQTT
+14012023-085717 [Local]      guiclient0 subscribed to 'Comms'
+14012023-085900 [guiclient1] Run [t100,if^lr==100,t100^,w|kb,t100,inf^lr<100,kb,kb^,inf^lr<100,kb^|]
+14012023-085910 [Local]      Execution of code failed: Robot busy
+14012023-090009 [Mazerunner] Status: Free
+14012023-090128 [guiclient1] Run [for|5,f100,r90|]
+14012023-090128 [Mazerunner] Received
+14012023-090131 [Local]      Execution of code failed: Robot busy
+14012023-090139 [Mazerunner] Status: Free
+14012023-090202 [guiclient1] Run [for|5,f100,r90|]
+14012023-090203 [Mazerunner] Received
+14012023-090208 [guiclient1] Interrupt execution
+14012023-090209 [Mazerunner] Status: Free
+14012023-090248 [guiclient1] Run [for|5,f100,r90|]
+14012023-090248 [Mazerunner] Received
+14012023-090249 [guiclient1] Interrupt execution
+14012023-090259 [Mazerunner] Status: Free
+14012023-090357 [Mazerunner] Status: Free
+14012023-090400 [Local]      Execution of code started
+14012023-090400 [guiclient0] Run [r100,if^lr<100,t100^]
+14012023-090400 [Mazerunner] Received
+14012023-090401 [Local]      Execution of code interrupted
+14012023-090401 [guiclient0] Interrupt execution
+14012023-090406 [Mazerunner] Status: Free
+14012023-090444 [Local]      Execution of code started
+14012023-090444 [guiclient0] Run [w|f100,inf^lr<=30,kb^|]
+14012023-090444 [Mazerunner] Received
+14012023-090449 [Mazerunner] Status: Free
+14012023-090540 [Local]      Execution of code started
+14012023-090540 [guiclient0] Run [w|f100,inf^lr<=30,kb^|]
+14012023-090605 [Mazerunner] Status: Free
+14012023-090616 [Local]      Execution of code started
+14012023-090617 [guiclient0] Run [w|f100,inf^lr<=30,kb^|]
+14012023-090617 [Mazerunner] Received
+14012023-090635 [Mazerunner] Status: Free
+14012023-090700 [guiclient1] Run [t1000]
+14012023-090700 [Mazerunner] Received
+14012023-090711 [guiclient1] Interrupt execution
+14012023-090712 [Mazerunner] Status: Free
+14012023-090821 [Mazerunner] Status: Free
+14012023-090832 [guiclient1] Run [t1000]
+14012023-090832 [Mazerunner] Received
+14012023-090839 [Mazerunner] Status: Free
+14012023-090846 [guiclient1] Run [t1000]
+14012023-090846 [Mazerunner] Received
+14012023-090850 [Mazerunner] Status: Free

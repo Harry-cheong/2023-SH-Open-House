@@ -561,6 +561,9 @@ function renderAddBlocks() {
     } else {
       $(`#${key} .blockdetail`).addClass("d-none");
     }
+    if(key === "if") {
+        $(`#${key} input`).attr("placeholder", "...");
+    }
     $(`#${key} .blockinfo`).attr("data-bs-title", value.info);
     $(`#${key}`).addClass(value.color);
   }
