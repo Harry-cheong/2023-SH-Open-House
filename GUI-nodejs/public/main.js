@@ -96,7 +96,6 @@ function updateLocalStorage() {
         if (id === "w" || id === "for") {
             finalText = finalText + id + "_" + val + "_" + $(allBlocks[i]).attr("data-numblocks");
         } else if (id === "if") {
-            console.log(`${$(`#${allBlocks[i].id} .selectvariable`).val()} [#${allBlocks[i].id} .selectvariable]`)
             finalText = finalText + id + "_" + val + "_" + $(allBlocks[i]).attr("data-numblocks") + "_" + $(`#${allBlocks[i].id} .selectvariable`).val() + "_" + $(`#${allBlocks[i].id} .selectcondition`).val();
         } else {
             finalText = finalText + id + "_" + val;
@@ -113,7 +112,6 @@ function renderLocalStorage() {
     clearAllCode(clearMemory = false)
     window.counter = 0;
     seq = localStorage.getItem("codesequence").split("-")
-    console.log(seq)
     if(seq.length > 0) {
     for(var i = 0; i < seq.length; i++) {
         let key = seq[i].split("_")[0]
@@ -122,12 +120,11 @@ function renderLocalStorage() {
         }  catch {
             // jquery throws a funny error if not caught -> this has no implications on functionality
         }
-        $(`#${window.codeCounter-1}_${key} input`).val(parseInt(seq[i].split("_")[1]))
+        $(`#${window.codeCounter-1}_${key} input`).val(seq[i].split("_")[1])
         if(key === "w" || key === "for" || key === "if") {
             $(`#${window.codeCounter-1}_${key}`).attr("data-numblocks", parseInt(seq[i].split("_")[2]))
         }
         if (key === "if") {
-            console.log()
             $(`#${window.codeCounter-1}_${key} .selectvariable`).val(seq[i].split("_")[3])
             $(`#${window.codeCounter-1}_${key} .selectcondition`).val(seq[i].split("_")[4])
         }
@@ -249,11 +246,17 @@ function verifyAllInputs() {
   var allBlocks = $("#codecontainer .block");
   for (var i = 0; i < allBlocks.length; i++) {
     var blockID = allBlocks[i].id;
-    var val = $(`#${blockID} input`).val();
-    if (val > 99999 || val < 1) {
+    var val = parseInt($(`#${blockID} input`).val());
+    if (blockID === "startblock") {
+        continue;
+    }
+    if (val > 99999 || val < 0 || isNaN(val)) {
       $("#run").addClass("disabled");
       $("#run").attr("disabled", true);
+      $(`#${blockID} input`).addClass("warning");
       return;
+    } else {
+        $(`#${blockID} input`).removeClass("warning");
     }
   }
   $("#run").removeClass("disabled");
@@ -262,17 +265,13 @@ function verifyAllInputs() {
 }
 
 function verifyInput(e) {
-  var value = e.currentTarget.value;
+  var value = parseInt(e.currentTarget.value);
   var input = e.currentTarget;
   var blockID = $(input).parent().parent().parent().attr("id");
-  if (value > 99999) {
-    $(`#${blockID} .warning`).removeClass("d-none");
-    $(`#${blockID} .warning`).text("! Value has to be smaller than 100000");
-  } else if (value < 1) {
-    $(`#${blockID} .warning`).removeClass("d-none");
-    $(`#${blockID} .warning`).text("! Value has to be larger than 0");
+  if (value > 99999 || value < 0 || isNaN(value)) {
+    $(`#${blockID} input`).addClass("warning");
   } else {
-    $(`#${blockID} .warning`).addClass("d-none");
+    $(`#${blockID} input`).removeClass("warning");
   }
   verifyAllInputs();
   updateLocalStorage();
@@ -311,13 +310,11 @@ function renderLoopIndentation(revertIfError = true) {
         var blocktype = blockID.split("_")[1]
         if (blocktype === "w" || blocktype === "for") {
             if (loopIndentRemaining > 0 && revertIfError) {
-                console.log("error")
                 renderLocalStorage()
                 renderLoopIndentation()
                 $("#errormessage").modal("show")
                 return;
             } else if (ifIndentRemaining > 0 && revertIfError) {
-                console.log("error")
                 renderLocalStorage()
                 renderLoopIndentation()
                 $("#errormessage").modal("show")
@@ -329,7 +326,6 @@ function renderLoopIndentation(revertIfError = true) {
             }
         } else if (blocktype === "if") {
             if (ifIndentRemaining > 0 && revertIfError) {
-                console.log("error")
                 renderLocalStorage()
                 renderLoopIndentation()
                 $("#errormessage").modal("show")
@@ -582,4 +578,5 @@ $(function () {
   // renderLocalStorage();
   // }
   renderLoopIndentation();
+  verifyAllInputs();
 });

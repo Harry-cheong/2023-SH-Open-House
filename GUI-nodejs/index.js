@@ -70,7 +70,7 @@ function beginExecution(seq, res) {
     } else {
         isRobotExecuting = true;
         isGUIExecuting = true;
-        currentStatus = "Running";
+        currentStatus = "Sending";
         logEvent("[Local] Execution of code started");
         res.status(200).send("Command succeeded");
         client.publish('Comms', `[${clientID}] Run ${seq}`)
@@ -96,8 +96,9 @@ client.on('message', function (topic, message) {
         isRobotExecuting = false;
         isGUIExecuting = false;
         currentStatus = "Clear";
-    } else if (txt == "[Mazerunner] Command Received. Running...") {
+    } else if (txt == "[Mazerunner] Received") {
         isRobotExecuting = true;
+        currentStatus = "Running";
     } else if (txt.replace(`[${opposingClientID}] Run`) !== txt) {
         isRobotExecuting = true;
     }
