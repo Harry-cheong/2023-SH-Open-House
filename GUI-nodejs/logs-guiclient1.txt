@@ -1,0 +1,259 @@
+14012023-104818 [Local]      Node.JS running on port 5001
+14012023-104818 [Local]      guiclient1 connected to MQTT
+14012023-104818 [Local]      guiclient1 subscribed to 'Comms'
+14012023-105655 [Mazerunner] Status: Free
+14012023-105734 [guiclient0] Run [f120]
+14012023-105734 [Mazerunner] Received
+14012023-105739 [Mazerunner] Status: Free
+14012023-105748 [guiclient0] Run [f120]
+14012023-105748 [Mazerunner] Received
+14012023-105805 [Mazerunner] Status: Free
+14012023-105838 [guiclient0] Run [f360]
+14012023-105838 [Mazerunner] Received
+14012023-105842 [Mazerunner] Status: Free
+14012023-105852 [guiclient0] Run [f360]
+14012023-105852 [Mazerunner] Received
+14012023-105858 [Mazerunner] Status: Free
+14012023-105940 [guiclient0] Run [f99999]
+14012023-105940 [Mazerunner] Received
+14012023-105947 [guiclient0] Interrupt execution
+14012023-105948 [Mazerunner] Status: Free
+14012023-110206 [Local]      Execution of code started
+14012023-110207 [guiclient1] Run [w|f100,b100|]
+14012023-110207 [Mazerunner] Received
+14012023-110219 [Local]      Execution of code interrupted
+14012023-110219 [guiclient1] Interrupt execution
+14012023-110221 [Mazerunner] Status: Free
+14012023-110228 [Local]      Execution of code started
+14012023-110228 [guiclient1] Run [w|f100,b100|]
+14012023-110228 [Mazerunner] Received
+14012023-110243 [Local]      Execution of code interrupted
+14012023-110243 [guiclient1] Interrupt execution
+14012023-110245 [Mazerunner] Status: Free
+14012023-110425 [Mazerunner] Status: Free
+14012023-110432 [Local]      Execution of code started
+14012023-110432 [guiclient1] Run [w|f100,b100|]
+14012023-110432 [Mazerunner] Received
+14012023-110441 [Local]      Execution of code interrupted
+14012023-110441 [guiclient1] Interrupt execution
+14012023-110442 [Mazerunner] Status: Free
+14012023-110709 [Local]      Execution of code started
+14012023-110710 [guiclient1] Run [w|f100,b100|]
+14012023-110710 [Mazerunner] Received
+14012023-110811 [Local]      Execution of code interrupted
+14012023-110812 [guiclient1] Interrupt execution
+14012023-110813 [Mazerunner] Status: Free
+14012023-110835 [guiclient0] Run [w|l360|]
+14012023-110835 [Mazerunner] Received
+14012023-110853 [guiclient0] Interrupt execution
+14012023-110855 [Mazerunner] Status: Free
+14012023-110927 [Local]      Execution of code started
+14012023-110927 [guiclient1] Run [f100]
+14012023-110927 [Mazerunner] Received
+14012023-110932 [Mazerunner] Status: Free
+14012023-110935 [Local]      Execution of code started
+14012023-110935 [guiclient1] Run [f100]
+14012023-110935 [Mazerunner] Received
+14012023-110941 [Mazerunner] Status: Free
+14012023-110949 [Local]      Execution of code started
+14012023-110949 [guiclient1] Run [f900]
+14012023-110949 [Mazerunner] Received
+14012023-110956 [Mazerunner] Status: Free
+14012023-111033 [Local]      Execution of code started
+14012023-111033 [guiclient1] Run [f1100,r90,f300,l180,f500]
+14012023-111033 [Mazerunner] Received
+14012023-111037 [Mazerunner] Status: Free
+14012023-111045 [Local]      Execution of code started
+14012023-111045 [guiclient1] Run [f1100,r90,f300,l180,f500]
+14012023-111045 [Mazerunner] Received
+14012023-111050 [Mazerunner] Status: Free
+14012023-111115 [Local]      Execution of code started
+14012023-111115 [guiclient1] Run [f1100,r90,f300,l90,f500]
+14012023-111115 [Mazerunner] Received
+14012023-111126 [Mazerunner] Status: Free
+14012023-111323 [Local]      Execution of code started
+14012023-111323 [guiclient1] Run [f1100,r90,f400,l90,f600,r90,f700,r90,f1100,l90,f500,l90,f2100,l90,f400,r90,f200]
+14012023-111323 [Mazerunner] Received
+14012023-111349 [Mazerunner] Status: Free
+14012023-111716 [guiclient0] Run [t1000]
+14012023-111717 [Mazerunner] Received
+14012023-111728 [Mazerunner] Status: Free
+14012023-111732 [guiclient0] Run [t1000]
+14012023-111732 [Mazerunner] Received
+14012023-111735 [guiclient0] Interrupt execution
+14012023-111737 [Mazerunner] Status: Free
+14012023-111751 [guiclient0] Run [f200,t1000]
+14012023-111751 [Mazerunner] Received
+14012023-111803 [Mazerunner] Status: Free
+14012023-112159 [guiclient0] Run [f1000,r90,f500,l90,f500,r90,f500,r90,f1500,l90,f500,l90,t2300,l90,f500,r90,f500]
+14012023-112159 [Mazerunner] Received
+14012023-112221 [guiclient0] Interrupt execution
+14012023-112223 [Mazerunner] Status: Free
+14012023-112243 [guiclient0] Run [f1300,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f500,l90,t2300,l90,f500,r90,f500]
+14012023-112243 [Mazerunner] Received
+14012023-112305 [guiclient0] Interrupt execution
+14012023-112306 [Mazerunner] Status: Free
+14012023-112344 [guiclient0] Run [f1300,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f750,l90,t2300,l90,f500,r90,f500]
+14012023-112344 [Mazerunner] Received
+14012023-112410 [guiclient0] Interrupt execution
+14012023-112412 [Mazerunner] Status: Free
+14012023-112425 [guiclient0] Run [f1300,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f850,l90,t2300,l90,f500,r90,f500]
+14012023-112425 [Mazerunner] Received
+14012023-112501 [guiclient0] Interrupt execution
+14012023-112503 [Mazerunner] Status: Free
+14012023-112545 [guiclient0] Run [f1300,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f800,l90,t2000,l90,f500,r90,f500]
+14012023-112546 [Mazerunner] Received
+14012023-112623 [Mazerunner] Status: Free
+14012023-112646 [guiclient0] Run [f1300,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f800,l90,t1500,l90,f500,r90,f500]
+14012023-112646 [Mazerunner] Received
+14012023-112720 [Mazerunner] Status: Free
+14012023-113054 [Local]      Execution of code started
+14012023-113054 [guiclient1] Run [w|inf^lr<50,l10^,inf^lr<100,r10^|]
+14012023-113054 [Mazerunner] Received
+14012023-113058 [Local]      Execution of code interrupted
+14012023-113058 [Mazerunner] Status: Free
+14012023-113059 [guiclient1] Interrupt execution
+14012023-113308 [Local]      Execution of code started
+14012023-113308 [guiclient1] Run [w|b100,f100|]
+14012023-113308 [Mazerunner] Received
+14012023-113341 [Local]      Execution of code interrupted
+14012023-113341 [guiclient1] Interrupt execution
+14012023-113342 [Mazerunner] Status: Free
+14012023-113351 [Local]      Execution of code started
+14012023-113351 [guiclient1] Run [w|b100,f100|]
+14012023-113351 [Mazerunner] Received
+14012023-113430 [Local]      Execution of code interrupted
+14012023-113430 [guiclient1] Interrupt execution
+14012023-113431 [Mazerunner] Status: Free
+14012023-113558 [guiclient0] Run [t1000]
+14012023-113558 [Mazerunner] Received
+14012023-113613 [Mazerunner] Status: Free
+14012023-113729 [guiclient0] Run [f100]
+14012023-113729 [Mazerunner] Received
+14012023-113734 [Mazerunner] Status: Free
+14012023-113736 [guiclient0] Run [f100]
+14012023-113736 [Mazerunner] Received
+14012023-113741 [Mazerunner] Status: Free
+14012023-113808 [guiclient0] Run [f1000]
+14012023-113808 [Mazerunner] Received
+14012023-113813 [Mazerunner] Status: Free
+14012023-113841 [guiclient0] Run [f1000,r300]
+14012023-113841 [Mazerunner] Received
+14012023-113850 [Mazerunner] Status: Free
+14012023-113911 [guiclient0] Run [r300]
+14012023-113911 [Mazerunner] Received
+14012023-113917 [Mazerunner] Status: Free
+14012023-113944 [guiclient0] Run [f1000]
+14012023-113944 [Mazerunner] Received
+14012023-113951 [Mazerunner] Status: Free
+14012023-114548 [Local]      Execution of code started
+14012023-114548 [guiclient1] Run [f100]
+14012023-114548 [Mazerunner] Received
+14012023-114553 [Mazerunner] Status: Free
+14012023-114606 [guiclient0] Run [f1100,r90,f300,l90,f400,r90,f400,r90,f1000,l90,f400,l90,f1500,l90,f400,r90,f200]
+14012023-114606 [Mazerunner] Received
+14012023-114630 [Mazerunner] Status: Free
+14012023-115200 [guiclient0] Run [f360,f360,f360]
+14012023-115200 [Mazerunner] Received
+14012023-115205 [Mazerunner] Status: Free
+14012023-115355 [guiclient0] Run [f360,f360,f360,r90,f100]
+14012023-115355 [Mazerunner] Received
+14012023-115401 [Mazerunner] Status: Free
+14012023-115438 [guiclient0] Run [f360,f360,f360,r90,f300,l90,f400]
+14012023-115438 [Mazerunner] Received
+14012023-115449 [Mazerunner] Status: Free
+14012023-115530 [guiclient0] Run [f360,f360,f360,r90,f290,l90,f500,r90]
+14012023-115530 [Mazerunner] Received
+14012023-115542 [Mazerunner] Status: Free
+14012023-120413 [guiclient0] Run [f360]
+14012023-120413 [Mazerunner] Received
+14012023-120440 [guiclient0] Interrupt execution
+14012023-120450 [Mazerunner] Status: Free
+14012023-120531 [Mazerunner] Status: Free
+14012023-120541 [guiclient0] Run [f360]
+14012023-120541 [Mazerunner] Received
+14012023-120547 [Mazerunner] Status: Free
+14012023-120703 [guiclient0] Run [f360]
+14012023-120703 [Mazerunner] Received
+14012023-120709 [Mazerunner] Status: Free
+14012023-120730 [Local]      Execution of code started
+14012023-120730 [guiclient1] Run [t0,f750,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f500,l1500,l90,f500,r90,f100]
+14012023-120730 [Mazerunner] Received
+14012023-120746 [Local]      Execution of code interrupted
+14012023-120746 [guiclient1] Interrupt execution
+14012023-120748 [Mazerunner] Status: Free
+14012023-120809 [Local]      Execution of code started
+14012023-120809 [guiclient1] Run [t0,f1200,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f500,l1500,l90,f500,r90,f100]
+14012023-120809 [Mazerunner] Received
+14012023-120814 [Mazerunner] Status: Free
+14012023-120946 [Local]      Execution of code started
+14012023-120946 [guiclient1] Run [t0,f1200,r90,f500,l90,f500,r90,f500,r90,f1000,l90,f500,l90,f1500,l90,f500,r90,f100]
+14012023-120946 [Mazerunner] Received
+14012023-121011 [Mazerunner] Status: Free
+14012023-122347 [Mazerunner] Status: Free
+14012023-122412 [guiclient0] Run [f100]
+14012023-122412 [Mazerunner] Received
+14012023-122418 [Mazerunner] Status: Free
+14012023-122723 [guiclient0] Run [f100,w|kb|]
+14012023-122723 [Mazerunner] Received
+14012023-122725 [guiclient0] Interrupt execution
+14012023-122729 [Mazerunner] Status: Free
+14012023-122821 [guiclient0] Run [for|100,f100|]
+14012023-122821 [Mazerunner] Received
+14012023-122851 [guiclient0] Interrupt execution
+14012023-122852 [Mazerunner] Status: Free
+14012023-123112 [guiclient0] Run [f900,r90,f200,l90,f500,r90,f600,l90,f400,l90,f1200,l90,f500,r90,f200]
+14012023-123112 [Mazerunner] Received
+14012023-123130 [guiclient0] Interrupt execution
+14012023-123131 [Mazerunner] Status: Free
+14012023-123219 [guiclient0] Run [f1200,r90,f400,l90,f700,r90,f800,l270,f1000,l90,f1200,l90,f500,r90,f200]
+14012023-123219 [Mazerunner] Received
+14012023-123241 [Mazerunner] Status: Free
+14012023-123339 [guiclient0] Run [f1200,r90,f400,l90,f700,r90,f800,l270,f1000,l90,f600,l90,f1200,r270,f600,r90,f300]
+14012023-123340 [Mazerunner] Received
+14012023-123407 [Mazerunner] Status: Free
+14012023-124609 [Local]      Execution of code started
+14012023-124609 [guiclient1] Run [f100]
+14012023-124623 [Local]      Execution of code interrupted
+14012023-124623 [guiclient1] Interrupt execution
+14012023-124642 [Mazerunner] Status: Free
+14012023-124649 [Local]      Execution of code started
+14012023-124649 [guiclient1] Run [f100,f100]
+14012023-124649 [Mazerunner] Received
+14012023-124710 [Mazerunner] Status: Free
+14012023-124715 [Local]      Execution of code started
+14012023-124716 [guiclient1] Run [f100,f100]
+14012023-124716 [Mazerunner] Received
+14012023-124721 [Mazerunner] Status: Free
+14012023-124735 [Local]      Execution of code started
+14012023-124735 [guiclient1] Run [f100,f100,f800]
+14012023-124735 [Mazerunner] Received
+14012023-124742 [Mazerunner] Status: Free
+14012023-124812 [Local]      Execution of code started
+14012023-124812 [guiclient1] Run [f900]
+14012023-124813 [Mazerunner] Received
+14012023-124819 [Mazerunner] Status: Free
+14012023-124856 [Local]      Execution of code started
+14012023-124858 [guiclient1] Run [f900,r100,l100,f100,f100]
+14012023-124858 [Mazerunner] Received
+14012023-124907 [Mazerunner] Status: Free
+14012023-125009 [Local]      Execution of code started
+14012023-125009 [guiclient1] Run [f1000,r300,l400]
+14012023-125009 [Mazerunner] Received
+14012023-125020 [Mazerunner] Status: Free
+14012023-125152 [Local]      Execution of code started
+14012023-125152 [guiclient1] Run [f1000,r90,l300,l90,f300,r90]
+14012023-125152 [Mazerunner] Received
+14012023-125201 [Local]      Execution of code interrupted
+14012023-125201 [guiclient1] Interrupt execution
+14012023-125203 [Mazerunner] Status: Free
+14012023-125211 [Local]      Execution of code started
+14012023-125211 [guiclient1] Run [f300,r90,l300,l90,f300,r90]
+14012023-125212 [Mazerunner] Received
+14012023-125219 [Local]      Execution of code interrupted
+14012023-125220 [guiclient1] Interrupt execution
+14012023-125221 [Mazerunner] Status: Free
+14012023-125230 [Local]      Execution of code started
+14012023-125230 [guiclient1] Run [f300,r90,l300,l90,f300,r90]
+14012023-125230 [Mazerunner] Received
+14012023-125240 [Mazerunner] Status: Free

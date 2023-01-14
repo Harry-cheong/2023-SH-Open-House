@@ -4,8 +4,8 @@ const fs = require('fs');
 const app = express();
 const port = 5001;
 
-const clientID = "guiclient0"
-const opposingClientID = "guiclient1"
+const clientID = "guiclient1"
+const opposingClientID = "guiclient0"
 const longestRecognisedClientID = "guiclient0"
 
 let isRobotExecuting = false;
