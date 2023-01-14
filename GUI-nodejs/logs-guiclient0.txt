@@ -83,3 +83,38 @@
 14012023-091659 [guiclient1] Run [t99999]
 14012023-091659 [Mazerunner] Received
 14012023-091738 [guiclient1] Interrupt execution
+14012023-091909 [Local]      Node.JS running on port 5001
+14012023-091909 [Local]      guiclient0 connected to MQTT
+14012023-091909 [Local]      guiclient0 subscribed to 'Comms'
+14012023-092332 [Mazerunner] Status: Free
+14012023-092343 [guiclient1] Run [t10000]
+14012023-092343 [Mazerunner] Received
+14012023-092403 [Mazerunner] Status: Free
+14012023-092507 [Mazerunner] Status: Free
+14012023-092607 [Mazerunner] Status: Free
+14012023-092613 [guiclient1] Run [t10000]
+14012023-092613 [Mazerunner] Received
+14012023-092624 [Mazerunner] Status: Free
+14012023-092650 [Mazerunner] Status: Free
+14012023-092658 [guiclient1] Run [t10000]
+14012023-092658 [Mazerunner] Received
+14012023-092703 [Mazerunner] Status: Free
+14012023-092732 [guiclient1] Run [t10000]
+14012023-092732 [Mazerunner] Received
+14012023-092746 [guiclient1] Interrupt execution
+14012023-092748 [Mazerunner] Status: Free
+14012023-092915 [Mazerunner] Status: Free
+14012023-092919 [guiclient1] Run [t10000]
+14012023-092919 [Mazerunner] Received
+14012023-092945 [guiclient1] Interrupt execution
+14012023-092946 [Mazerunner] Status: Free
+14012023-093353 [guiclient1] Run [w|inf^lr<50,r10^,inf^lr<100,l100^|]
+14012023-093353 [Mazerunner] Received
+14012023-093416 [guiclient1] Interrupt execution
+14012023-093418 [Mazerunner] Status: Free
+14012023-093501 [guiclient1] Run [w|inf^lr<50,r10^,inf^lr<100,l10^|]
+14012023-093501 [Mazerunner] Received
+14012023-093523 [Mazerunner] Status: Free
+14012023-093658 [Local]      Node.JS running on port 5001
+14012023-093658 [Local]      guiclient0 connected to MQTT
+14012023-093658 [Local]      guiclient0 subscribed to 'Comms'
