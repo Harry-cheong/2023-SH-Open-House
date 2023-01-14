@@ -50,3 +50,36 @@
 14012023-090846 [guiclient1] Run [t1000]
 14012023-090846 [Mazerunner] Received
 14012023-090850 [Mazerunner] Status: Free
+14012023-091127 [Local]      Node.JS running on port 5001
+14012023-091127 [Local]      guiclient0 connected to MQTT
+14012023-091127 [Local]      guiclient0 subscribed to 'Comms'
+14012023-091139 [guiclient1] Run [t1000]
+14012023-091140 [Mazerunner] Received
+14012023-091143 [Local]      Execution of code failed: Robot busy
+14012023-091147 [Mazerunner] Status: Free
+14012023-091151 [guiclient1] Run [t1000]
+14012023-091151 [Mazerunner] Received
+14012023-091158 [Mazerunner] Status: Free
+14012023-091241 [guiclient1] Run [t1000]
+14012023-091253 [Mazerunner] Status: Free
+14012023-091256 [guiclient1] Run [t1000]
+14012023-091257 [Mazerunner] Received
+14012023-091305 [Mazerunner] Status: Free
+14012023-091309 [guiclient1] Run [t1000]
+14012023-091309 [Mazerunner] Received
+14012023-091314 [Mazerunner] Status: Free
+14012023-091321 [guiclient1] Run [t1000]
+14012023-091321 [Mazerunner] Received
+14012023-091329 [Mazerunner] Status: Free
+14012023-091441 [guiclient1] Run [t1000]
+14012023-091454 [Mazerunner] Status: Free
+14012023-091526 [guiclient1] Run [t1000]
+14012023-091526 [Mazerunner] Received
+14012023-091535 [Mazerunner] Status: Free
+14012023-091635 [Mazerunner] Status: Free
+14012023-091641 [guiclient1] Run [t1000]
+14012023-091641 [Mazerunner] Received
+14012023-091648 [Mazerunner] Status: Free
+14012023-091659 [guiclient1] Run [t99999]
+14012023-091659 [Mazerunner] Received
+14012023-091738 [guiclient1] Interrupt execution
