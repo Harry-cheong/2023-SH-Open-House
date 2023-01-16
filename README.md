@@ -19,7 +19,13 @@ A custom webpage for users to program the robot using blocks
 
 ## 2 : Mazerobot
 
-A program executed on ev3 loaded with ev3dev to run commands from GUI
+A custom program that automates programming on pybricks to execute files on spike prime
+
+## Dependencies
+
+1. `Selenium`
+2. `pyautogui`
+3. `paho-mqtt`
 
 ## 3 : MQTT Server
 
