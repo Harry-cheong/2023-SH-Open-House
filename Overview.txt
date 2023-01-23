@@ -102,39 +102,44 @@ _____________________ Robot cmd _____________________
     gf : p gyro turn
     90 : until bearing 90 is reached
 
-[* New *] | Sensors |
+| Sensors |
 
-    1. lr [MazeRobot✅]
+    1. lr [MazeRobot✅] [GUI✅]
     - lr : returns light reflection value (0 - 100 arbitrary units)
 
-    2. ud [MazeRobot✅]
+    2. ud [MazeRobot✅] [GUI✅]
     - usd : returns distance value from ultrasonic sensor (0 - 2000 mm)
 
-[* New *] | Loops & Logic |
+[* 🌟 New *] | Indentation |
 
-    1. w{...} [MazeRobot✅]
-    w{} -> while true, execute functions inside the bracket
+    1. ...,[,... [MazeRobot✅]
+    - [ : increases global indentation by 1 
 
-    2. if^conditon, ...^, ef^condition, ...^, el^...^ [MazeRobot✅]
+    2. ...,],... [MazeRobot✅]
+    - ] : decreases global indentation by 1 
+
+[* ❗ Revised *] | Loops & Logic |
+
+    1. w(),[,...,] [MazeRobot✅]
+    w() -> while true, execute functions inside the bracket
+
+    2. if(condition), ef(condition), el(condition) [MazeRobot✅]
     - checking of syntax done on gui side
-    if() -> if condition is true
 
     3. kb [MazeRobot✅]
     kb : keyword break 
 
-    4. w(inf^conditon, ...^, enf^condition, ...^, enl^...^,...) [MazeRobot✅]
+    4. w(),[,if(condition),[, ... ,], ef(condition),[, ... ,],el(condition),[, ... ,],] [MazeRobot✅]
     - if/else statement nested inside while loop
 
-    5. for|i, ...| [MazeRobot✅]
+    5. for(i),[,...,], [MazeRobot✅]
     - executes the loop i times
 
-[* New *] | Operators |
+| Operators |
 
-    1. >, <, ==, (optional) <=, (optional) >= [MazeRobot✅]
+    1. >, <, ==, <=, >= [MazeRobot✅] [GUI✅]
     - comparison operators
 
-    2. +, -, *, / [❌]
-    - arithmetic operators
     
 
 

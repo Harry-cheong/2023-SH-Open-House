@@ -1,6 +1,9 @@
-pair.straight(300)
-pair.turn(-331)
-pair.turn(1104)
-pair.turn(331)
-pair.straight(300)
-pair.turn(-331)
+if us.distance() > 1000:
+    pair.straight(100)
+    pair.turn(368)
+pair.turn(-368)
+while True:
+    if ls.reflection() > 50:
+        pair.turn(368)
+    elif ls.reflection() < 30:
+        pair.turn(-368)
