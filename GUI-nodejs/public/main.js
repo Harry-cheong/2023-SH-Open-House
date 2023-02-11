@@ -39,13 +39,13 @@ function pullCodeSequenceToString() {
                 finalText = finalText + id + val;
             }
             if(ifIndentRemaining === 1 && loopIndentRemaining > 1) {
-                finalText = finalText + "^";
+                finalText = finalText + ",]"; // ending IF, not ending LOOP
             } else if (ifIndentRemaining === 1 && loopIndentRemaining === 1) {
-                finalText = finalText + "^|";
+                finalText = finalText + ",],]"; // ending IF, ending LOOP
             } else if (ifIndentRemaining === 0 && loopIndentRemaining === 1) {
-                finalText = finalText + "|";
+                finalText = finalText + ",]"; // ending LOOP, not ending IF
             } else if (ifIndentRemaining === 1 && loopIndentRemaining === 0) {
-                finalText = finalText + "^";
+                finalText = finalText + ",]";  // ending IF, not ending LOOP
             } 
             if (i !== allBlocks.length-1) {
                 finalText = finalText + ",";
@@ -62,17 +62,13 @@ function pullCodeSequenceToString() {
         } else if (id === "w" || id === "for") {
             loopIndentRemaining = parseInt($(allBlocks[i]).attr("data-numblocks"))
             if (id === "w") {
-                finalText = finalText + "w|"
+                finalText = finalText + "w(),[,"
             } else {
-                finalText = finalText + "for|" + $(`#${allBlocks[i].id} input`).val() + ","
+                finalText = finalText + "for(" + $(`#${allBlocks[i].id} input`).val() + "),[,"
             }
         } else if (id === "if") {
             ifIndentRemaining = parseInt($(allBlocks[i]).attr("data-numblocks"))
-            if (loopIndentRemaining > 0) {
-                finalText = finalText + "inf^" + $(`#${allBlocks[i].id} .selectvariable`).val() + $(`#${allBlocks[i].id} .selectcondition`).val() + $(`#${allBlocks[i].id} input`).val() + ","
-            } else {
-                finalText = finalText + "if^" + $(`#${allBlocks[i].id} .selectvariable`).val() + $(`#${allBlocks[i].id} .selectcondition`).val() + $(`#${allBlocks[i].id} input`).val() + ","
-            }
+            finalText = finalText + "if(" + $(`#${allBlocks[i].id} .selectvariable`).val() + $(`#${allBlocks[i].id} .selectcondition`).val() + $(`#${allBlocks[i].id} input`).val() + "),[,"
         }
         
     }
