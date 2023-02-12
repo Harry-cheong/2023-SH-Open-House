@@ -39,13 +39,13 @@ function pullCodeSequenceToString() {
                 finalText = finalText + id + val;
             }
             if(ifIndentRemaining === 1 && loopIndentRemaining > 1) {
-                finalText = finalText + "^";
+                finalText = finalText + ",]"; // ending IF, not ending LOOP
             } else if (ifIndentRemaining === 1 && loopIndentRemaining === 1) {
-                finalText = finalText + "^|";
+                finalText = finalText + ",],]"; // ending IF, ending LOOP
             } else if (ifIndentRemaining === 0 && loopIndentRemaining === 1) {
-                finalText = finalText + "|";
+                finalText = finalText + ",]"; // ending LOOP, not ending IF
             } else if (ifIndentRemaining === 1 && loopIndentRemaining === 0) {
-                finalText = finalText + "^";
+                finalText = finalText + ",]";  // ending IF, not ending LOOP
             } 
             if (i !== allBlocks.length-1) {
                 finalText = finalText + ",";
@@ -62,17 +62,13 @@ function pullCodeSequenceToString() {
         } else if (id === "w" || id === "for") {
             loopIndentRemaining = parseInt($(allBlocks[i]).attr("data-numblocks"))
             if (id === "w") {
-                finalText = finalText + "w|"
+                finalText = finalText + "w(),[,"
             } else {
-                finalText = finalText + "for|" + $(`#${allBlocks[i].id} input`).val() + ","
+                finalText = finalText + "for(" + $(`#${allBlocks[i].id} input`).val() + "),[,"
             }
         } else if (id === "if") {
             ifIndentRemaining = parseInt($(allBlocks[i]).attr("data-numblocks"))
-            if (loopIndentRemaining > 0) {
-                finalText = finalText + "inf^" + $(`#${allBlocks[i].id} .selectvariable`).val() + $(`#${allBlocks[i].id} .selectcondition`).val() + $(`#${allBlocks[i].id} input`).val() + ","
-            } else {
-                finalText = finalText + "if^" + $(`#${allBlocks[i].id} .selectvariable`).val() + $(`#${allBlocks[i].id} .selectcondition`).val() + $(`#${allBlocks[i].id} input`).val() + ","
-            }
+            finalText = finalText + "if(" + $(`#${allBlocks[i].id} .selectvariable`).val() + $(`#${allBlocks[i].id} .selectcondition`).val() + $(`#${allBlocks[i].id} input`).val() + "),[,"
         }
         
     }
@@ -371,11 +367,26 @@ function renderLoopIndentation(revertIfError = true) {
     }
 }
 
+function updateColor(id1, id2) {
+    // id1 and id2 should be provided without #
+    $(`#${id1}`).addClass("updated");
+    if (id2 !== "") {
+        $(`#${id2}`).addClass("updated");
+    }
+    setTimeout(function() {
+        $(`#${id1}`).removeClass("updated");
+        if (id2 !== "") {
+            $(`#${id2}`).removeClass("updated");
+        }
+    }, 500)
+}
+
 function addlayer(e) {
   var btn = e.currentTarget;
   var block = $(btn).parent().parent();
   var currentlayer = $(block).attr("data-numblocks");
   $(block).attr("data-numblocks", parseInt(currentlayer) + 1);
+  updateColor(`${block.attr("id")}`,"");
   renderLoopIndentation();
   updateLocalStorage();
 }
@@ -387,6 +398,7 @@ function removelayer(e) {
   if (currentlayer > 1) {
     $(block).attr("data-numblocks", parseInt(currentlayer) - 1);
   }
+  updateColor(`${block.attr("id")}`,"");
   renderLoopIndentation();
   updateLocalStorage();
 }
@@ -417,6 +429,7 @@ function moveUp(e) {
       "id",
       `${blockNumber - 1}_${blockID.split("_")[1]}`
     );
+    updateColor(`${blockNumber}_${blockAboveID.split("_")[1]}`, `${blockNumber - 1}_${blockID.split("_")[1]}`);
   }
   renderLoopIndentation();
   updateLocalStorage();
@@ -448,6 +461,7 @@ function moveDown(e) {
       "id",
       `${blockNumber + 1}_${blockID.split("_")[1]}`
     );
+    updateColor(`${blockNumber}_${blockBelowID.split("_")[1]}`, `${blockNumber + 1}_${blockID.split("_")[1]}`);
   }
   renderLoopIndentation();
   updateLocalStorage();
@@ -473,7 +487,7 @@ function trash(e) {
   renderLoopIndentation();
   updateLocalStorage();
 }
-function addToCode(key) {
+function addToCode(key, showColor=false) {
     contents = $(`#${key}`).html();
     copy = $(`<button id="${window.codeCounter}_${key}" class="block fillblock ${allBlocks[key].color}"></button>`);
     $('#codecontainer').append(copy.append(contents));
@@ -522,6 +536,10 @@ function addToCode(key) {
         $(`#${window.codeCounter}_${key} input`).before(condition)
         $(`#${window.codeCounter}_${key} .selectcondition`).before(variable)
     }
+    if(showColor) {
+        updateColor(`${window.codeCounter}_${key}`,"");
+    }
+    
     window.codeCounter += 1;
     verifySequence();
     renderLoopIndentation()
@@ -544,7 +562,7 @@ function renderAddBlocks() {
   for (const [key, value] of Object.entries(allBlocks)) {
     contents = $("#template").html();
     copy = $(
-      `<button id="${key}" class="block addblock" onclick="addToCode('${key}')"></button>`
+      `<button id="${key}" class="block addblock" onclick="addToCode('${key}', showColor=true)"></button>`
     );
     if (isOdd) {
       $("#allblocksleft").append(copy.append(contents));
