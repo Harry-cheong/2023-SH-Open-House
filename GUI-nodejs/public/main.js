@@ -518,7 +518,7 @@ function addToCode(key, showColor=false) {
     if (key === "if") {
         var variable = $(`<select class="selectvariable" aria-label="Select variable">
         <option value="lr" selected>Light reflected (%)</option>
-        <option value="ud">Obstacle distance (m)</option>
+        <option value="ud">Obstacle distance (mm)</option>
         </select>`)
         var condition = $(`<select class="selectcondition" aria-label="Select variable">
         <option value="<" selected>&#60;</option>

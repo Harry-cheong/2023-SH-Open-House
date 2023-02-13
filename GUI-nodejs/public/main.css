@@ -170,7 +170,7 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
     margin: -3vh -2vw;
     border-left: 30px solid rgb(0, 175, 240);
     background-color: #0000;
-    height: 92px;
+    height: 93.5px;
     width: calc(2vw + 60px);
     width: -moz-calc(2vw + 60px);
 }
@@ -179,7 +179,7 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
     margin: -3vh -2vw;
     border-left: 30px solid rgb(180, 70, 255);
     background-color: #0000;
-    height: 92px;
+    height: 93.5px;
     width: calc(2vw + 60px);
     width: -moz-calc(2vw + 60px);
 }
@@ -188,7 +188,7 @@ button.btngreen.disabled, button.btngreen.disabled:hover {
     margin: -3vh -2vw;
     border-left: 30px solid rgb(0, 175, 240);
     background: linear-gradient(90deg, rgb(180, 70, 255) 60%, #0000 60%);
-    height: 92px;
+    height: 93.5px;
     width: calc(2vw + 60px);
     width: -moz-calc(2vw + 60px);
 }
@@ -256,7 +256,7 @@ button:disabled, button[disabled] {
     border: none;
 }
 .block .selectvariable {
-    width: 12em;
+    width: 14.5em;
     padding: 0.3em 1em;
     margin: 0;
 }
