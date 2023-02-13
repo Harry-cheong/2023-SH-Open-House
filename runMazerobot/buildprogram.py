@@ -105,10 +105,7 @@ class Builder():
         
         # Copy of og cmds
         commands = _commands
-
-        # Make sure that the command is in the right format [...]
-        if commands.find("[") == -1 or commands.find("]") == -1:
-            raise ValueError("Invalid Robot Commands")
+        # print(commands)
 
         # Opening outFile
         self.outFile = open(self.PATH_TO_CMD, "w")
@@ -118,7 +115,8 @@ class Builder():
 
         # Splitting command
         command_list = commands.split(",")
-        command_list.remove("")
+        try: command_list.remove("")
+        except: pass
         print(command_list)
 
         # Writing to cmd file
@@ -184,5 +182,5 @@ class Builder():
 
 if __name__ == "__main__":
     b = Builder()
-    b.buildcmds("[if(ud>1000),[,f100,l100,],r100,wh(),[,if(lr>50),[,l100,],ef(lr<30),[,r100,],],]") # Test Case
+    b.buildcmds("[t100,if(lr<100),[,t100,],l100,w(),[,kb,],t100,w(),[,if(lr<50),[,kb,],t100,],l100,for(100),[,if(lr<100),[,t100,],]]") # Test Case
     # print("if " + b.buildcondition("us>300") + ": \n")

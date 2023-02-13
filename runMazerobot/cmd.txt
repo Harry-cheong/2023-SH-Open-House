@@ -1,9 +1,13 @@
-if us.distance() > 1000:
-    pair.straight(100)
-    pair.turn(368)
-pair.turn(-368)
-while True:
-    if ls.reflection() > 50:
-        pair.turn(368)
-    elif ls.reflection() < 30:
-        pair.turn(-368)
+line_trace(100)
+if ls.reflection() < 100:
+    line_trace(100)
+pair.turn(368)
+    break
+line_trace(100)
+    if ls.reflection() < 50:
+        break
+    line_trace(100)
+pair.turn(368)
+for i in range(1):
+    if ls.reflection() < 100:
+        line_trace(100)
