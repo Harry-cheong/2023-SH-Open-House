@@ -551,6 +551,8 @@ const allBlocks = {
     "r": {pretext: "Turn right ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Turns the robot right by degrees of robot", color: "orange"},
     "l": {pretext: "Turn left ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot left by degrees of robot", color: "orange"},
     "b": {pretext: "Move backward ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot backward by degrees of wheel rotation", color: "orange"},
+    "d": {pretext: "Start motor at  ", posttext: "mm/s", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Starts both motors on the robot", color: "orange"},
+    "s0": {pretext: "Stop motor", posttext: "", inputRequired: false, info: "Stops both motors on the robot", color: "orange"},
     "t": {pretext: "Line trace ", posttext: "°", inputRequired: true, inputType: "number", max: 10000, min: 1, info: "Moves the robot forward by tracing the line by degrees of wheel rotation", color: "orange"},
     "if": {pretext: "If ", posttext: "", inputRequired: true, info: "Executes code blocks within it if condition is fulfilled", color: "purple"},
     "w": {pretext: "Repeat continuously", posttext: "", inputRequired: false, info: "Repeats code blocks within it infinitely", color: "blue"},
