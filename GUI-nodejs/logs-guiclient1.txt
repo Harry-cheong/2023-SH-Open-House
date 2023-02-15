@@ -262,3 +262,298 @@
 11022023-172553 [Local]      Execution of code started
 11022023-172604 [Local]      Node.JS running on port 5001
 12022023-122639 [Local]      Node.JS running on port 5001
+12022023-124611 [Local]      Node.JS running on port 5001
+12022023-135022 [Local]      Node.JS running on port 5001
+12022023-135119 [Local]      Execution of code started
+12022023-135121 [Local]      Execution of code interrupted
+12022023-135126 [Local]      Node.JS running on port 5001
+13022023-072427 [Local]      Node.JS running on port 5001
+13022023-072455 [Local]      Node.JS running on port 5001
+13022023-072652 [Local]      Node.JS running on port 5001
+13022023-124903 [Local]      Node.JS running on port 5001
+13022023-125622 [Local]      Node.JS running on port 5001
+13022023-130720 [Local]      Node.JS running on port 5001
+13022023-131410 [Local]      Node.JS running on port 5001
+13022023-135651 [Local]      Node.JS running on port 5001
+13022023-185327 [Local]      Node.JS running on port 5001
+14022023-172849 [Local]      Node.JS running on port 5001
+14022023-173216 [Local]      Node.JS running on port 5001
+14022023-173628 [Local]      guiclient1 connected to MQTT
+14022023-173628 [Local]      guiclient1 subscribed to 'Comms'
+14022023-173816 [Local]      Execution of code started
+14022023-173816 [guiclient1] Run [w(),[,t100,if(ud<1),[,kb,t100,],]]
+14022023-173819 [Local]      Execution of code interrupted
+14022023-173819 [guiclient1] Interrupt execution
+14022023-184235 [Local]      Node.JS running on port 5001
+14022023-184235 [Local]      guiclient1 connected to MQTT
+14022023-184235 [Local]      guiclient1 subscribed to 'Comms'
+14022023-221948 [Local]      Node.JS running on port 5001
+14022023-221948 [Local]      guiclient1 connected to MQTT
+14022023-221948 [Local]      guiclient1 subscribed to 'Comms'
+15022023-075913 [Local]      Node.JS running on port 5001
+15022023-075913 [Local]      guiclient1 connected to MQTT
+15022023-075913 [Local]      guiclient1 subscribed to 'Comms'
+15022023-075940 [Local]      Execution of code started
+15022023-075940 [guiclient1] Run [w(),[,t100,if(ud<1),[,kb,t100,],]]
+15022023-075942 [Local]      Execution of code interrupted
+15022023-075942 [guiclient1] Interrupt execution
+15022023-141411 [Local]      Node.JS running on port 5001
+15022023-141411 [Local]      guiclient1 connected to MQTT
+15022023-141411 [Local]      guiclient1 subscribed to 'Comms'
+15022023-141418 [guiclient0] Run [d100,d100,t100]
+15022023-141418 [Local]      Execution of code failed: Robot busy
+15022023-141427 [guiclient0] Interrupt execution
+15022023-141431 [Local]      Execution of code failed: Robot busy
+15022023-141442 [Mazerunner] Status: Free
+15022023-141452 [Local]      Execution of code started
+15022023-141452 [guiclient1] Run [w(),[,t100,if(ud<1),[,kb,t100,],]]
+15022023-141452 [Mazerunner] Received
+15022023-141506 [Mazerunner] Status: Free
+15022023-141604 [Local]      Execution of code started
+15022023-141604 [guiclient1] Run [d100,w(),[,if(ud<=50),[,s0100,],]]
+15022023-141604 [Mazerunner] Received
+15022023-141608 [Mazerunner] Status: Free
+15022023-141701 [Local]      Execution of code started
+15022023-141701 [guiclient1] Run [d100,w(),[,if(ud<=50),[,s0100,],]]
+15022023-141711 [Mazerunner] Status: Free
+15022023-141836 [Mazerunner] Status: Free
+15022023-141846 [Local]      Execution of code started
+15022023-141846 [guiclient1] Run [d100,w(),[,if(ud<=50),[,s0100,],]]
+15022023-141846 [Mazerunner] Received
+15022023-141855 [Mazerunner] Status: Free
+15022023-142020 [Local]      Execution of code started
+15022023-142020 [guiclient1] Run [d100,w(),[,if(ud<=50),[,s0100,],]]
+15022023-142020 [Mazerunner] Received
+15022023-142026 [Mazerunner] Status: Free
+15022023-142032 [Local]      Execution of code started
+15022023-142032 [guiclient1] Run [d100,w(),[,if(ud<=50),[,s0100,],]]
+15022023-142032 [Mazerunner] Received
+15022023-142041 [Mazerunner] Status: Free
+15022023-142057 [Local]      Execution of code started
+15022023-142058 [guiclient1] Run [d100,w(),[,if(ud<=50),[,s0100,],]]
+15022023-142058 [Mazerunner] Received
+15022023-142218 [Local]      Execution of code interrupted
+15022023-142218 [guiclient1] Interrupt execution
+15022023-142220 [Mazerunner] Status: Free
+15022023-142228 [Local]      Execution of code started
+15022023-142228 [guiclient1] Run [d1000,w(),[,if(ud<=50),[,s0100,kb,],]]
+15022023-142228 [Mazerunner] Received
+15022023-142236 [Mazerunner] Status: Free
+15022023-142249 [Local]      Execution of code started
+15022023-142249 [guiclient1] Run [d1000,w(),[,if(ud<=100),[,s0100,kb,],]]
+15022023-142249 [Mazerunner] Received
+15022023-142257 [Mazerunner] Status: Free
+15022023-145613 [Local]      guiclient1 connected to MQTT
+15022023-145613 [Local]      guiclient1 subscribed to 'Comms'
+15022023-151551 [Local]      guiclient1 connected to MQTT
+15022023-151551 [Local]      guiclient1 subscribed to 'Comms'
+15022023-162211 [Local]      guiclient1 connected to MQTT
+15022023-162211 [Local]      guiclient1 subscribed to 'Comms'
+15022023-162311 [Mazerunner] Status: Free
+15022023-162421 [guiclient0] Run [d300,w(),[,if(ud<=100),[,s0100,kb,],]]
+15022023-162421 [Mazerunner] Received
+15022023-162421 [Local]      Execution of code failed: Robot busy
+15022023-162424 [Local]      Execution of code failed: Robot busy
+15022023-162425 [Mazerunner] Status: Free
+15022023-162431 [guiclient0] Run [d300,w(),[,if(ud<=100),[,s0100,kb,],]]
+15022023-162431 [Mazerunner] Received
+15022023-162433 [Local]      Execution of code failed: Robot busy
+15022023-162435 [Local]      Execution of code failed: Robot busy
+15022023-162436 [Mazerunner] Status: Free
+15022023-162438 [Local]      Execution of code started
+15022023-162438 [guiclient1] Run []
+15022023-162438 [Mazerunner] Received
+15022023-162443 [Mazerunner] Status: Free
+15022023-162803 [Local]      Execution of code started
+15022023-162803 [guiclient1] Run [if(lr<100),[,t100,]]
+15022023-162803 [Mazerunner] Received
+15022023-162808 [Mazerunner] Status: Free
+15022023-162821 [Local]      Execution of code started
+15022023-162821 [guiclient1] Run [if(lr<100),[,t100,]]
+15022023-162821 [Mazerunner] Received
+15022023-162828 [Mazerunner] Status: Free
+15022023-163047 [Local]      Execution of code started
+15022023-163047 [guiclient1] Run [f100,if(ud<100),[,l90,],f100,if(ud<100),[,r100,],f100]
+15022023-163050 [Mazerunner] Received
+15022023-163055 [Mazerunner] Status: Free
+15022023-163104 [Local]      Execution of code started
+15022023-163104 [guiclient1] Run [f100,if(ud<100),[,l90,],f100,if(ud<100),[,r100,],f100]
+15022023-163104 [Mazerunner] Received
+15022023-163110 [Mazerunner] Status: Free
+15022023-163204 [Local]      Execution of code started
+15022023-163204 [guiclient1] Run [f1000,if(ud<100),[,l90,],f1000,if(ud<100),[,r100,],f1000]
+15022023-163204 [Mazerunner] Received
+15022023-163214 [Mazerunner] Status: Free
+15022023-163251 [Local]      Execution of code started
+15022023-163251 [guiclient1] Run [f400,if(ud<100),[,l200,],f400,if(ud<100),[,r200,],f400]
+15022023-163251 [Mazerunner] Received
+15022023-163300 [Mazerunner] Status: Free
+15022023-163357 [Local]      Execution of code started
+15022023-163357 [guiclient1] Run [d100,if(ud<100),[,s0100,],l200,f400,if(ud<100),[,r200,],f400]
+15022023-163357 [Mazerunner] Received
+15022023-163402 [Mazerunner] Status: Free
+15022023-163550 [Local]      Execution of code started
+15022023-163551 [guiclient1] Run [d100,w(),[,if(lr<100),[,kb,],],s0100]
+15022023-163551 [Mazerunner] Received
+15022023-163556 [Mazerunner] Status: Free
+15022023-163558 [Local]      Execution of code started
+15022023-163558 [guiclient1] Run [d100,w(),[,if(lr<100),[,kb,],],s0100]
+15022023-163559 [Mazerunner] Received
+15022023-163603 [Mazerunner] Status: Free
+15022023-163610 [Local]      Execution of code started
+15022023-163611 [guiclient1] Run [d100,w(),[,if(lr<100),[,kb,],],s0100]
+15022023-163611 [Mazerunner] Received
+15022023-163616 [Mazerunner] Status: Free
+15022023-163633 [Local]      Execution of code started
+15022023-163633 [guiclient1] Run [d100,w(),[,if(lr<100),[,kb,],],s0100]
+15022023-163633 [Mazerunner] Received
+15022023-163638 [Mazerunner] Status: Free
+15022023-163705 [Mazerunner] Status: Free
+15022023-163707 [Local]      Execution of code started
+15022023-163707 [guiclient1] Run [d100,w(),[,if(lr<100),[,kb,],],s0100]
+15022023-163707 [Mazerunner] Received
+15022023-163713 [Mazerunner] Status: Free
+15022023-163802 [Mazerunner] Status: Free
+15022023-163805 [Local]      Execution of code started
+15022023-163805 [guiclient1] Run [d100,w(),[,if(lr<100),[,kb,],],s0100]
+15022023-163805 [Mazerunner] Received
+15022023-163811 [Mazerunner] Status: Free
+15022023-163828 [Local]      Execution of code started
+15022023-163829 [guiclient1] Run [d100,w(),[,if(lr<100),[,kb,],],s0100]
+15022023-163829 [Mazerunner] Received
+15022023-163833 [Mazerunner] Status: Free
+15022023-163910 [guiclient0] Run [t360,l90,f405,r90,f360,r90]
+15022023-163910 [guiclient0] Interrupt execution
+15022023-163910 [Mazerunner] Received
+15022023-163920 [Mazerunner] Status: Free
+15022023-163929 [guiclient0] Run [t360,l90,f405,r90,f360,r90]
+15022023-163929 [Mazerunner] Received
+15022023-163941 [Mazerunner] Status: Free
+15022023-164019 [guiclient0] Run [t360,l90,f405,r90,f360,r90]
+15022023-164019 [Mazerunner] Received
+15022023-164030 [Mazerunner] Status: Free
+15022023-164225 [Local]      Execution of code started
+15022023-164225 [guiclient1] Run [d100,w(),[,if(ud<100),[,kb,],],s0100]
+15022023-164226 [Mazerunner] Received
+15022023-164233 [Mazerunner] Status: Free
+15022023-164623 [Local]      Execution of code started
+15022023-164623 [guiclient1] Run [d200,if(lr<100),[,t10000,]]
+15022023-164623 [Mazerunner] Received
+15022023-164703 [Local]      Execution of code interrupted
+15022023-164703 [guiclient1] Interrupt execution
+15022023-164705 [Mazerunner] Status: Free
+15022023-164823 [Local]      Execution of code started
+15022023-164823 [guiclient1] Run [d100,f100,l100,f100,r100,f100,r100]
+15022023-164823 [Mazerunner] Received
+15022023-164831 [Mazerunner] Status: Free
+15022023-165012 [Local]      Execution of code started
+15022023-165013 [guiclient1] Run [d1000,f1000,l90,f1000,r90,f1000,r90,f1000,l90,f1000,l90,f1000,r90,f1000]
+15022023-165013 [Mazerunner] Received
+15022023-165018 [Mazerunner] Status: Free
+15022023-165025 [Local]      Execution of code started
+15022023-165025 [guiclient1] Run [d1000,f1000,l90,f1000,r90,f1000,r90,f1000,l90,f1000,l90,f1000,r90,f1000]
+15022023-165025 [Mazerunner] Received
+15022023-165030 [Mazerunner] Status: Free
+15022023-165122 [Local]      Execution of code started
+15022023-165122 [guiclient1] Run [d1000,f1000,l90,f1000,r90,f1000,r90,f1000,l90,f1000,l90,f1000,r90,f1000]
+15022023-165122 [Mazerunner] Received
+15022023-165127 [Mazerunner] Status: Free
+15022023-165132 [Local]      Execution of code started
+15022023-165132 [guiclient1] Run [d1000,f1000,l90,f1000,r90,f1000,r90,f1000,l90,f1000,l90,f1000,r90,f1000]
+15022023-165132 [Mazerunner] Received
+15022023-165137 [Mazerunner] Status: Free
+15022023-165307 [Mazerunner] Status: Free
+15022023-165325 [Local]      Execution of code started
+15022023-165325 [guiclient1] Run [d1000,f1000,l90,f1000,r90,f1000,r90,f1000,l90,f1000,l90,f1000,r90,f1000]
+15022023-165325 [Mazerunner] Received
+15022023-165330 [Mazerunner] Status: Free
+15022023-165341 [Local]      Execution of code started
+15022023-165341 [guiclient1] Run [d1000,f1000,l90,f1000,r90,f1000,r90,f1000,l90,f1000,l90,f1000,r90,f1000]
+15022023-165341 [Mazerunner] Received
+15022023-165347 [Mazerunner] Status: Free
+15022023-165357 [Local]      Execution of code started
+15022023-165357 [guiclient1] Run [d1000,f1000,l90,f1000,r90,f1000,r90,f1000,l90,f1000,l90,f1000,r90,f1000]
+15022023-165357 [Mazerunner] Received
+15022023-165419 [Local]      Execution of code interrupted
+15022023-165419 [guiclient1] Interrupt execution
+15022023-165420 [Mazerunner] Status: Free
+15022023-165424 [Local]      Execution of code started
+15022023-165424 [guiclient1] Run [d1000,f1000,l90,f1000,r90,f1000,r90,f1000,l90,f1000,l90,f1000,r90,f1000]
+15022023-165424 [Mazerunner] Received
+15022023-165447 [Mazerunner] Status: Free
+15022023-165515 [Local]      Execution of code started
+15022023-165515 [guiclient1] Run [d1000,f1000,l90,f100,r90,f100,r90,f100,l90,f100,l90,f100,r90,f100]
+15022023-165515 [Mazerunner] Received
+15022023-165529 [Mazerunner] Status: Free
+15022023-165539 [Local]      Execution of code started
+15022023-165539 [guiclient1] Run [d100,f100,l90,f100,r90,f100,r90,f100,l90,f100,l90,f100,r90,f100]
+15022023-165540 [Mazerunner] Received
+15022023-165544 [Mazerunner] Status: Free
+15022023-165559 [Local]      Execution of code started
+15022023-165559 [guiclient1] Run [d1000,f100,l90,f100,r90,f100,r90,f100,l90,f100,l90,f100,r90,f100]
+15022023-165559 [Mazerunner] Received
+15022023-165610 [Local]      Execution of code interrupted
+15022023-165610 [guiclient1] Interrupt execution
+15022023-165612 [Mazerunner] Status: Free
+15022023-165641 [Local]      Execution of code started
+15022023-165641 [guiclient1] Run [d1000,f800,l90,f800,r90,f800,r90,f800,l90,f800,l90,f800,r90,f800]
+15022023-165641 [Mazerunner] Received
+15022023-165655 [Local]      Execution of code interrupted
+15022023-165656 [guiclient1] Interrupt execution
+15022023-165657 [Mazerunner] Status: Free
+15022023-170509 [Local]      Execution of code started
+15022023-170509 [guiclient1] Run [f100,l100]
+15022023-170510 [Mazerunner] Received
+15022023-170516 [Mazerunner] Status: Free
+15022023-170531 [Local]      Execution of code started
+15022023-170531 [guiclient1] Run [f100,f100,f100,f100,l100,l100,l100]
+15022023-170531 [Mazerunner] Received
+15022023-170540 [Mazerunner] Status: Free
+15022023-170624 [Local]      Execution of code started
+15022023-170625 [guiclient1] Run [f100,f100,f100,f100,l100,l100,f100,f100,f100]
+15022023-170625 [Mazerunner] Received
+15022023-170634 [Mazerunner] Status: Free
+15022023-170750 [Local]      Execution of code started
+15022023-170750 [guiclient1] Run [f400,l180,f400,r180,f300]
+15022023-170750 [Mazerunner] Received
+15022023-170800 [Mazerunner] Status: Free
+15022023-170825 [Local]      Execution of code started
+15022023-170825 [guiclient1] Run [f450,l180,f400,r180,f300]
+15022023-170825 [Mazerunner] Received
+15022023-170835 [Mazerunner] Status: Free
+15022023-170848 [Local]      Execution of code started
+15022023-170848 [guiclient1] Run [f450,l180,f600,r180,f300]
+15022023-170848 [Mazerunner] Received
+15022023-170859 [Mazerunner] Status: Free
+15022023-170911 [Local]      Execution of code started
+15022023-170911 [guiclient1] Run [f450,l180,f800,r180,f300]
+15022023-170911 [Mazerunner] Received
+15022023-170921 [Mazerunner] Status: Free
+15022023-170929 [Local]      Execution of code started
+15022023-170929 [guiclient1] Run [f450,l180,f800,r180,f300]
+15022023-170929 [Mazerunner] Received
+15022023-170939 [Mazerunner] Status: Free
+15022023-172244 [Local]      Node.JS running on port 5001
+15022023-172244 [Local]      guiclient1 connected to MQTT
+15022023-172244 [Local]      guiclient1 subscribed to 'Comms'
+15022023-172249 [Local]      Execution of code started
+15022023-172249 [guiclient1] Run [d1000,w(),[,if(ud<=100),[,kb,],],s0100,r90,d1000,w(),[,if(ud<=100),[,kb,],],s0100]
+15022023-172249 [Mazerunner] Received
+15022023-172254 [Mazerunner] Status: Free
+15022023-172300 [Local]      Execution of code started
+15022023-172300 [guiclient1] Run [d1000,w(),[,if(ud<=100),[,kb,],],s0100,r90,d1000,w(),[,if(ud<=100),[,kb,],],s0100]
+15022023-172301 [Mazerunner] Received
+15022023-172305 [Mazerunner] Status: Free
+15022023-172337 [Local]      Execution of code started
+15022023-172337 [guiclient1] Run [d1000,w(),[,if(ud<=100),[,kb,],],s0100,r90,d1000,w(),[,if(ud<=100),[,kb,],],s0100]
+15022023-172337 [Mazerunner] Received
+15022023-172342 [Mazerunner] Status: Free
+15022023-172407 [Mazerunner] Status: Free
+15022023-172421 [Local]      Execution of code started
+15022023-172421 [guiclient1] Run [d1000,w(),[,if(ud<=100),[,kb,],],s0100,r90,d1000,w(),[,if(ud<=100),[,kb,],],s0100]
+15022023-172421 [Mazerunner] Received
+15022023-172426 [Mazerunner] Status: Free
+15022023-172432 [Local]      Execution of code started
+15022023-172432 [guiclient1] Run [d1000,w(),[,if(ud<=100),[,kb,],],s0100,r90,d1000,w(),[,if(ud<=100),[,kb,],],s0100]
+15022023-172432 [Mazerunner] Received
+15022023-172440 [Mazerunner] Status: Free
